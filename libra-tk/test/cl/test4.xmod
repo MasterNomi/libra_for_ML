@@ -1,0 +1,1495 @@
+<?xml version="1.0" standalone="yes"?>
+<AnalysisNotebook>
+	<Variables>
+		<Variable name="Variable_0" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_1" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_2" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_3" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_4" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_5" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_6" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_7" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_8" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_9" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_10" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_11" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_12" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_13" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_14" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_15" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_16" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_17" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_18" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_19" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_20" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_21" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_22" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_23" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_24" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_25" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_26" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_27" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_28" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_29" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_30" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_31" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_32" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_33" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_34" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_35" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_36" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_37" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_38" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_39" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_40" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_41" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_42" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_43" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_44" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_45" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_46" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_47" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_48" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_49" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_50" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_51" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_52" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_53" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_54" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_55" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_56" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_57" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_58" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_59" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_60" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_61" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_62" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_63" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_64" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+	</Variables>
+	<Model name="">
+		<LocalModels>
+			<LocalModel variable="Variable_0">
+				<Table>
+					<TableEntry>
+						<InputStates></InputStates>
+						<Multinomial>
+							<Probs>0.998150184982 0.0018498150185</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_1">
+				<Inputs>
+					<Input variable="Variable_2"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999374092434 0.000625907565971</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.467741935484 0.532258064516</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_2">
+				<Inputs>
+					<Input variable="Variable_3"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999074027729 0.000925972270884</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.45652173913 0.54347826087</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_3">
+				<Inputs>
+					<Input variable="Variable_7"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999373904333 0.000626095667418</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.716216216216 0.283783783784</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_4">
+				<Inputs>
+					<Input variable="Variable_3"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999774763502 0.000225236498323</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.54347826087 0.45652173913</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_5">
+				<Inputs>
+					<Input variable="Variable_1"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999474290292 0.000525709708106</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.568965517241 0.431034482759</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_6">
+				<Inputs>
+					<Input variable="Variable_5"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998773712398 0.00122628760198</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.630434782609 0.369565217391</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_7">
+				<Inputs>
+					<Input variable="Variable_15"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998865984577 0.00113401542261</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.909937888199 0.0900621118012</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_8">
+				<Inputs>
+					<Input variable="Variable_24"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999565373012 0.000434626987779</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.97191011236 0.0280898876404</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_9">
+				<Inputs>
+					<Input variable="Variable_31"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999773174051 0.000226825948889</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.935582822086 0.0644171779141</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_10">
+				<Inputs>
+					<Input variable="Variable_8"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998673740053 0.00132625994695</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.595238095238 0.404761904762</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_11">
+				<Inputs>
+					<Input variable="Variable_1"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999374155109 0.000625844890602</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.568965517241 0.431034482759</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_12">
+				<Inputs>
+					<Input variable="Variable_19"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.988447343142 0.0115526568583</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.674887892377 0.325112107623</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_13">
+				<Inputs>
+					<Input variable="Variable_16"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998538686356 0.00146131364405</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.962925851703 0.0370741482966</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_14">
+				<Inputs>
+					<Input variable="Variable_17"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.994399675637 0.00560032436268</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.784132841328 0.215867158672</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_15">
+				<Inputs>
+					<Input variable="Variable_30"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.994513274336 0.00548672566372</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.76872246696 0.23127753304</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_16">
+				<Inputs>
+					<Input variable="Variable_30"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.978331226296 0.0216687737042</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.689427312775 0.310572687225</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_17">
+				<Inputs>
+					<Input variable="Variable_19"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.989458516609 0.0105414833915</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.719730941704 0.280269058296</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_18">
+				<Inputs>
+					<Input variable="Variable_16"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.947572168384 0.0524278316156</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.670340681363 0.329659318637</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_19">
+				<Inputs>
+					<Input variable="Variable_25"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.99156577681 0.00843422319031</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.783524904215 0.216475095785</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_20">
+				<Inputs>
+					<Input variable="Variable_33"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.991523718497 0.00847628150309</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.475609756098 0.524390243902</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_21">
+				<Inputs>
+					<Input variable="Variable_20"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.992083565178 0.0079164348222</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.654506437768 0.345493562232</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_22">
+				<Inputs>
+					<Input variable="Variable_20"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.990161363751 0.00983863624867</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.714592274678 0.285407725322</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_23">
+				<Inputs>
+					<Input variable="Variable_15"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.997152361272 0.00284763872789</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.760869565217 0.239130434783</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_24">
+				<Inputs>
+					<Input variable="Variable_32"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.982442361287 0.0175576387129</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.631086142322 0.368913857678</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_25">
+				<Inputs>
+					<Input variable="Variable_22"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.989742160985 0.0102578390152</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.775862068966 0.224137931034</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_26">
+				<Inputs>
+					<Input variable="Variable_21"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.995320010119 0.0046799898811</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.854430379747 0.145569620253</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_27">
+				<Inputs>
+					<Input variable="Variable_33"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.996453543941 0.00354645605916</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.508130081301 0.491869918699</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_28">
+				<Inputs>
+					<Input variable="Variable_16"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.988386402092 0.011613597908</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.822645290581 0.177354709419</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_29">
+				<Inputs>
+					<Input variable="Variable_26"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.992628930818 0.00737106918239</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.728346456693 0.271653543307</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_30">
+				<Inputs>
+					<Input variable="Variable_21"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.991373640273 0.00862635972679</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.761603375527 0.238396624473</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_31">
+				<Inputs>
+					<Input variable="Variable_33"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.995548065798 0.00445193420192</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.394308943089 0.605691056911</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_32">
+				<Inputs>
+					<Input variable="Variable_20"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.990060195255 0.0099398047448</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.697424892704 0.302575107296</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_33">
+				<Inputs>
+					<Input variable="Variable_0"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.994565489607 0.00543451039319</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.608108108108 0.391891891892</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_34">
+				<Inputs>
+					<Input variable="Variable_30"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.98399494311 0.01600505689</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.856828193833 0.143171806167</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_35">
+				<Inputs>
+					<Input variable="Variable_37"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.990034640293 0.00996535970681</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.632530120482 0.367469879518</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_36">
+				<Inputs>
+					<Input variable="Variable_34"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.995496870707 0.00450312929324</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.883954154728 0.116045845272</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_37">
+				<Inputs>
+					<Input variable="Variable_36"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.997458863785 0.00254113621497</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.748062015504 0.251937984496</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_38">
+				<Inputs>
+					<Input variable="Variable_39"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.991399747793 0.00860025220681</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.838983050847 0.161016949153</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_39">
+				<Inputs>
+					<Input variable="Variable_18"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.992851448313 0.00714855168748</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.964195450716 0.0358045492839</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_40">
+				<Inputs>
+					<Input variable="Variable_46"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.994057469535 0.00594253046487</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.5 0.5</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_41">
+				<Inputs>
+					<Input variable="Variable_40"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998463708256 0.00153629174432</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.929530201342 0.0704697986577</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_42">
+				<Inputs>
+					<Input variable="Variable_44"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.991931024081 0.00806897591876</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.671171171171 0.328828828829</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_43">
+				<Inputs>
+					<Input variable="Variable_45"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998568198945 0.00143180105501</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.932989690722 0.0670103092784</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_44">
+				<Inputs>
+					<Input variable="Variable_38"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.996338938545 0.00366106145534</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.806532663317 0.193467336683</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_45">
+				<Inputs>
+					<Input variable="Variable_39"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.996141235813 0.00385876418663</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.88418079096 0.11581920904</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_46">
+				<Inputs>
+					<Input variable="Variable_44"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998466643205 0.00153335679453</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.725225225225 0.274774774775</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_47">
+				<Inputs>
+					<Input variable="Variable_27"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.99937094258 0.000629057420361</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.980916030534 0.0190839694656</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_48">
+				<Inputs>
+					<Input variable="Variable_60"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.982408488602 0.0175915113977</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.827868852459 0.172131147541</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_49">
+				<Inputs>
+					<Input variable="Variable_48"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.996913737693 0.00308626230679</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.928571428571 0.0714285714286</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_50">
+				<Inputs>
+					<Input variable="Variable_60"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.988602325227 0.0113976747728</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.847540983607 0.152459016393</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_51">
+				<Inputs>
+					<Input variable="Variable_50"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.995920125691 0.00407987430946</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.924354243542 0.0756457564576</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_52">
+				<Inputs>
+					<Input variable="Variable_58"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.994513274336 0.00548672566372</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.86563876652 0.13436123348</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_53">
+				<Inputs>
+					<Input variable="Variable_52"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.997457584454 0.00254241554649</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.953237410072 0.0467625899281</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_54">
+				<Inputs>
+					<Input variable="Variable_62"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.993416073861 0.00658392613894</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.776243093923 0.223756906077</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_55">
+				<Inputs>
+					<Input variable="Variable_59"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.995558343789 0.00444165621079</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.88961038961 0.11038961039</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_56">
+				<Inputs>
+					<Input variable="Variable_54"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.995940698906 0.00405930109425</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.821637426901 0.178362573099</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_57">
+				<Inputs>
+					<Input variable="Variable_56"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.998064451259 0.00193554874064</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.959459459459 0.0405405405405</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_58">
+				<Inputs>
+					<Input variable="Variable_62"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.990489884466 0.00951011553403</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.78729281768 0.21270718232</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_59">
+				<Inputs>
+					<Input variable="Variable_58"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.996738305942 0.00326169405815</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.944933920705 0.0550660792952</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_60">
+				<Inputs>
+					<Input variable="Variable_35"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.986319728923 0.0136802710767</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.849344978166 0.150655021834</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_61">
+				<Inputs>
+					<Input variable="Variable_60"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.99418693202 0.0058130679799</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.932786885246 0.0672131147541</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_62">
+				<Inputs>
+					<Input variable="Variable_60"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.994390008631 0.00560999136924</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.768852459016 0.231147540984</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_63">
+				<Inputs>
+					<Input variable="Variable_61"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.997256757437 0.00274324256304</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.951851851852 0.0481481481481</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_64">
+				<Inputs>
+					<Input variable="Variable_9"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.999974983739 2.50162605694e-05</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.966666666667 0.0333333333333</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+		</LocalModels>
+	</Model>
+</AnalysisNotebook>

@@ -1,0 +1,26 @@
+Arguments: ../../bin/acve -b cold-learned.xmod -o out3.ac -log out3.log -v
+Minfill ordering: 0.000007s
+ADD creation: 0.000122s
+cus maxsize = 0.000000
+Eliminating var 1: 0.000020s
+Summing out: 0.000012s
+Final size: 10
+9 factors remaining.
+Eliminating var 0: 0.000048s
+Summing out: 0.000009s
+Final size: 15
+4 factors remaining.
+Eliminating var 2: 0.000007s
+Summing out: 0.000006s
+Final size: 7
+3 factors remaining.
+Eliminating var 3: 0.000006s
+Summing out: 0.000005s
+Final size: 3
+2 factors remaining.
+Eliminating var 4: 0.000004s
+Summing out: 0.000005s
+Final size: 1
+1 factors remaining.
+Variable elimination: 0.000803s
+Creating circuit: 0.000858s

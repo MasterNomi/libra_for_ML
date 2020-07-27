@@ -1,0 +1,88 @@
+Version 0.1.0 (4/24/2010):
+  * Initial release
+
+Version 0.2.0 (6/08/2010):
+  * BP now supports table CPDs, not just trees
+  * Gibbs sampling now supports dependency networks with 
+    -depnet flag (experimental).
+  * Added -norb flag to disable Rao-Blackwellization in 
+    Gibbs sampling
+  * Fixed expat compilation under OS X
+  * Greatly expanded user manual
+  * Tweaks to the output of inference algorithms
+  * Added more automated tests, based on the tutorial
+
+Version 0.3.0 (8/01/2010):
+  * New data structure and functions for Markov networks with factors 
+    that are trees, tables, conjunctive features, or sets of 
+    conjunctive features. 
+  * Added MN support to acve, bp, mf, gibbs, and acopt.
+  * AC, BN, and MN scoring is now handled by a single program, mscore.
+  * Added mconvert utility to convert between .xmod and .bif formats, or 
+    to go from .xmod/.bif to .mn (Markov network format).
+  * Added -noac option to aclearnstruct, so that it can be used 
+    to learn a Bayesian network that isn't represented as a circuit.
+  * Added dependency network learner (dnlearn)
+  * Extended tutorial, revised manual, and added more tests.
+  * Changed directory structure: Now we just have util and inference,
+    instead of acutil, bninference, and bnutil.
+
+Version 0.4.0 (7/06/2011):
+  * Max-product algorithm for BNs and MNs (maxprod)
+  * MPE inference in ACs (acquery -mpe)
+  * MF inference in DNs (mf -depnet)
+  * Added support for UAI MN file format.
+  * New fstats utility to get basic file statistics for most
+    file types supported by Libra
+  * mf implementation uses a queue instead of updating marginals 
+    in parallel (use -roundrobin to obtain old behavior)
+  * More flexible parent restrictions in aclearnstruct
+  * Support for weighted examples in aclearn and mscore
+  * Gibbs supports user-specified prior counts with -prior
+  * Internal: Unified timing code, refactored inference algorithms,
+    priority queues use new binary heap instead of Set
+
+Version 0.5.0 (8/16/2012):
+ * New dn2mn algorithm for converting DNs to MNs. 
+   (See (Lowd, UAI'12) for details.)
+ * Implemented MN weight learning to optimize PLL, with L1 and/or L2 priors
+ * Implemented iterated conditional modes (ICM) algorithm for MPE
+   inference.
+ * New method for learning DNs with boosted decision tree CPDs (dnboost).
+ * New BN/DN file format that allows CPDs to be arbitrary factors
+ * -mincount option sets minimum number of examples in each decision
+   tree leaf.
+ * -pervar option in mscore to get log-likelihood or PLL for each
+   variable separately.
+
+Version 1.0.1 (3/30/2014):
+ * Several new algorithms --
+   acmn, learning ACs using MNs (Lowd & Rooshenas, AISTATS'13)
+   idspn, SPN structure learning (Rooshenas & Lowd, ICML'14)
+   mtlearn, learning mixtures of trees (Meila and Jordan, 2000)
+ * Several new support programs --
+   spquery, for exact inference in SPNs
+   spn2ac, for converting SPNs to ACs
+ * Renamed aclearnstruct to acbn
+ * Replaced aclearnstruct -noac with separate bnlearn program
+ * ...and many more small changes and fixes, throughout!
+
+Version 1.1.0 (3/26/2015):
+ * Added SPN library
+ * Added API documentation for all libraries
+ * Introduced libra script as a unified interface to all programs
+ * Many minor improvements to the code, interface, and documentation.
+
+Version 1.1.1 (5/21/2015):
+ * Many minor fixes to documentation, scripts, and code.
+
+Version 1.1.2 (6/10/2015):
+ * Switched to 2-clause BSD license; added license headers to
+   all source files.
+ * Switched to OASIS build system for much cleaner compilation 
+   and installation procedures.
+
+Version 1.1.2c (6/24/2015):
+ * Libra can now be installed using the OPAM package manager: 
+     opam install libra-tk
+ * Updated documentation to describe OPAM installation.

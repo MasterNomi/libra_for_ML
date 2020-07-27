@@ -1,0 +1,12 @@
+Inferring schema from data: 0.000085 s
+Schema:
+3,3,3,3
+Collecting counts: 0.000068 s
+Computing MI: 0.000054 s
+Picking edges: 0.000016 s
+Creating BN: 0.000035 s
+
+Edge list:
+0 -> 2
+2 -> 3
+3 -> 1

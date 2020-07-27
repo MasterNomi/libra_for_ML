@@ -1,0 +1,2979 @@
+Arguments: ../../bin/aclearnstruct -i alarm.data -o alarm-out2.ac -ob alarm-out2.xmod -debug -v
+Initializing...
+Loaded data.
+Initial splits: 3133
+Splits after filtering: 3133
+Initializing took 0.069255 seconds.
+Initial log likelihood: -20815.398109
+
+SPLIT 1:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 14
+Splitting distribution:
+dvar: 31 ; vals:  0.671578 0.076174 0.051199 0.201049 ; cond:
+Splitting on var n18 = v32_2
+Delta edges: 14 ; ll: 515.829349
+Total edges: 366 ; Depth: 6
+Elapsed time: 0.070422 seconds
+Delta time: 0.001150 seconds
+Total number of potential splits: 3177
+Times: pick=0.0001 split=0.0008 update=0.0045
+
+SPLIT 2:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 36
+Splitting distribution:
+dvar: 19 ; vals:  0.794539 0.017316 0.188145 ; cond:
+Splitting on var n34 = v31_3
+Delta edges: 36 ; ll: 464.519957
+Total edges: 402 ; Depth: 6
+Elapsed time: 0.075908 seconds
+Delta time: 0.005485 seconds
+Total number of potential splits: 3202
+Times: pick=0.0001 split=0.0006 update=0.0045
+
+SPLIT 3:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 11
+Splitting distribution:
+dvar: 2 ; vals:  0.118215 0.688645 0.193140 ; cond:
+Splitting on var n6 = v4_1
+Delta edges: 11 ; ll: 439.567359
+Total edges: 413 ; Depth: 6
+Elapsed time: 0.081156 seconds
+Delta time: 0.005245 seconds
+Total number of potential splits: 3266
+Times: pick=0.0001 split=0.0006 update=0.0043
+
+SPLIT 4:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 19
+Splitting distribution:
+dvar: 17 ; vals:  0.695554 0.056194 0.044206 0.204046 ; cond:
+Splitting on var n46 = v31_3
+Delta edges: 19 ; ll: 410.434484
+Total edges: 432 ; Depth: 7
+Elapsed time: 0.086259 seconds
+Delta time: 0.005101 seconds
+Total number of potential splits: 3311
+Times: pick=0.0001 split=0.0007 update=0.0043
+
+SPLIT 5:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 11
+Splitting distribution:
+dvar: 8 ; vals:  0.184149 0.071262 0.744589 ; cond:
+Splitting on var n16 = v34_2
+Delta edges: 11 ; ll: 391.463309
+Total edges: 443 ; Depth: 7
+Elapsed time: 0.091605 seconds
+Delta time: 0.005342 seconds
+Total number of potential splits: 3381
+Times: pick=0.0001 split=0.0009 update=0.0041
+
+SPLIT 6:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 50
+Splitting distribution:
+dvar: 9 ; vals:  0.180153 0.095238 0.724609 ; cond:
+Splitting on var n16 = v11_2
+Delta edges: 11 ; ll: 376.740906
+Total edges: 454 ; Depth: 7
+Elapsed time: 0.096866 seconds
+Delta time: 0.005258 seconds
+Total number of potential splits: 3455
+Times: pick=0.0002 split=0.0009 update=0.0045
+
+SPLIT 7:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 50
+Splitting distribution:
+dvar: 20 ; vals:  0.785548 0.027306 0.187146 ; cond:
+Splitting on var n3 = v19_0
+Delta edges: 50 ; ll: 378.667419
+Total edges: 504 ; Depth: 9
+Elapsed time: 0.102260 seconds
+Delta time: 0.005389 seconds
+Total number of potential splits: 3510
+Times: pick=0.0001 split=0.0007 update=0.0046
+
+SPLIT 8:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 17
+Splitting distribution:
+dvar: 11 ; vals:  0.181152 0.103230 0.715618 ; cond:
+Splitting on var n25 = v34_2
+Delta edges: 17 ; ll: 372.017675
+Total edges: 521 ; Depth: 9
+Elapsed time: 0.107844 seconds
+Delta time: 0.005582 seconds
+Total number of potential splits: 3575
+Times: pick=0.0001 split=0.0008 update=0.0047
+
+SPLIT 9:
+z = -0.000000
+Splits recomputed: 1 ; worst-case edges: 39
+Splitting distribution:
+dvar: 30 ; vals:  0.727522 0.238012 0.008242 0.026224 ; cond:
+Splitting on var n78 = v31_3
+Delta edges: 39 ; ll: 347.874534
+Total edges: 560 ; Depth: 10
+Elapsed time: 0.113712 seconds
+Delta time: 0.005866 seconds
+Total number of potential splits: 3594
+Times: pick=0.0002 split=0.0007 update=0.0048
+
+SPLIT 10:
+z = -0.000000
+Splits recomputed: 1 ; worst-case edges: 11
+Splitting distribution:
+dvar: 35 ; vals:  0.193140 0.170163 0.636697 ; cond:
+Splitting on var n3 = v6_0
+Delta edges: 11 ; ll: 313.265483
+Total edges: 571 ; Depth: 10
+Elapsed time: 0.119712 seconds
+Delta time: 0.005997 seconds
+Total number of potential splits: 3659
+Times: pick=0.0003 split=0.0007 update=0.0079
+
+SPLIT 11:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 14
+Splitting distribution:
+dvar: 4 ; vals:  0.098235 0.711622 0.190143 ; cond:
+Splitting on var n6 = v1_1
+Delta edges: 14 ; ll: 304.658920
+Total edges: 585 ; Depth: 10
+Elapsed time: 0.128581 seconds
+Delta time: 0.008866 seconds
+Total number of potential splits: 3720
+Times: pick=0.0002 split=0.0009 update=0.0048
+
+SPLIT 12:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 11
+Splitting distribution:
+dvar: 14 ; vals:  0.314019 0.399933 0.286047 ; cond:
+Splitting on var n3 = v36_0
+Delta edges: 11 ; ll: 296.292918
+Total edges: 596 ; Depth: 10
+Elapsed time: 0.134322 seconds
+Delta time: 0.005739 seconds
+Total number of potential splits: 3798
+Times: pick=0.0001 split=0.0007 update=0.0048
+
+SPLIT 13:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 23
+Splitting distribution:
+dvar: 35 ; vals:  0.037634 0.175352 0.787014 ; cond: -v6_0
+Splitting on var n37 = v34_2
+Delta edges: 23 ; ll: 286.785804
+Total edges: 619 ; Depth: 10
+Elapsed time: 0.140347 seconds
+Delta time: 0.006022 seconds
+Total number of potential splits: 3861
+Times: pick=0.0001 split=0.0008 update=0.0044
+
+SPLIT 14:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 15
+Splitting distribution:
+dvar: 29 ; vals:  0.211039 0.714535 0.012238 0.062188 ; cond:
+Splitting on var n9 = v28_2
+Delta edges: 15 ; ll: 275.036711
+Total edges: 634 ; Depth: 10
+Elapsed time: 0.149031 seconds
+Delta time: 0.008682 seconds
+Total number of potential splits: 3928
+Times: pick=0.0029 split=0.0012 update=0.0049
+
+SPLIT 15:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 20
+Splitting distribution:
+dvar: 29 ; vals:  0.117169 0.860542 0.012349 0.009940 ; cond: +v28_2
+Splitting on var n3 = v26_0
+Delta edges: 20 ; ll: 258.872952
+Total edges: 654 ; Depth: 10
+Elapsed time: 0.155588 seconds
+Delta time: 0.006555 seconds
+Total number of potential splits: 3918
+Times: pick=0.0001 split=0.0014 update=0.0047
+
+SPLIT 16:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 33
+Splitting distribution:
+dvar: 3 ; vals:  0.183317 0.816683 ; cond:
+Splitting on var n35 = v4_2
+Delta edges: 29 ; ll: 253.921124
+Total edges: 683 ; Depth: 10
+Elapsed time: 0.162053 seconds
+Delta time: 0.006461 seconds
+Total number of potential splits: 3988
+Times: pick=0.0002 split=0.0012 update=0.0050
+
+SPLIT 17:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 33
+Splitting distribution:
+dvar: 28 ; vals:  0.061189 0.054196 0.828422 0.056194 ; cond:
+Splitting on var n6 = v27_1
+Delta edges: 33 ; ll: 253.190518
+Total edges: 716 ; Depth: 10
+Elapsed time: 0.171164 seconds
+Delta time: 0.009109 seconds
+Total number of potential splits: 4041
+Times: pick=0.0001 split=0.0038 update=0.0052
+
+SPLIT 18:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 361
+Splitting distribution:
+dvar: 11 ; vals:  0.010378 0.108759 0.880863 ; cond: +v34_2
+Splitting on var n3 = v10_0
+Delta edges: 21 ; ll: 212.162071
+Total edges: 737 ; Depth: 11
+Elapsed time: 0.177478 seconds
+Delta time: 0.006310 seconds
+Total number of potential splits: 4043
+Times: pick=0.0003 split=0.0007 update=0.0051
+
+SPLIT 19:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 28
+Splitting distribution:
+dvar: 30 ; vals:  0.901563 0.055313 0.010313 0.032813 ; cond: -v31_3
+Splitting on var n6 = v15_1
+Delta edges: 28 ; ll: 194.119079
+Total edges: 765 ; Depth: 12
+Elapsed time: 0.183564 seconds
+Delta time: 0.006082 seconds
+Total number of potential splits: 4047
+Times: pick=0.0001 split=0.0009 update=0.0050
+
+SPLIT 20:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 390
+Splitting distribution:
+dvar: 33 ; vals:  0.114386 0.885614 ; cond:
+Splitting on var n50 = v34_2
+Delta edges: 23 ; ll: 183.005445
+Total edges: 788 ; Depth: 12
+Elapsed time: 0.190152 seconds
+Delta time: 0.006586 seconds
+Total number of potential splits: 4100
+Times: pick=0.0004 split=0.0010 update=0.0057
+
+SPLIT 21:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 390
+Splitting distribution:
+dvar: 32 ; vals:  0.187146 0.071262 0.741592 ; cond:
+Splitting on var n32 = v29_1
+Delta edges: 390 ; ll: 212.539320
+Total edges: 1178 ; Depth: 14
+Elapsed time: 0.197657 seconds
+Delta time: 0.007502 seconds
+Total number of potential splits: 4042
+Times: pick=0.0004 split=0.0013 update=0.0052
+
+SPLIT 22:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 7
+Splitting distribution:
+dvar: 0 ; vals:  0.061439 0.938561 ; cond:
+Splitting on var n3 = v5_0
+Delta edges: 7 ; ll: 166.681031
+Total edges: 1185 ; Depth: 14
+Elapsed time: 0.204313 seconds
+Delta time: 0.006609 seconds
+Total number of potential splits: 4059
+Times: pick=0.0002 split=0.0010 update=0.0054
+
+SPLIT 23:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 13
+Splitting distribution:
+dvar: 5 ; vals:  0.061439 0.938561 ; cond:
+Splitting on var n3 = v4_0
+Delta edges: 13 ; ll: 156.375595
+Total edges: 1198 ; Depth: 14
+Elapsed time: 0.211064 seconds
+Delta time: 0.006748 seconds
+Total number of potential splits: 4071
+Times: pick=0.0002 split=0.0011 update=0.0053
+
+SPLIT 24:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 9
+Splitting distribution:
+dvar: 2 ; vals:  0.322953 0.042676 0.634371 ; cond: -v4_1
+Splitting on var n19 = v4_0
+Delta edges: 9 ; ll: 155.784042
+Total edges: 1207 ; Depth: 14
+Elapsed time: 0.218153 seconds
+Delta time: 0.007085 seconds
+Total number of potential splits: 4115
+Times: pick=0.0005 split=0.0010 update=0.0027
+
+SPLIT 25:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 12
+Splitting distribution:
+dvar: 17 ; vals:  0.862812 0.070312 0.051563 0.015313 ; cond: -v31_3
+Splitting on var n316 = v31_0
+Delta edges: 12 ; ll: 141.317401
+Total edges: 1219 ; Depth: 14
+Elapsed time: 0.222859 seconds
+Delta time: 0.004702 seconds
+Total number of potential splits: 4186
+Times: pick=0.0003 split=0.0017 update=0.0031
+
+SPLIT 26:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 6
+Splitting distribution:
+dvar: 4 ; vals:  0.354637 0.136591 0.508772 ; cond: -v1_1
+Splitting on var n105 = v1_2
+Delta edges: 6 ; ll: 138.498550
+Total edges: 1225 ; Depth: 14
+Elapsed time: 0.227523 seconds
+Delta time: 0.004662 seconds
+Total number of potential splits: 4229
+Times: pick=0.0002 split=0.0011 update=0.0032
+
+SPLIT 27:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 9
+Splitting distribution:
+dvar: 9 ; vals:  0.587135 0.292398 0.120468 ; cond: -v11_2
+Splitting on var n643 = v34_2
+Delta edges: 9 ; ll: 127.318226
+Total edges: 1234 ; Depth: 14
+Elapsed time: 0.232266 seconds
+Delta time: 0.004741 seconds
+Total number of potential splits: 4268
+Times: pick=0.0004 split=0.0011 update=0.0028
+
+SPLIT 28:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 10
+Splitting distribution:
+dvar: 23 ; vals:  0.889610 0.110390 ; cond:
+Splitting on var n14 = v24_2
+Delta edges: 8 ; ll: 119.566198
+Total edges: 1242 ; Depth: 14
+Elapsed time: 0.236890 seconds
+Delta time: 0.004620 seconds
+Total number of potential splits: 4301
+Times: pick=0.0003 split=0.0012 update=0.0054
+
+SPLIT 29:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 34
+Splitting distribution:
+dvar: 8 ; vals:  0.011623 0.066418 0.921959 ; cond: +v34_2
+Splitting on var n3 = v7_0
+Delta edges: 34 ; ll: 116.996827
+Total edges: 1276 ; Depth: 14
+Elapsed time: 0.243773 seconds
+Delta time: 0.006881 seconds
+Total number of potential splits: 4297
+Times: pick=0.0002 split=0.0013 update=0.0055
+
+SPLIT 30:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 96
+Splitting distribution:
+dvar: 29 ; vals:  0.664244 0.007267 0.013081 0.315407 ; cond: -v28_2
+Splitting on var n697 = v28_3
+Delta edges: 0 ; ll: 96.882618
+Total edges: 1276 ; Depth: 14
+Elapsed time: 0.251219 seconds
+Delta time: 0.007444 seconds
+Total number of potential splits: 4299
+Times: pick=0.0004 split=0.0014 update=0.0032
+
+SPLIT 31:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 102
+Splitting distribution:
+dvar: 6 ; vals:  0.195138 0.760573 0.044289 ; cond:
+Splitting on var n29 = v4_1
+Delta edges: 96 ; ll: 105.207245
+Total edges: 1372 ; Depth: 16
+Elapsed time: 0.256280 seconds
+Delta time: 0.005059 seconds
+Total number of potential splits: 4350
+Times: pick=0.0004 split=0.0013 update=0.0055
+
+SPLIT 32:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 19
+Splitting distribution:
+dvar: 25 ; vals:  0.023227 0.248002 0.216034 0.512737 ; cond:
+Splitting on var n3 = v29_0
+Delta edges: 19 ; ll: 94.735867
+Total edges: 1391 ; Depth: 16
+Elapsed time: 0.263575 seconds
+Delta time: 0.007292 seconds
+Total number of potential splits: 4404
+Times: pick=0.0002 split=0.0013 update=0.0060
+
+SPLIT 33:
+z = 0.000000
+Splits recomputed: 6 ; worst-case edges: 384
+Splitting distribution:
+dvar: 31 ; vals:  0.031853 0.000965 0.197876 0.769305 ; cond: -v32_2
+Splitting on var n374 = v32_1
+Delta edges: 0 ; ll: 77.544157
+Total edges: 1391 ; Depth: 16
+Elapsed time: 0.272517 seconds
+Delta time: 0.008939 seconds
+Total number of potential splits: 4447
+Times: pick=0.0014 split=0.0014 update=0.0033
+
+SPLIT 34:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 90
+Splitting distribution:
+dvar: 15 ; vals:  0.036214 0.870380 0.057193 0.036214 ; cond:
+Splitting on var n283 = v31_1
+Delta edges: 90 ; ll: 86.431692
+Total edges: 1481 ; Depth: 16
+Elapsed time: 0.277982 seconds
+Delta time: 0.005462 seconds
+Total number of potential splits: 4482
+Times: pick=0.0005 split=0.0014 update=0.0056
+
+SPLIT 35:
+z = 0.000000
+Splits recomputed: 7 ; worst-case edges: 708
+Splitting distribution:
+dvar: 24 ; vals:  0.907426 0.034299 0.058275 ; cond:
+Splitting on var n3 = v31_0
+Delta edges: 107 ; ll: 75.033732
+Total edges: 1588 ; Depth: 17
+Elapsed time: 0.287525 seconds
+Delta time: 0.009541 seconds
+Total number of potential splits: 4489
+Times: pick=0.0019 split=0.0016 update=0.0063
+
+SPLIT 36:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 12
+Splitting distribution:
+dvar: 24 ; vals:  0.760892 0.061803 0.177305 ; cond: -v31_0
+Splitting on var n274 = v31_3
+Delta edges: 12 ; ll: 94.567694
+Total edges: 1600 ; Depth: 17
+Elapsed time: 0.295951 seconds
+Delta time: 0.008423 seconds
+Total number of potential splits: 4487
+Times: pick=0.0003 split=0.0018 update=0.0068
+
+SPLIT 37:
+z = 0.000000
+Splits recomputed: 10 ; worst-case edges: 387
+Splitting distribution:
+dvar: 14 ; vals:  0.043598 0.517108 0.439294 ; cond: -v36_0
+Splitting on var n3 = v33_0
+Delta edges: 77 ; ll: 59.306370
+Total edges: 1677 ; Depth: 18
+Elapsed time: 0.306237 seconds
+Delta time: 0.010283 seconds
+Total number of potential splits: 4513
+Times: pick=0.0019 split=0.0014 update=0.0057
+
+SPLIT 38:
+z = 0.000000
+Splits recomputed: 8 ; worst-case edges: 532
+Splitting distribution:
+dvar: 25 ; vals:  0.010443 0.293987 0.269937 0.425633 ; cond: -v29_0
+Splitting on var n802 = v29_3
+Delta edges: 12 ; ll: 52.325572
+Total edges: 1689 ; Depth: 18
+Elapsed time: 0.316191 seconds
+Delta time: 0.009951 seconds
+Total number of potential splits: 4571
+Times: pick=0.0018 split=0.0021 update=0.0035
+
+SPLIT 39:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 124
+Splitting distribution:
+dvar: 28 ; vals:  0.081683 0.477723 0.002475 0.438119 ; cond: -v27_1
+Splitting on var n940 = v27_0
+Delta edges: 124 ; ll: 62.943144
+Total edges: 1813 ; Depth: 18
+Elapsed time: 0.322292 seconds
+Delta time: 0.006098 seconds
+Total number of potential splits: 4559
+Times: pick=0.0004 split=0.0019 update=0.0033
+
+SPLIT 40:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 330
+Splitting distribution:
+dvar: 25 ; vals:  0.071934 0.076651 0.015330 0.836085 ; cond: +v29_0
+Splitting on var n644 = v24_0
+Delta edges: 66 ; ll: 54.092054
+Total edges: 1879 ; Depth: 19
+Elapsed time: 0.328320 seconds
+Delta time: 0.006026 seconds
+Total number of potential splits: 4568
+Times: pick=0.0007 split=0.0019 update=0.0054
+
+SPLIT 41:
+z = 0.000000
+Splits recomputed: 5 ; worst-case edges: 288
+Splitting distribution:
+dvar: 25 ; vals:  0.009959 0.244849 0.286058 0.459135 ; cond: -v29_3 -v29_0
+Splitting on var n672 = v24_0
+Delta edges: 36 ; ll: 49.569152
+Total edges: 1915 ; Depth: 19
+Elapsed time: 0.337098 seconds
+Delta time: 0.008775 seconds
+Total number of potential splits: 4610
+Times: pick=0.0011 split=0.0021 update=0.0036
+
+SPLIT 42:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 306
+Splitting distribution:
+dvar: 20 ; vals:  0.064725 0.084142 0.851133 ; cond: -v19_0
+Splitting on var n922 = v19_1
+Delta edges: 9 ; ll: 46.506503
+Total edges: 1924 ; Depth: 19
+Elapsed time: 0.344121 seconds
+Delta time: 0.007020 seconds
+Total number of potential splits: 4627
+Times: pick=0.0009 split=0.0022 update=0.0033
+
+SPLIT 43:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 192
+Splitting distribution:
+dvar: 9 ; vals:  0.013889 0.795139 0.190972 ; cond: +v34_2 -v11_2
+Splitting on var n252 = v10_0
+Delta edges: 9 ; ll: 45.146596
+Total edges: 1933 ; Depth: 19
+Elapsed time: 0.350174 seconds
+Delta time: 0.006051 seconds
+Total number of potential splits: 4589
+Times: pick=0.0006 split=0.0019 update=0.0033
+
+SPLIT 44:
+z = 0.000000
+Splits recomputed: 11 ; worst-case edges: 427
+Splitting distribution:
+dvar: 30 ; vals:  0.230198 0.428218 0.081683 0.259901 ; cond: -v15_1 -v31_3
+Splitting on var n989 = v15_3
+Delta edges: 24 ; ll: 39.829184
+Total edges: 1957 ; Depth: 19
+Elapsed time: 0.361258 seconds
+Delta time: 0.011081 seconds
+Total number of potential splits: 4637
+Times: pick=0.0020 split=0.0054 update=0.0035
+
+SPLIT 45:
+z = 0.000000
+Splits recomputed: 13 ; worst-case edges: 366
+Splitting distribution:
+dvar: 17 ; vals:  0.330078 0.384766 0.251953 0.033203 ; cond: -v31_0 -v31_3
+Splitting on var n558 = v31_1
+Delta edges: 12 ; ll: 32.385463
+Total edges: 1969 ; Depth: 19
+Elapsed time: 0.369913 seconds
+Delta time: 0.008652 seconds
+Total number of potential splits: 4698
+Times: pick=0.0030 split=0.0022 update=0.0030
+
+SPLIT 46:
+z = 0.000000
+Splits recomputed: 4 ; worst-case edges: 310
+Splitting distribution:
+dvar: 15 ; vals:  0.016234 0.340909 0.314935 0.327922 ; cond: +v31_1
+Splitting on var n747 = v24_2
+Delta edges: 64 ; ll: 37.178556
+Total edges: 2033 ; Depth: 19
+Elapsed time: 0.376540 seconds
+Delta time: 0.006624 seconds
+Total number of potential splits: 4700
+Times: pick=0.0007 split=0.0026 update=0.0093
+
+SPLIT 47:
+z = 0.000000
+Splits recomputed: 4 ; worst-case edges: 532
+Splitting distribution:
+dvar: 36 ; vals:  0.396936 0.209124 0.393939 ; cond:
+Splitting on var n92 = v35_0
+Delta edges: 532 ; ll: 83.324253
+Total edges: 2565 ; Depth: 20
+Elapsed time: 0.390637 seconds
+Delta time: 0.014094 seconds
+Total number of potential splits: 4722
+Times: pick=0.0019 split=0.0022 update=0.0064
+
+SPLIT 48:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 9
+Splitting distribution:
+dvar: 14 ; vals:  0.724456 0.221943 0.053601 ; cond: +v36_0
+Splitting on var n106 = v35_0
+Delta edges: 9 ; ll: 73.705320
+Total edges: 2574 ; Depth: 20
+Elapsed time: 0.400193 seconds
+Delta time: 0.009553 seconds
+Total number of potential splits: 4780
+Times: pick=0.0004 split=0.0024 update=0.0034
+
+SPLIT 49:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 489
+Splitting distribution:
+dvar: 36 ; vals:  0.313531 0.210809 0.475660 ; cond: -v35_0
+Splitting on var n193 = v35_1
+Delta edges: 21 ; ll: 44.138391
+Total edges: 2595 ; Depth: 20
+Elapsed time: 0.407152 seconds
+Delta time: 0.006956 seconds
+Total number of potential splits: 4858
+Times: pick=0.0008 split=0.0024 update=0.0042
+
+SPLIT 50:
+z = 0.000000
+Splits recomputed: 11 ; worst-case edges: 416
+Splitting distribution:
+dvar: 5 ; vals:  0.611111 0.388889 ; cond: +v4_0
+Splitting on var n570 = v35_2
+Delta edges: 10 ; ll: 29.646465
+Total edges: 2605 ; Depth: 20
+Elapsed time: 0.417247 seconds
+Delta time: 0.010092 seconds
+Total number of potential splits: 4858
+Times: pick=0.0037 split=0.0020 update=0.0103
+
+SPLIT 51:
+z = 0.000000
+Splits recomputed: 12 ; worst-case edges: 282
+Splitting distribution:
+dvar: 15 ; vals:  0.038108 0.913784 0.035946 0.012162 ; cond: -v31_1
+Splitting on var n1040 = v24_1
+Delta edges: 192 ; ll: 45.218094
+Total edges: 2797 ; Depth: 20
+Elapsed time: 0.433548 seconds
+Delta time: 0.016298 seconds
+Total number of potential splits: 4868
+Times: pick=0.0030 split=0.0026 update=0.0037
+
+SPLIT 52:
+z = 0.000000
+Splits recomputed: 11 ; worst-case edges: 361
+Splitting distribution:
+dvar: 15 ; vals:  0.038694 0.927827 0.023326 0.010154 ; cond: -v24_1 -v31_1
+Splitting on var n719 = v31_0
+Delta edges: 0 ; ll: 26.481657
+Total edges: 2797 ; Depth: 20
+Elapsed time: 0.447212 seconds
+Delta time: 0.013662 seconds
+Total number of potential splits: 4928
+Times: pick=0.0035 split=0.0022 update=0.0083
+
+SPLIT 53:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 264
+Splitting distribution:
+dvar: 8 ; vals:  0.881072 0.092127 0.026801 ; cond: -v34_2
+Splitting on var n407 = v34_0
+Delta edges: 9 ; ll: 26.649422
+Total edges: 2806 ; Depth: 20
+Elapsed time: 0.455997 seconds
+Delta time: 0.008780 seconds
+Total number of potential splits: 4943
+Times: pick=0.0011 split=0.0025 update=0.0036
+
+SPLIT 54:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 258
+Splitting distribution:
+dvar: 35 ; vals:  0.145969 0.812636 0.041394 ; cond: -v34_2 -v6_0
+Splitting on var n428 = v34_0
+Delta edges: 54 ; ll: 30.899558
+Total edges: 2860 ; Depth: 20
+Elapsed time: 0.463943 seconds
+Delta time: 0.007944 seconds
+Total number of potential splits: 4973
+Times: pick=0.0010 split=0.0034 update=0.0030
+
+SPLIT 55:
+z = 0.000000
+Splits recomputed: 8 ; worst-case edges: 255
+Splitting distribution:
+dvar: 9 ; vals:  0.018596 0.017201 0.964203 ; cond: +v11_2
+Splitting on var n548 = v34_2
+Delta edges: 9 ; ll: 25.107320
+Total edges: 2869 ; Depth: 20
+Elapsed time: 0.477275 seconds
+Delta time: 0.013328 seconds
+Total number of potential splits: 5020
+Times: pick=0.0074 split=0.0026 update=0.0040
+
+SPLIT 56:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 235
+Splitting distribution:
+dvar: 36 ; vals:  0.259259 0.481481 0.259259 ; cond: +v35_1 -v35_0
+Splitting on var n95 = v33_0
+Delta edges: 3 ; ll: 23.590118
+Total edges: 2872 ; Depth: 20
+Elapsed time: 0.485282 seconds
+Delta time: 0.008004 seconds
+Total number of potential splits: 5077
+Times: pick=0.0012 split=0.0023 update=0.0102
+
+SPLIT 57:
+z = 0.000000
+Splits recomputed: 4 ; worst-case edges: 233
+Splitting distribution:
+dvar: 23 ; vals:  0.940085 0.059915 ; cond: -v24_2
+Splitting on var n3 = v22_0
+Delta edges: 67 ; ll: 28.658913
+Total edges: 2939 ; Depth: 21
+Elapsed time: 0.500349 seconds
+Delta time: 0.015064 seconds
+Total number of potential splits: 5075
+Times: pick=0.0012 split=0.0033 update=0.0063
+
+SPLIT 58:
+z = 0.000000
+Splits recomputed: 36 ; worst-case edges: 332
+Splitting distribution:
+dvar: 14 ; vals:  0.367816 0.505747 0.126437 ; cond: +v35_0 +v36_0
+Splitting on var n949 = v33_0
+Delta edges: 12 ; ll: 19.724737
+Total edges: 2951 ; Depth: 21
+Elapsed time: 0.522611 seconds
+Delta time: 0.022258 seconds
+Total number of potential splits: 5123
+Times: pick=0.0134 split=0.0020 update=0.0041
+
+SPLIT 59:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 186
+Splitting distribution:
+dvar: 14 ; vals:  0.051940 0.600263 0.347798 ; cond: -v33_0 -v36_0
+Splitting on var n974 = v35_0
+Delta edges: 9 ; ll: 19.330265
+Total edges: 2960 ; Depth: 21
+Elapsed time: 0.530840 seconds
+Delta time: 0.008227 seconds
+Total number of potential splits: 5172
+Times: pick=0.0007 split=0.0026 update=0.0045
+
+SPLIT 60:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 9
+Splitting distribution:
+dvar: 14 ; vals:  0.046335 0.629322 0.324343 ; cond: -v35_0 -v33_0 -v36_0
+Splitting on var n1490 = v36_1
+Delta edges: 9 ; ll: 24.527342
+Total edges: 2969 ; Depth: 21
+Elapsed time: 0.539750 seconds
+Delta time: 0.008906 seconds
+Total number of potential splits: 5235
+Times: pick=0.0005 split=0.0036 update=0.0041
+
+SPLIT 61:
+z = 0.000000
+Splits recomputed: 8 ; worst-case edges: 183
+Splitting distribution:
+dvar: 17 ; vals:  0.274038 0.100962 0.581731 0.043269 ; cond: -v31_1 -v31_0 -v31_3
+Splitting on var n497 = v24_0
+Delta edges: 111 ; ll: 28.151211
+Total edges: 3080 ; Depth: 21
+Elapsed time: 0.549889 seconds
+Delta time: 0.010136 seconds
+Total number of potential splits: 5221
+Times: pick=0.0021 split=0.0038 update=0.0056
+
+SPLIT 62:
+z = 0.000000
+Splits recomputed: 21 ; worst-case edges: 332
+Splitting distribution:
+dvar: 30 ; vals:  0.250000 0.619231 0.126923 0.003846 ; cond: -v15_3 -v15_1 -v31_3
+Splitting on var n540 = v24_0
+Delta edges: 90 ; ll: 26.322017
+Total edges: 3170 ; Depth: 21
+Elapsed time: 0.565880 seconds
+Delta time: 0.015987 seconds
+Total number of potential splits: 5239
+Times: pick=0.0061 split=0.0037 update=0.0032
+
+SPLIT 63:
+z = 0.000000
+Splits recomputed: 23 ; worst-case edges: 332
+Splitting distribution:
+dvar: 36 ; vals:  0.743986 0.202749 0.053265 ; cond: +v35_0
+Splitting on var n1047 = v33_0
+Delta edges: 0 ; ll: 16.154545
+Total edges: 3170 ; Depth: 21
+Elapsed time: 0.579302 seconds
+Delta time: 0.013420 seconds
+Total number of potential splits: 5302
+Times: pick=0.0067 split=0.0029 update=0.0039
+
+SPLIT 64:
+z = 0.000000
+Splits recomputed: 5 ; worst-case edges: 161
+Splitting distribution:
+dvar: 11 ; vals:  0.871022 0.082077 0.046901 ; cond: -v34_2
+Splitting on var n1398 = v34_0
+Delta edges: 12 ; ll: 17.096367
+Total edges: 3182 ; Depth: 21
+Elapsed time: 0.589777 seconds
+Delta time: 0.010473 seconds
+Total number of potential splits: 5365
+Times: pick=0.0021 split=0.0035 update=0.0042
+
+SPLIT 65:
+z = 0.000000
+Splits recomputed: 4 ; worst-case edges: 160
+Splitting distribution:
+dvar: 35 ; vals:  0.053922 0.906863 0.039216 ; cond: -v34_0 -v34_2 -v6_0
+Splitting on var n1477 = v6_2
+Delta edges: 0 ; ll: 15.635003
+Total edges: 3182 ; Depth: 21
+Elapsed time: 0.598481 seconds
+Delta time: 0.008701 seconds
+Total number of potential splits: 5339
+Times: pick=0.0015 split=0.0027 update=0.0039
+
+SPLIT 66:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 109
+Splitting distribution:
+dvar: 11 ; vals:  0.924494 0.051565 0.023941 ; cond: -v34_0 -v34_2
+Splitting on var n1477 = v10_0
+Delta edges: 26 ; ll: 18.201853
+Total edges: 3208 ; Depth: 21
+Elapsed time: 0.607109 seconds
+Delta time: 0.008626 seconds
+Total number of potential splits: 5382
+Times: pick=0.0008 split=0.0035 update=0.0040
+
+SPLIT 67:
+z = 0.000000
+Splits recomputed: 21 ; worst-case edges: 332
+Splitting distribution:
+dvar: 30 ; vals:  0.035891 0.961634 0.001238 0.001238 ; cond: +v31_3
+Splitting on var n712 = v29_1
+Delta edges: 12 ; ll: 16.282782
+Total edges: 3220 ; Depth: 21
+Elapsed time: 0.620635 seconds
+Delta time: 0.013522 seconds
+Total number of potential splits: 5372
+Times: pick=0.0067 split=0.0028 update=0.0035
+
+SPLIT 68:
+z = 0.000000
+Splits recomputed: 16 ; worst-case edges: 244
+Splitting distribution:
+dvar: 22 ; vals:  0.011489 0.988511 ; cond:
+Splitting on var n14 = v21_2
+Delta edges: 10 ; ll: 14.547826
+Total edges: 3230 ; Depth: 23
+Elapsed time: 0.632625 seconds
+Delta time: 0.011990 seconds
+Total number of potential splits: 5398
+Times: pick=0.0045 split=0.0030 update=0.0071
+
+SPLIT 69:
+z = 0.000000
+Splits recomputed: 31 ; worst-case edges: 332
+Splitting distribution:
+dvar: 17 ; vals:  0.366883 0.574675 0.029221 0.029221 ; cond: +v31_1 -v31_0 -v31_3
+Splitting on var n735 = v29_1
+Delta edges: 12 ; ll: 14.683801
+Total edges: 3242 ; Depth: 23
+Elapsed time: 0.651830 seconds
+Delta time: 0.019202 seconds
+Total number of potential splits: 5417
+Times: pick=0.0082 split=0.0036 update=0.0038
+
+SPLIT 70:
+z = 0.000000
+Splits recomputed: 16 ; worst-case edges: 297
+Splitting distribution:
+dvar: 9 ; vals:  0.875439 0.038596 0.085965 ; cond: -v34_2 -v11_2
+Splitting on var n1527 = v10_0
+Delta edges: 32 ; ll: 15.756472
+Total edges: 3274 ; Depth: 23
+Elapsed time: 0.664664 seconds
+Delta time: 0.012833 seconds
+Total number of potential splits: 5483
+Times: pick=0.0042 split=0.0047 update=0.0038
+
+SPLIT 71:
+z = 0.000000
+Splits recomputed: 22 ; worst-case edges: 332
+Splitting distribution:
+dvar: 25 ; vals:  0.007943 0.269667 0.313540 0.408850 ; cond: +v24_0 -v29_3 -v29_0
+Splitting on var n744 = v29_1
+Delta edges: 12 ; ll: 13.360490
+Total edges: 3286 ; Depth: 23
+Elapsed time: 0.684879 seconds
+Delta time: 0.020211 seconds
+Total number of potential splits: 5497
+Times: pick=0.0067 split=0.0089 update=0.0044
+
+SPLIT 72:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 168
+Splitting distribution:
+dvar: 3 ; vals:  0.037608 0.962392 ; cond: -v4_2
+Splitting on var n1189 = v35_0
+Delta edges: 14 ; ll: 13.259764
+Total edges: 3300 ; Depth: 23
+Elapsed time: 0.694406 seconds
+Delta time: 0.009524 seconds
+Total number of potential splits: 5531
+Times: pick=0.0010 split=0.0041 update=0.0120
+
+SPLIT 73:
+z = 0.000000
+Splits recomputed: 5 ; worst-case edges: 201
+Splitting distribution:
+dvar: 24 ; vals:  0.385417 0.158854 0.455729 ; cond: -v31_3 -v31_0
+Splitting on var n545 = v31_2
+Delta edges: 10 ; ll: 12.614810
+Total edges: 3310 ; Depth: 23
+Elapsed time: 0.712236 seconds
+Delta time: 0.017827 seconds
+Total number of potential splits: 5555
+Times: pick=0.0015 split=0.0039 update=0.0038
+
+SPLIT 74:
+z = 0.000000
+Splits recomputed: 18 ; worst-case edges: 281
+Splitting distribution:
+dvar: 17 ; vals:  0.030941 0.001238 0.016089 0.951733 ; cond: +v31_3
+Splitting on var n843 = v30_0
+Delta edges: 52 ; ll: 16.079914
+Total edges: 3362 ; Depth: 24
+Elapsed time: 0.725465 seconds
+Delta time: 0.013227 seconds
+Total number of potential splits: 5524
+Times: pick=0.0044 split=0.0039 update=0.0065
+
+SPLIT 75:
+z = 0.000000
+Splits recomputed: 43 ; worst-case edges: 332
+Splitting distribution:
+dvar: 31 ; vals:  0.894011 0.102624 0.000336 0.003028 ; cond: +v32_2
+Splitting on var n762 = v29_1
+Delta edges: 0 ; ll: 10.456027
+Total edges: 3362 ; Depth: 24
+Elapsed time: 0.747054 seconds
+Delta time: 0.021586 seconds
+Total number of potential splits: 5539
+Times: pick=0.0121 split=0.0031 update=0.0037
+
+SPLIT 76:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 122
+Splitting distribution:
+dvar: 3 ; vals:  0.803665 0.196335 ; cond: +v4_2
+Splitting on var n1700 = v35_2
+Delta edges: 10 ; ll: 11.346942
+Total edges: 3372 ; Depth: 24
+Elapsed time: 0.756829 seconds
+Delta time: 0.009773 seconds
+Total number of potential splits: 5586
+Times: pick=0.0012 split=0.0043 update=0.0041
+
+SPLIT 77:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 0
+Splitting distribution:
+dvar: 31 ; vals:  0.011968 0.001330 0.017287 0.969415 ; cond: -v32_1 -v32_2
+Splitting on var n766 = v29_1
+Delta edges: 0 ; ll: 10.268175
+Total edges: 3372 ; Depth: 24
+Elapsed time: 0.765713 seconds
+Delta time: 0.008881 seconds
+Total number of potential splits: 5576
+Times: pick=0.0010 split=0.0030 update=0.0041
+
+SPLIT 78:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 0
+Splitting distribution:
+dvar: 15 ; vals:  0.111660 0.831028 0.048419 0.008893 ; cond: -v31_0 -v24_1 -v31_1
+Splitting on var n555 = v31_2
+Delta edges: 0 ; ll: 10.201873
+Total edges: 3372 ; Depth: 24
+Elapsed time: 0.774275 seconds
+Delta time: 0.008562 seconds
+Total number of potential splits: 5614
+Times: pick=0.0009 split=0.0029 update=0.0046
+
+SPLIT 79:
+z = 0.000000
+Splits recomputed: 4 ; worst-case edges: 439
+Splitting distribution:
+dvar: 15 ; vals:  0.062500 0.735577 0.158654 0.043269 ; cond: +v31_2 -v31_0 -v24_1 -v31_1
+Splitting on var n638 = v24_2
+Delta edges: 0 ; ll: 10.528876
+Total edges: 3372 ; Depth: 24
+Elapsed time: 0.783989 seconds
+Delta time: 0.009711 seconds
+Total number of potential splits: 5635
+Times: pick=0.0017 split=0.0028 update=0.0041
+
+SPLIT 80:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 12
+Splitting distribution:
+dvar: 30 ; vals:  0.544643 0.151786 0.294643 0.008929 ; cond: +v24_0 -v15_3 -v15_1 -v31_3
+Splitting on var n568 = v31_2
+Delta edges: 12 ; ll: 11.374723
+Total edges: 3384 ; Depth: 24
+Elapsed time: 0.794100 seconds
+Delta time: 0.010109 seconds
+Total number of potential splits: 5628
+Times: pick=0.0010 split=0.0039 update=0.0046
+
+SPLIT 81:
+z = 0.000000
+Splits recomputed: 6 ; worst-case edges: 244
+Splitting distribution:
+dvar: 9 ; vals:  0.922348 0.030303 0.047348 ; cond: -v10_0 -v34_2 -v11_2
+Splitting on var n1534 = v34_0
+Delta edges: 9 ; ll: 11.029552
+Total edges: 3393 ; Depth: 24
+Elapsed time: 0.805105 seconds
+Delta time: 0.011002 seconds
+Total number of potential splits: 5670
+Times: pick=0.0020 split=0.0045 update=0.0041
+
+SPLIT 82:
+z = 0.000000
+Splits recomputed: 5 ; worst-case edges: 110
+Splitting distribution:
+dvar: 31 ; vals:  0.086806 0.003472 0.670139 0.239583 ; cond: +v32_1 -v32_2
+Splitting on var n787 = v29_1
+Delta edges: 0 ; ll: 9.951538
+Total edges: 3393 ; Depth: 24
+Elapsed time: 0.816042 seconds
+Delta time: 0.010933 seconds
+Total number of potential splits: 5681
+Times: pick=0.0024 split=0.0041 update=0.0036
+
+SPLIT 83:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 12
+Splitting distribution:
+dvar: 25 ; vals:  0.343750 0.593750 0.052083 0.010417 ; cond: -v24_0 +v29_0
+Splitting on var n362 = v31_1
+Delta edges: 12 ; ll: 11.137054
+Total edges: 3405 ; Depth: 24
+Elapsed time: 0.825418 seconds
+Delta time: 0.009376 seconds
+Total number of potential splits: 5647
+Times: pick=0.0005 split=0.0049 update=0.0037
+
+SPLIT 84:
+z = 0.000000
+Splits recomputed: 5 ; worst-case edges: 168
+Splitting distribution:
+dvar: 30 ; vals:  0.195946 0.087838 0.006757 0.709459 ; cond: +v15_3 -v15_1 -v31_3
+Splitting on var n200 = v31_0
+Delta edges: 12 ; ll: 10.945394
+Total edges: 3417 ; Depth: 24
+Elapsed time: 0.836204 seconds
+Delta time: 0.010782 seconds
+Total number of potential splits: 5664
+Times: pick=0.0024 split=0.0041 update=0.0047
+
+SPLIT 85:
+z = 0.000000
+Splits recomputed: 30 ; worst-case edges: 244
+Splitting distribution:
+dvar: 14 ; vals:  0.143210 0.683951 0.172840 ; cond: +v36_1 -v35_0 -v33_0 -v36_0
+Splitting on var n1438 = v35_2
+Delta edges: 9 ; ll: 8.746156
+Total edges: 3426 ; Depth: 24
+Elapsed time: 0.852230 seconds
+Delta time: 0.016023 seconds
+Total number of potential splits: 5698
+Times: pick=0.0079 split=0.0031 update=0.0042
+
+SPLIT 86:
+z = 0.000000
+Splits recomputed: 8 ; worst-case edges: 102
+Splitting distribution:
+dvar: 15 ; vals:  0.125000 0.852723 0.021040 0.001238 ; cond: -v31_2 -v31_0 -v24_1 -v31_1
+Splitting on var n809 = v29_1
+Delta edges: 0 ; ll: 7.484481
+Total edges: 3426 ; Depth: 24
+Elapsed time: 0.867736 seconds
+Delta time: 0.015503 seconds
+Total number of potential splits: 5738
+Times: pick=0.0024 split=0.0027 update=0.0101
+
+SPLIT 87:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 220
+Splitting distribution:
+dvar: 15 ; vals:  0.106354 0.885359 0.006906 0.001381 ; cond: -v29_1 -v31_2 -v31_0 -v24_1 -v31_1
+Splitting on var n930 = v32_0
+Delta edges: 220 ; ll: 43.486646
+Total edges: 3646 ; Depth: 24
+Elapsed time: 0.879089 seconds
+Delta time: 0.011349 seconds
+Total number of potential splits: 5741
+Times: pick=0.0010 split=0.0052 update=0.0040
+
+SPLIT 88:
+z = 0.000000
+Splits recomputed: 62 ; worst-case edges: 332
+Splitting distribution:
+dvar: 17 ; vals:  0.513636 0.440909 0.040909 0.004545 ; cond: +v29_1 +v31_1 -v31_0 -v31_3
+Splitting on var n708 = v24_1
+Delta edges: 44 ; ll: 11.591566
+Total edges: 3690 ; Depth: 24
+Elapsed time: 0.906505 seconds
+Delta time: 0.027414 seconds
+Total number of potential splits: 5729
+Times: pick=0.0182 split=0.0039 update=0.0045
+
+SPLIT 89:
+z = 0.000000
+Splits recomputed: 60 ; worst-case edges: 332
+Splitting distribution:
+dvar: 15 ; vals:  0.004902 0.514706 0.024510 0.455882 ; cond: -v24_2 +v31_1
+Splitting on var n655 = v24_0
+Delta edges: 8 ; ll: 7.490360
+Total edges: 3698 ; Depth: 24
+Elapsed time: 0.935800 seconds
+Delta time: 0.029292 seconds
+Total number of potential splits: 5735
+Times: pick=0.0217 split=0.0034 update=0.0043
+
+SPLIT 90:
+z = 0.000000
+Splits recomputed: 71 ; worst-case edges: 332
+Splitting distribution:
+dvar: 25 ; vals:  0.019841 0.861111 0.083333 0.035714 ; cond: +v29_3 -v29_0
+Splitting on var n665 = v24_0
+Delta edges: 15 ; ll: 8.024695
+Total edges: 3713 ; Depth: 24
+Elapsed time: 0.970107 seconds
+Delta time: 0.034305 seconds
+Total number of potential splits: 5709
+Times: pick=0.0258 split=0.0036 update=0.0039
+
+SPLIT 91:
+z = 0.000000
+Splits recomputed: 82 ; worst-case edges: 332
+Splitting distribution:
+dvar: 15 ; vals:  0.008065 0.298387 0.040323 0.653226 ; cond: +v24_0 -v24_2 +v31_1
+Splitting on var n880 = v29_1
+Delta edges: 0 ; ll: 6.360467
+Total edges: 3713 ; Depth: 24
+Elapsed time: 1.006328 seconds
+Delta time: 0.036217 seconds
+Total number of potential splits: 5708
+Times: pick=0.0284 split=0.0033 update=0.0036
+
+SPLIT 92:
+z = 0.000000
+Splits recomputed: 4 ; worst-case edges: 65
+Splitting distribution:
+dvar: 30 ; vals:  0.329545 0.647727 0.011364 0.011364 ; cond: +v29_1 +v31_3
+Splitting on var n972 = v15_1
+Delta edges: 16 ; ll: 7.902805
+Total edges: 3729 ; Depth: 24
+Elapsed time: 1.017333 seconds
+Delta time: 0.011002 seconds
+Total number of potential splits: 5713
+Times: pick=0.0019 split=0.0050 update=0.0089
+
+SPLIT 93:
+z = 0.000000
+Splits recomputed: 67 ; worst-case edges: 332
+Splitting distribution:
+dvar: 30 ; vals:  0.791667 0.180556 0.013889 0.013889 ; cond: -v31_2 +v24_0 -v15_3 -v15_1 -v31_3
+Splitting on var n898 = v29_1
+Delta edges: 12 ; ll: 7.064728
+Total edges: 3741 ; Depth: 24
+Elapsed time: 1.050273 seconds
+Delta time: 0.032938 seconds
+Total number of potential splits: 5679
+Times: pick=0.0194 split=0.0040 update=0.0041
+
+SPLIT 94:
+z = 0.000000
+Splits recomputed: 81 ; worst-case edges: 244
+Splitting distribution:
+dvar: 17 ; vals:  0.656977 0.331395 0.005814 0.005814 ; cond: -v24_1 +v29_1 +v31_1 -v31_0 -v31_3
+Splitting on var n1151 = v15_3
+Delta edges: 30 ; ll: 7.468807
+Total edges: 3771 ; Depth: 24
+Elapsed time: 1.083545 seconds
+Delta time: 0.033268 seconds
+Total number of potential splits: 5685
+Times: pick=0.0248 split=0.0037 update=0.0036
+
+SPLIT 95:
+z = 0.000000
+Splits recomputed: 87 ; worst-case edges: 332
+Splitting distribution:
+dvar: 29 ; vals:  0.021930 0.004386 0.039474 0.934211 ; cond: +v28_3 -v28_2
+Splitting on var n1210 = v26_0
+Delta edges: 36 ; ll: 7.817648
+Total edges: 3807 ; Depth: 24
+Elapsed time: 1.122284 seconds
+Delta time: 0.038736 seconds
+Total number of potential splits: 5662
+Times: pick=0.0291 split=0.0055 update=0.0037
+
+SPLIT 96:
+z = 0.000000
+Splits recomputed: 26 ; worst-case edges: 108
+Splitting distribution:
+dvar: 19 ; vals:  0.989167 0.010417 0.000417 ; cond: -v31_3
+Splitting on var n203 = v31_0
+Delta edges: 0 ; ll: 4.138034
+Total edges: 3807 ; Depth: 24
+Elapsed time: 1.145809 seconds
+Delta time: 0.023522 seconds
+Total number of potential splits: 5679
+Times: pick=0.0080 split=0.0112 update=0.0043
+
+SPLIT 97:
+z = 0.000000
+Splits recomputed: 67 ; worst-case edges: 45
+Splitting distribution:
+dvar: 13 ; vals:  0.009491 0.990509 ; cond:
+Splitting on var n3 = v36_0
+Delta edges: 42 ; ll: 7.877723
+Total edges: 3849 ; Depth: 24
+Elapsed time: 1.171094 seconds
+Delta time: 0.025283 seconds
+Total number of potential splits: 5672
+Times: pick=0.0151 split=0.0048 update=0.0081
+
+SPLIT 98:
+z = 0.000000
+Splits recomputed: 195 ; worst-case edges: 332
+Splitting distribution:
+dvar: 15 ; vals:  0.112500 0.412500 0.412500 0.062500 ; cond: -v24_2 +v31_2 -v31_0 -v24_1 -v31_1
+Splitting on var n1694 = v29_1
+Delta edges: 0 ; ll: 3.452397
+Total edges: 3849 ; Depth: 24
+Elapsed time: 1.227843 seconds
+Delta time: 0.056746 seconds
+Total number of potential splits: 5683
+Times: pick=0.0458 split=0.0030 update=0.0047
+
+SPLIT 99:
+z = 0.000000
+Splits recomputed: 9 ; worst-case edges: 36
+Splitting distribution:
+dvar: 25 ; vals:  0.173077 0.019231 0.019231 0.788462 ; cond: -v29_1 +v24_0 -v29_3 -v29_0
+Splitting on var n977 = v31_0
+Delta edges: 12 ; ll: 4.603208
+Total edges: 3861 ; Depth: 24
+Elapsed time: 1.248436 seconds
+Delta time: 0.020590 seconds
+Total number of potential splits: 5661
+Times: pick=0.0027 split=0.0131 update=0.0040
+
+SPLIT 100:
+z = 0.000000
+Splits recomputed: 16 ; worst-case edges: 168
+Splitting distribution:
+dvar: 5 ; vals:  0.847826 0.152174 ; cond: -v35_2 +v4_0
+Splitting on var n191 = v33_0
+Delta edges: 12 ; ll: 4.559560
+Total edges: 3873 ; Depth: 24
+Elapsed time: 1.270723 seconds
+Delta time: 0.022285 seconds
+Total number of potential splits: 5692
+Times: pick=0.0044 split=0.0128 update=0.0062
+
+SPLIT 101:
+z = 0.000000
+Splits recomputed: 37 ; worst-case edges: 123
+Splitting distribution:
+dvar: 8 ; vals:  0.941068 0.029466 0.029466 ; cond: -v34_0 -v34_2
+Splitting on var n587 = v7_0
+Delta edges: 123 ; ll: 15.612010
+Total edges: 3996 ; Depth: 24
+Elapsed time: 1.297604 seconds
+Delta time: 0.026878 seconds
+Total number of potential splits: 5730
+Times: pick=0.0129 split=0.0070 update=0.0049
+
+SPLIT 102:
+z = 0.000000
+Splits recomputed: 128 ; worst-case edges: 332
+Splitting distribution:
+dvar: 9 ; vals:  0.013183 0.011770 0.975047 ; cond: +v34_2 +v11_2
+Splitting on var n716 = v10_0
+Delta edges: 9 ; ll: 4.139760
+Total edges: 4005 ; Depth: 24
+Elapsed time: 1.340829 seconds
+Delta time: 0.043223 seconds
+Total number of potential splits: 5728
+Times: pick=0.0323 split=0.0062 update=0.0043
+
+SPLIT 103:
+z = 0.000000
+Splits recomputed: 50 ; worst-case edges: 110
+Splitting distribution:
+dvar: 15 ; vals:  0.897059 0.014706 0.073529 0.014706 ; cond: -v32_0 -v29_1 -v31_2 -v31_0 -v24_1 -v31_1
+Splitting on var n1900 = v32_1
+Delta edges: 0 ; ll: 3.049429
+Total edges: 4005 ; Depth: 24
+Elapsed time: 1.369525 seconds
+Delta time: 0.028695 seconds
+Total number of potential splits: 5712
+Times: pick=0.0206 split=0.0033 update=0.0036
+
+SPLIT 104:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 9
+Splitting distribution:
+dvar: 14 ; vals:  0.166667 0.051282 0.782051 ; cond: +v35_0 -v33_0 -v36_0
+Splitting on var n831 = v36_2
+Delta edges: 9 ; ll: 3.943848
+Total edges: 4014 ; Depth: 24
+Elapsed time: 1.381231 seconds
+Delta time: 0.011702 seconds
+Total number of potential splits: 5713
+Times: pick=0.0005 split=0.0070 update=0.0096
+
+SPLIT 105:
+z = 0.000000
+Splits recomputed: 6 ; worst-case edges: 61
+Splitting distribution:
+dvar: 35 ; vals:  0.012742 0.026504 0.960754 ; cond: +v34_2 -v6_0
+Splitting on var n527 = v4_1
+Delta edges: 0 ; ll: 3.022024
+Total edges: 4014 ; Depth: 24
+Elapsed time: 1.397515 seconds
+Delta time: 0.016282 seconds
+Total number of potential splits: 5719
+Times: pick=0.0019 split=0.0041 update=0.0041
+
+SPLIT 106:
+z = 0.000000
+Splits recomputed: 26 ; worst-case edges: 48
+Splitting distribution:
+dvar: 35 ; vals:  0.833333 0.149660 0.017007 ; cond: +v6_0
+Splitting on var n530 = v4_1
+Delta edges: 0 ; ll: 2.978466
+Total edges: 4014 ; Depth: 24
+Elapsed time: 1.419799 seconds
+Delta time: 0.022281 seconds
+Total number of potential splits: 5751
+Times: pick=0.0067 split=0.0108 update=0.0038
+
+SPLIT 107:
+z = 0.000000
+Splits recomputed: 6 ; worst-case edges: 34
+Splitting distribution:
+dvar: 17 ; vals:  0.963224 0.010773 0.013744 0.012259 ; cond: +v31_0 -v31_3
+Splitting on var n1791 = v29_1
+Delta edges: 12 ; ll: 4.169261
+Total edges: 4026 ; Depth: 24
+Elapsed time: 1.434223 seconds
+Delta time: 0.014421 seconds
+Total number of potential splits: 5790
+Times: pick=0.0020 split=0.0082 update=0.0047
+
+SPLIT 108:
+z = 0.000000
+Splits recomputed: 12 ; worst-case edges: 297
+Splitting distribution:
+dvar: 17 ; vals:  0.878906 0.035156 0.035156 0.050781 ; cond: -v29_1 +v31_0 -v31_3
+Splitting on var n1896 = v15_1
+Delta edges: 30 ; ll: 8.331781
+Total edges: 4056 ; Depth: 24
+Elapsed time: 1.457033 seconds
+Delta time: 0.022805 seconds
+Total number of potential splits: 5805
+Times: pick=0.0039 split=0.0133 update=0.0043
+
+SPLIT 109:
+z = 0.000000
+Splits recomputed: 127 ; worst-case edges: 332
+Splitting distribution:
+dvar: 5 ; vals:  0.566667 0.433333 ; cond: +v33_0 -v35_2 +v4_0
+Splitting on var n315 = v35_0
+Delta edges: 8 ; ll: 3.747088
+Total edges: 4064 ; Depth: 24
+Elapsed time: 1.500725 seconds
+Delta time: 0.043688 seconds
+Total number of potential splits: 5789
+Times: pick=0.0330 split=0.0062 update=0.0040
+
+SPLIT 110:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 31
+Splitting distribution:
+dvar: 0 ; vals:  0.879032 0.120968 ; cond: +v5_0
+Splitting on var n836 = v35_2
+Delta edges: 13 ; ll: 4.243641
+Total edges: 4077 ; Depth: 24
+Elapsed time: 1.514952 seconds
+Delta time: 0.014223 seconds
+Total number of potential splits: 5779
+Times: pick=0.0007 split=0.0090 update=0.0039
+
+SPLIT 111:
+z = 0.000000
+Splits recomputed: 80 ; worst-case edges: 59
+Splitting distribution:
+dvar: 30 ; vals:  0.032895 0.953947 0.006579 0.006579 ; cond: -v24_0 -v15_3 -v15_1 -v31_3
+Splitting on var n1556 = v31_2
+Delta edges: 12 ; ll: 3.904494
+Total edges: 4089 ; Depth: 24
+Elapsed time: 1.548498 seconds
+Delta time: 0.033544 seconds
+Total number of potential splits: 5760
+Times: pick=0.0235 split=0.0052 update=0.0041
+
+SPLIT 112:
+z = 0.000000
+Splits recomputed: 61 ; worst-case edges: 244
+Splitting distribution:
+dvar: 30 ; vals:  0.113636 0.113636 0.750000 0.022727 ; cond: +v31_2 +v24_0 -v15_3 -v15_1 -v31_3
+Splitting on var n1920 = v15_0
+Delta edges: 16 ; ll: 4.203931
+Total edges: 4105 ; Depth: 24
+Elapsed time: 1.580841 seconds
+Delta time: 0.032342 seconds
+Total number of potential splits: 5748
+Times: pick=0.0208 split=0.0068 update=0.0044
+
+SPLIT 113:
+z = 0.000000
+Splits recomputed: 183 ; worst-case edges: 332
+Splitting distribution:
+dvar: 24 ; vals:  0.393939 0.264069 0.341991 ; cond: -v31_2 -v31_3 -v31_0
+Splitting on var n1872 = v29_2
+Delta edges: 61 ; ll: 8.699525
+Total edges: 4166 ; Depth: 24
+Elapsed time: 1.645352 seconds
+Delta time: 0.064506 seconds
+Total number of potential splits: 5747
+Times: pick=0.0539 split=0.0056 update=0.0046
+
+SPLIT 114:
+z = 0.000000
+Splits recomputed: 75 ; worst-case edges: 332
+Splitting distribution:
+dvar: 24 ; vals:  0.313725 0.299020 0.387255 ; cond: -v29_2 -v31_2 -v31_3 -v31_0
+Splitting on var n1723 = v29_0
+Delta edges: 10 ; ll: 7.529922
+Total edges: 4176 ; Depth: 24
+Elapsed time: 1.686102 seconds
+Delta time: 0.040747 seconds
+Total number of potential splits: 5766
+Times: pick=0.0297 split=0.0060 update=0.0046
+
+SPLIT 115:
+z = 0.000000
+Splits recomputed: 376 ; worst-case edges: 281
+Splitting distribution:
+dvar: 15 ; vals:  0.046296 0.009259 0.861111 0.083333 ; cond: +v24_2 +v31_1
+Splitting on var n1882 = v29_1
+Delta edges: 0 ; ll: 2.370615
+Total edges: 4176 ; Depth: 24
+Elapsed time: 1.771422 seconds
+Delta time: 0.085317 seconds
+Total number of potential splits: 5753
+Times: pick=0.0762 split=0.0038 update=0.0038
+
+SPLIT 116:
+z = 0.000000
+Splits recomputed: 1 ; worst-case edges: 16
+Splitting distribution:
+dvar: 30 ; vals:  0.625000 0.225000 0.025000 0.125000 ; cond: +v31_0 +v15_3 -v15_1 -v31_3
+Splitting on var n1726 = v24_1
+Delta edges: 16 ; ll: 3.969941
+Total edges: 4192 ; Depth: 24
+Elapsed time: 1.787009 seconds
+Delta time: 0.015584 seconds
+Total number of potential splits: 5729
+Times: pick=0.0007 split=0.0103 update=0.0041
+
+SPLIT 117:
+z = 0.000000
+Splits recomputed: 334 ; worst-case edges: 332
+Splitting distribution:
+dvar: 14 ; vals:  0.009579 0.607280 0.383142 ; cond: -v36_1 -v35_0 -v33_0 -v36_0
+Splitting on var n776 = v31_3
+Delta edges: 107 ; ll: 12.863749
+Total edges: 4299 ; Depth: 24
+Elapsed time: 1.879148 seconds
+Delta time: 0.092137 seconds
+Total number of potential splits: 5697
+Times: pick=0.0807 split=0.0064 update=0.0072
+
+SPLIT 118:
+z = 0.000000
+Splits recomputed: 78 ; worst-case edges: 332
+Splitting distribution:
+dvar: 16 ; vals:  0.034466 0.965534 ; cond:
+Splitting on var n784 = v31_3
+Delta edges: 13 ; ll: 7.280573
+Total edges: 4312 ; Depth: 25
+Elapsed time: 1.918935 seconds
+Delta time: 0.039784 seconds
+Total number of potential splits: 5680
+Times: pick=0.0273 split=0.0055 update=0.0068
+
+SPLIT 119:
+z = 0.000000
+Splits recomputed: 174 ; worst-case edges: 182
+Splitting distribution:
+dvar: 22 ; vals:  0.150000 0.850000 ; cond: +v21_2
+Splitting on var n216 = v31_0
+Delta edges: 0 ; ll: 3.268708
+Total edges: 4312 ; Depth: 25
+Elapsed time: 1.966271 seconds
+Delta time: 0.047332 seconds
+Total number of potential splits: 5698
+Times: pick=0.0364 split=0.0031 update=0.0072
+
+SPLIT 120:
+z = 0.000000
+Splits recomputed: 526 ; worst-case edges: 55
+Splitting distribution:
+dvar: 26 ; vals:  0.101399 0.898601 ; cond:
+Splitting on var n2236 = v27_1
+Delta edges: 0 ; ll: 1.863267
+Total edges: 4312 ; Depth: 25
+Elapsed time: 2.050221 seconds
+Delta time: 0.083948 seconds
+Total number of potential splits: 5716
+Times: pick=0.0717 split=0.0037 update=0.0079
+
+SPLIT 121:
+z = 0.000000
+Splits recomputed: 27 ; worst-case edges: 76
+Splitting distribution:
+dvar: 21 ; vals:  0.056277 0.894439 0.049284 ; cond:
+Splitting on var n2275 = v31_3
+Delta edges: 0 ; ll: 1.847841
+Total edges: 4312 ; Depth: 25
+Elapsed time: 2.074755 seconds
+Delta time: 0.024530 seconds
+Total number of potential splits: 5757
+Times: pick=0.0124 split=0.0044 update=0.0071
+
+SPLIT 122:
+z = 0.000000
+Splits recomputed: 72 ; worst-case edges: 24
+Splitting distribution:
+dvar: 15 ; vals:  0.037879 0.916667 0.007576 0.037879 ; cond: +v24_2 +v31_2 -v31_0 -v24_1 -v31_1
+Splitting on var n2030 = v29_3
+Delta edges: 20 ; ll: 3.757275
+Total edges: 4332 ; Depth: 25
+Elapsed time: 2.112366 seconds
+Delta time: 0.037608 seconds
+Total number of potential splits: 5747
+Times: pick=0.0209 split=0.0087 update=0.0045
+
+SPLIT 123:
+z = 0.000000
+Splits recomputed: 326 ; worst-case edges: 332
+Splitting distribution:
+dvar: 11 ; vals:  0.016878 0.966245 0.016878 ; cond: +v10_0 +v34_2
+Splitting on var n1401 = v7_0
+Delta edges: 12 ; ll: 2.912702
+Total edges: 4344 ; Depth: 25
+Elapsed time: 2.179749 seconds
+Delta time: 0.067381 seconds
+Total number of potential splits: 5750
+Times: pick=0.0564 split=0.0051 update=0.0077
+
+SPLIT 124:
+z = 0.000000
+Splits recomputed: 203 ; worst-case edges: 110
+Splitting distribution:
+dvar: 17 ; vals:  0.019231 0.788462 0.173077 0.019231 ; cond: +v24_1 +v29_1 +v31_1 -v31_0 -v31_3
+Splitting on var n2073 = v15_1
+Delta edges: 30 ; ll: 4.603213
+Total edges: 4374 ; Depth: 25
+Elapsed time: 2.231649 seconds
+Delta time: 0.051896 seconds
+Total number of potential splits: 5738
+Times: pick=0.0355 split=0.0085 update=0.0039
+
+SPLIT 125:
+z = 0.000000
+Splits recomputed: 390 ; worst-case edges: 332
+Splitting distribution:
+dvar: 14 ; vals:  0.926509 0.060367 0.013123 ; cond: -v35_0 +v36_0
+Splitting on var n1027 = v33_0
+Delta edges: 11 ; ll: 2.577766
+Total edges: 4385 ; Depth: 25
+Elapsed time: 2.306151 seconds
+Delta time: 0.074499 seconds
+Total number of potential splits: 5756
+Times: pick=0.0636 split=0.0064 update=0.0044
+
+SPLIT 126:
+z = 0.000000
+Splits recomputed: 79 ; worst-case edges: 61
+Splitting distribution:
+dvar: 8 ; vals:  0.410256 0.256410 0.333333 ; cond: +v7_0 -v34_0 -v34_2
+Splitting on var n1366 = v4_1
+Delta edges: 15 ; ll: 2.973570
+Total edges: 4400 ; Depth: 25
+Elapsed time: 2.340240 seconds
+Delta time: 0.034086 seconds
+Total number of potential splits: 5736
+Times: pick=0.0193 split=0.0094 update=0.0076
+
+SPLIT 127:
+z = 0.000000
+Splits recomputed: 291 ; worst-case edges: 332
+Splitting distribution:
+dvar: 10 ; vals:  0.095405 0.904595 ; cond:
+Splitting on var n1681 = v35_2
+Delta edges: 0 ; ll: 1.452897
+Total edges: 4400 ; Depth: 25
+Elapsed time: 2.410302 seconds
+Delta time: 0.070059 seconds
+Total number of potential splits: 5721
+Times: pick=0.0568 split=0.0055 update=0.0072
+
+SPLIT 128:
+z = 0.000000
+Splits recomputed: 6 ; worst-case edges: 37
+Splitting distribution:
+dvar: 10 ; vals:  0.107367 0.892633 ; cond: +v35_2
+Splitting on var n1482 = v34_0
+Delta edges: 0 ; ll: 1.956158
+Total edges: 4400 ; Depth: 25
+Elapsed time: 2.424920 seconds
+Delta time: 0.014614 seconds
+Total number of potential splits: 5722
+Times: pick=0.0023 split=0.0048 update=0.0041
+
+SPLIT 129:
+z = 0.000000
+Splits recomputed: 217 ; worst-case edges: 37
+Splitting distribution:
+dvar: 25 ; vals:  0.033088 0.003676 0.018382 0.944853 ; cond: -v24_0 -v29_3 -v29_0
+Splitting on var n820 = v31_2
+Delta edges: 12 ; ll: 2.489261
+Total edges: 4412 ; Depth: 25
+Elapsed time: 2.473618 seconds
+Delta time: 0.048698 seconds
+Total number of potential splits: 5695
+Times: pick=0.0355 split=0.0083 update=0.0045
+
+SPLIT 130:
+z = 0.000000
+Splits recomputed: 136 ; worst-case edges: 170
+Splitting distribution:
+dvar: 17 ; vals:  0.662500 0.262500 0.012500 0.062500 ; cond: +v24_0 -v31_1 -v31_0 -v31_3
+Splitting on var n2024 = v29_1
+Delta edges: 12 ; ll: 2.456496
+Total edges: 4424 ; Depth: 25
+Elapsed time: 2.516913 seconds
+Delta time: 0.043291 seconds
+Total number of potential splits: 5712
+Times: pick=0.0297 split=0.0090 update=0.0039
+
+SPLIT 131:
+z = 0.000000
+Splits recomputed: 108 ; worst-case edges: 297
+Splitting distribution:
+dvar: 7 ; vals:  0.051449 0.948551 ; cond:
+Splitting on var n1296 = v35_1
+Delta edges: 0 ; ll: 1.227992
+Total edges: 4424 ; Depth: 25
+Elapsed time: 2.550626 seconds
+Delta time: 0.033709 seconds
+Total number of potential splits: 5733
+Times: pick=0.0262 split=0.0033 update=0.0082
+
+SPLIT 132:
+z = 0.000000
+Splits recomputed: 10 ; worst-case edges: 51
+Splitting distribution:
+dvar: 7 ; vals:  0.046330 0.953670 ; cond: -v35_1
+Splitting on var n1047 = v33_0
+Delta edges: 0 ; ll: 1.727371
+Total edges: 4424 ; Depth: 25
+Elapsed time: 2.573745 seconds
+Delta time: 0.023115 seconds
+Total number of potential splits: 5721
+Times: pick=0.0024 split=0.0118 update=0.0068
+
+SPLIT 133:
+z = 0.000000
+Splits recomputed: 139 ; worst-case edges: 55
+Splitting distribution:
+dvar: 15 ; vals:  0.011002 0.963961 0.014036 0.011002 ; cond: +v31_0 -v24_1 -v31_1
+Splitting on var n2032 = v29_1
+Delta edges: 0 ; ll: 1.133180
+Total edges: 4424 ; Depth: 25
+Elapsed time: 2.615489 seconds
+Delta time: 0.041741 seconds
+Total number of potential splits: 5744
+Times: pick=0.0291 split=0.0051 update=0.0046
+
+SPLIT 134:
+z = 0.000000
+Splits recomputed: 125 ; worst-case edges: 88
+Splitting distribution:
+dvar: 3 ; vals:  0.020863 0.979137 ; cond: -v35_0 -v4_2
+Splitting on var n1337 = v4_0
+Delta edges: 6 ; ll: 1.692795
+Total edges: 4430 ; Depth: 25
+Elapsed time: 2.659403 seconds
+Delta time: 0.043966 seconds
+Total number of potential splits: 5792
+Times: pick=0.0295 split=0.0090 update=0.0054
+
+SPLIT 135:
+z = 0.000000
+Splits recomputed: 77 ; worst-case edges: 43
+Splitting distribution:
+dvar: 17 ; vals:  0.970902 0.008607 0.011885 0.008607 ; cond: +v29_1 +v31_0 -v31_3
+Splitting on var n2255 = v19_1
+Delta edges: 12 ; ll: 2.279021
+Total edges: 4442 ; Depth: 25
+Elapsed time: 2.695195 seconds
+Delta time: 0.035738 seconds
+Total number of potential splits: 5817
+Times: pick=0.0131 split=0.0101 update=0.0149
+
+SPLIT 136:
+z = 0.000000
+Splits recomputed: 148 ; worst-case edges: 297
+Splitting distribution:
+dvar: 6 ; vals:  0.492503 0.482122 0.025375 ; cond: -v4_1
+Splitting on var n1528 = v34_0
+Delta edges: 9 ; ll: 1.933785
+Total edges: 4451 ; Depth: 25
+Elapsed time: 2.737212 seconds
+Delta time: 0.042010 seconds
+Total number of potential splits: 5823
+Times: pick=0.0230 split=0.0100 update=0.0079
+
+SPLIT 137:
+z = 0.000000
+Splits recomputed: 101 ; worst-case edges: 72
+Splitting distribution:
+dvar: 30 ; vals:  0.044643 0.044643 0.008929 0.901786 ; cond: -v31_0 +v15_3 -v15_1 -v31_3
+Splitting on var n1835 = v24_0
+Delta edges: 16 ; ll: 2.632680
+Total edges: 4467 ; Depth: 25
+Elapsed time: 2.785335 seconds
+Delta time: 0.048119 seconds
+Total number of potential splits: 5825
+Times: pick=0.0175 split=0.0221 update=0.0043
+
+SPLIT 138:
+z = 0.000000
+Splits recomputed: 597 ; worst-case edges: 332
+Splitting distribution:
+dvar: 30 ; vals:  0.781250 0.031250 0.031250 0.156250 ; cond: -v24_1 +v31_0 +v15_3 -v15_1 -v31_3
+Splitting on var n2072 = v29_1
+Delta edges: 12 ; ll: 2.187474
+Total edges: 4479 ; Depth: 25
+Elapsed time: 2.884170 seconds
+Delta time: 0.098833 seconds
+Total number of potential splits: 5807
+Times: pick=0.0863 split=0.0070 update=0.0052
+
+SPLIT 139:
+z = 0.000000
+Splits recomputed: 73 ; worst-case edges: 244
+Splitting distribution:
+dvar: 30 ; vals:  0.997500 0.001786 0.000357 0.000357 ; cond: +v15_1 -v31_3
+Splitting on var n871 = v31_2
+Delta edges: 12 ; ll: 2.186747
+Total edges: 4491 ; Depth: 25
+Elapsed time: 2.919647 seconds
+Delta time: 0.035473 seconds
+Total number of potential splits: 5802
+Times: pick=0.0095 split=0.0212 update=0.0046
+
+SPLIT 140:
+z = 0.000000
+Splits recomputed: 97 ; worst-case edges: 244
+Splitting distribution:
+dvar: 33 ; vals:  0.545226 0.454774 ; cond: -v34_2
+Splitting on var n1516 = v34_0
+Delta edges: 0 ; ll: 0.975363
+Total edges: 4491 ; Depth: 25
+Elapsed time: 2.953723 seconds
+Delta time: 0.034073 seconds
+Total number of potential splits: 5856
+Times: pick=0.0241 split=0.0050 update=0.0040
+
+SPLIT 141:
+z = 0.000000
+Splits recomputed: 29 ; worst-case edges: 265
+Splitting distribution:
+dvar: 33 ; vals:  0.394737 0.605263 ; cond: +v34_0 -v34_2
+Splitting on var n1442 = v4_1
+Delta edges: 0 ; ll: 1.530527
+Total edges: 4491 ; Depth: 25
+Elapsed time: 2.969754 seconds
+Delta time: 0.016030 seconds
+Total number of potential splits: 5864
+Times: pick=0.0077 split=0.0040 update=0.0143
+
+SPLIT 142:
+z = 0.000000
+Splits recomputed: 55 ; worst-case edges: 16
+Splitting distribution:
+dvar: 35 ; vals:  0.746914 0.246914 0.006173 ; cond: +v4_1 +v6_0
+Splitting on var n1569 = v34_1
+Delta edges: 9 ; ll: 1.859629
+Total edges: 4500 ; Depth: 25
+Elapsed time: 3.007690 seconds
+Delta time: 0.037933 seconds
+Total number of potential splits: 5854
+Times: pick=0.0116 split=0.0111 update=0.0038
+
+SPLIT 143:
+z = 0.000000
+Splits recomputed: 144 ; worst-case edges: 72
+Splitting distribution:
+dvar: 36 ; vals:  0.328109 0.138454 0.533438 ; cond: -v35_1 -v35_0
+Splitting on var n1094 = v33_0
+Delta edges: 0 ; ll: 0.944242
+Total edges: 4500 ; Depth: 25
+Elapsed time: 3.052073 seconds
+Delta time: 0.044382 seconds
+Total number of potential splits: 5884
+Times: pick=0.0348 split=0.0044 update=0.0056
+
+SPLIT 144:
+z = 0.000000
+Splits recomputed: 72 ; worst-case edges: 40
+Splitting distribution:
+dvar: 14 ; vals:  0.010929 0.561749 0.427322 ; cond: -v31_3 -v36_1 -v35_0 -v33_0 -v36_0
+Splitting on var n1778 = v35_2
+Delta edges: 9 ; ll: 1.838494
+Total edges: 4509 ; Depth: 25
+Elapsed time: 3.087159 seconds
+Delta time: 0.035081 seconds
+Total number of potential splits: 5898
+Times: pick=0.0175 split=0.0119 update=0.0053
+
+SPLIT 145:
+z = 0.000000
+Splits recomputed: 103 ; worst-case edges: 56
+Splitting distribution:
+dvar: 2 ; vals:  0.922559 0.053872 0.023569 ; cond: +v4_0 -v4_1
+Splitting on var n1766 = v1_1
+Delta edges: 9 ; ll: 1.829655
+Total edges: 4518 ; Depth: 25
+Elapsed time: 3.131943 seconds
+Delta time: 0.044731 seconds
+Total number of potential splits: 5908
+Times: pick=0.0153 split=0.0234 update=0.0047
+
+SPLIT 146:
+z = 0.000000
+Splits recomputed: 166 ; worst-case edges: 60
+Splitting distribution:
+dvar: 35 ; vals:  0.851852 0.074074 0.074074 ; cond: +v34_0 -v34_2 -v6_0
+Splitting on var n1468 = v4_1
+Delta edges: 0 ; ll: 0.900075
+Total edges: 4518 ; Depth: 25
+Elapsed time: 3.161961 seconds
+Delta time: 0.030014 seconds
+Total number of potential splits: 5904
+Times: pick=0.0208 split=0.0043 update=0.0038
+
+SPLIT 147:
+z = 0.000000
+Splits recomputed: 142 ; worst-case edges: 22
+Splitting distribution:
+dvar: 14 ; vals:  0.003401 0.085034 0.911565 ; cond: +v33_0 -v36_0
+Splitting on var n1226 = v35_0
+Delta edges: 9 ; ll: 1.742703
+Total edges: 4527 ; Depth: 25
+Elapsed time: 3.207905 seconds
+Delta time: 0.045940 seconds
+Total number of potential splits: 5896
+Times: pick=0.0315 split=0.0098 update=0.0042
+
+SPLIT 148:
+z = 0.000000
+Splits recomputed: 32 ; worst-case edges: 56
+Splitting distribution:
+dvar: 14 ; vals:  0.004505 0.112613 0.882883 ; cond: -v35_0 +v33_0 -v36_0
+Splitting on var n1816 = v36_2
+Delta edges: 9 ; ll: 2.539435
+Total edges: 4536 ; Depth: 25
+Elapsed time: 3.235623 seconds
+Delta time: 0.027716 seconds
+Total number of potential splits: 5911
+Times: pick=0.0034 split=0.0192 update=0.0048
+
+SPLIT 149:
+z = 0.000000
+Splits recomputed: 90 ; worst-case edges: 56
+Splitting distribution:
+dvar: 19 ; vals:  0.021452 0.046205 0.932343 ; cond: +v31_3
+Splitting on var n2128 = v29_1
+Delta edges: 0 ; ll: 0.839972
+Total edges: 4536 ; Depth: 25
+Elapsed time: 3.256993 seconds
+Delta time: 0.021368 seconds
+Total number of potential splits: 5909
+Times: pick=0.0127 split=0.0040 update=0.0049
+
+SPLIT 150:
+z = 0.000000
+Splits recomputed: 41 ; worst-case edges: 176
+Splitting distribution:
+dvar: 15 ; vals:  0.017857 0.017857 0.089286 0.875000 ; cond: -v29_1 +v24_0 -v24_2 +v31_1
+Splitting on var n2210 = v29_3
+Delta edges: 20 ; ll: 2.835199
+Total edges: 4556 ; Depth: 25
+Elapsed time: 3.294838 seconds
+Delta time: 0.037841 seconds
+Total number of potential splits: 5889
+Times: pick=0.0170 split=0.0142 update=0.0051
+
+SPLIT 151:
+z = 0.000000
+Splits recomputed: 724 ; worst-case edges: 332
+Splitting distribution:
+dvar: 29 ; vals:  0.976293 0.010776 0.002155 0.010776 ; cond: -v28_3 -v28_2
+Splitting on var n2445 = v28_0
+Delta edges: 0 ; ll: 0.794003
+Total edges: 4556 ; Depth: 25
+Elapsed time: 3.405115 seconds
+Delta time: 0.110275 seconds
+Total number of potential splits: 5887
+Times: pick=0.1011 split=0.0042 update=0.0041
+
+SPLIT 152:
+z = 0.000000
+Splits recomputed: 3 ; worst-case edges: 23
+Splitting distribution:
+dvar: 29 ; vals:  0.950000 0.022727 0.004545 0.022727 ; cond: -v28_0 -v28_3 -v28_2
+Splitting on var n2431 = v27_1
+Delta edges: 0 ; ll: 1.696492
+Total edges: 4556 ; Depth: 25
+Elapsed time: 3.416812 seconds
+Delta time: 0.011693 seconds
+Total number of potential splits: 5886
+Times: pick=0.0020 split=0.0052 update=0.0036
+
+SPLIT 153:
+z = 0.000000
+Splits recomputed: 44 ; worst-case edges: 21
+Splitting distribution:
+dvar: 20 ; vals:  0.971524 0.012982 0.015494 ; cond: +v19_0
+Splitting on var n245 = v31_0
+Delta edges: 9 ; ll: 1.677793
+Total edges: 4565 ; Depth: 25
+Elapsed time: 3.453771 seconds
+Delta time: 0.036958 seconds
+Total number of potential splits: 5890
+Times: pick=0.0202 split=0.0121 update=0.0049
+
+SPLIT 154:
+z = 0.000000
+Splits recomputed: 428 ; worst-case edges: 272
+Splitting distribution:
+dvar: 3 ; vals:  0.926471 0.073529 ; cond: -v35_2 +v4_2
+Splitting on var n1781 = v5_0
+Delta edges: 18 ; ll: 2.449011
+Total edges: 4583 ; Depth: 25
+Elapsed time: 3.534176 seconds
+Delta time: 0.080403 seconds
+Total number of potential splits: 5882
+Times: pick=0.0654 split=0.0092 update=0.0073
+
+SPLIT 155:
+z = 0.000000
+Splits recomputed: 452 ; worst-case edges: 53
+Splitting distribution:
+dvar: 35 ; vals:  0.037037 0.370370 0.592593 ; cond: +v6_2 -v34_0 -v34_2 -v6_0
+Splitting on var n1515 = v4_1
+Delta edges: 0 ; ll: 0.641743
+Total edges: 4583 ; Depth: 25
+Elapsed time: 3.602163 seconds
+Delta time: 0.067985 seconds
+Total number of potential splits: 5876
+Times: pick=0.0557 split=0.0050 update=0.0036
+
+SPLIT 156:
+z = 0.000000
+Splits recomputed: 130 ; worst-case edges: 24
+Splitting distribution:
+dvar: 14 ; vals:  0.219697 0.628788 0.151515 ; cond: +v35_2 +v36_1 -v35_0 -v33_0 -v36_0
+Splitting on var n2509 = v31_3
+Delta edges: 24 ; ll: 3.005511
+Total edges: 4607 ; Depth: 25
+Elapsed time: 3.654865 seconds
+Delta time: 0.052701 seconds
+Total number of potential splits: 5891
+Times: pick=0.0335 split=0.0120 update=0.0074
+
+SPLIT 157:
+z = 0.000000
+Splits recomputed: 1276 ; worst-case edges: 332
+Splitting distribution:
+dvar: 36 ; vals:  0.835470 0.136752 0.027778 ; cond: -v33_0 +v35_0
+Splitting on var n2522 = v31_3
+Delta edges: 25 ; ll: 3.558480
+Total edges: 4632 ; Depth: 25
+Elapsed time: 3.824310 seconds
+Delta time: 0.169442 seconds
+Total number of potential splits: 5837
+Times: pick=0.1534 split=0.0087 update=0.0089
+
+SPLIT 158:
+z = 0.000000
+Splits recomputed: 910 ; worst-case edges: 332
+Splitting distribution:
+dvar: 36 ; vals:  0.330688 0.138624 0.530688 ; cond: -v33_0 -v35_1 -v35_0
+Splitting on var n2527 = v31_3
+Delta edges: 5 ; ll: 1.870013
+Total edges: 4637 ; Depth: 25
+Elapsed time: 3.964129 seconds
+Delta time: 0.139814 seconds
+Total number of potential splits: 5901
+Times: pick=0.1243 split=0.0070 update=0.0053
+
+SPLIT 159:
+z = 0.000000
+Splits recomputed: 1207 ; worst-case edges: 332
+Splitting distribution:
+dvar: 14 ; vals:  0.006944 0.777778 0.215278 ; cond: -v35_2 +v36_1 -v35_0 -v33_0 -v36_0
+Splitting on var n2536 = v31_3
+Delta edges: 14 ; ll: 2.430581
+Total edges: 4651 ; Depth: 25
+Elapsed time: 4.129128 seconds
+Delta time: 0.164999 seconds
+Total number of potential splits: 5891
+Times: pick=0.1513 split=0.0068 update=0.0058
+
+SPLIT 160:
+z = 0.000000
+Splits recomputed: 1783 ; worst-case edges: 332
+Splitting distribution:
+dvar: 13 ; vals:  0.023869 0.976131 ; cond: +v36_0
+Splitting on var n2541 = v31_3
+Delta edges: 6 ; ll: 1.245698
+Total edges: 4657 ; Depth: 25
+Elapsed time: 4.352640 seconds
+Delta time: 0.223507 seconds
+Total number of potential splits: 5879
+Times: pick=0.2115 split=0.0066 update=0.0058
+
+SPLIT 161:
+z = 0.000000
+Splits recomputed: 200 ; worst-case edges: 24
+Splitting distribution:
+dvar: 33 ; vals:  0.560773 0.439227 ; cond: -v34_0 -v34_2
+Splitting on var n1453 = v35_1
+Delta edges: 0 ; ll: 0.581513
+Total edges: 4657 ; Depth: 25
+Elapsed time: 4.404726 seconds
+Delta time: 0.052084 seconds
+Total number of potential splits: 5936
+Times: pick=0.0415 split=0.0050 update=0.0067
+
+SPLIT 162:
+z = 0.000000
+Splits recomputed: 156 ; worst-case edges: 188
+Splitting distribution:
+dvar: 33 ; vals:  0.541667 0.458333 ; cond: +v4_1 +v34_0 -v34_2
+Splitting on var n1302 = v35_0
+Delta edges: 0 ; ll: 0.559907
+Total edges: 4657 ; Depth: 25
+Elapsed time: 4.452174 seconds
+Delta time: 0.047444 seconds
+Total number of potential splits: 5933
+Times: pick=0.0359 split=0.0046 update=0.0037
+
+SPLIT 163:
+z = 0.000000
+Splits recomputed: 105 ; worst-case edges: 34
+Splitting distribution:
+dvar: 9 ; vals:  0.487179 0.333333 0.179487 ; cond: +v34_0 -v10_0 -v34_2 -v11_2
+Splitting on var n1836 = v8_1
+Delta edges: 34 ; ll: 3.931493
+Total edges: 4691 ; Depth: 26
+Elapsed time: 4.501380 seconds
+Delta time: 0.049203 seconds
+Total number of potential splits: 5917
+Times: pick=0.0277 split=0.0165 update=0.0070
+
+SPLIT 164:
+z = 0.000000
+Splits recomputed: 528 ; worst-case edges: 332
+Splitting distribution:
+dvar: 10 ; vals:  0.075549 0.924451 ; cond: -v35_2
+Splitting on var n1566 = v4_1
+Delta edges: 0 ; ll: 0.526952
+Total edges: 4691 ; Depth: 26
+Elapsed time: 4.606541 seconds
+Delta time: 0.105159 seconds
+Total number of potential splits: 5961
+Times: pick=0.0926 split=0.0055 update=0.0044
+
+SPLIT 165:
+z = 0.000000
+Splits recomputed: 40 ; worst-case edges: 36
+Splitting distribution:
+dvar: 10 ; vals:  0.089744 0.910256 ; cond: +v4_1 -v35_2
+Splitting on var n1847 = v34_2
+Delta edges: 0 ; ll: 0.600581
+Total edges: 4691 ; Depth: 26
+Elapsed time: 4.625126 seconds
+Delta time: 0.018582 seconds
+Total number of potential splits: 5994
+Times: pick=0.0090 split=0.0047 update=0.0045
+
+SPLIT 166:
+z = 0.000000
+Splits recomputed: 70 ; worst-case edges: 39
+Splitting distribution:
+dvar: 35 ; vals:  0.013580 0.032099 0.954321 ; cond: +v4_1 +v34_2 -v6_0
+Splitting on var n1806 = v6_2
+Delta edges: 0 ; ll: 0.519098
+Total edges: 4691 ; Depth: 26
+Elapsed time: 4.656038 seconds
+Delta time: 0.030910 seconds
+Total number of potential splits: 6010
+Times: pick=0.0218 split=0.0043 update=0.0051
+
+SPLIT 167:
+z = 0.000000
+Splits recomputed: 144 ; worst-case edges: 53
+Splitting distribution:
+dvar: 6 ; vals:  0.501182 0.472813 0.026005 ; cond: -v34_0 -v4_1
+Splitting on var n1770 = v34_1
+Delta edges: 9 ; ll: 1.387979
+Total edges: 4700 ; Depth: 26
+Elapsed time: 4.704648 seconds
+Delta time: 0.048606 seconds
+Total number of potential splits: 6051
+Times: pick=0.0299 split=0.0123 update=0.0042
+
+SPLIT 168:
+z = 0.000000
+Splits recomputed: 174 ; worst-case edges: 72
+Splitting distribution:
+dvar: 35 ; vals:  0.862471 0.114219 0.023310 ; cond: -v4_1 +v6_0
+Splitting on var n1859 = v34_2
+Delta edges: 0 ; ll: 0.636156
+Total edges: 4700 ; Depth: 26
+Elapsed time: 4.752336 seconds
+Delta time: 0.047685 seconds
+Total number of potential splits: 6069
+Times: pick=0.0383 split=0.0047 update=0.0051
+
+SPLIT 169:
+z = 0.000000
+Splits recomputed: 207 ; worst-case edges: 24
+Splitting distribution:
+dvar: 8 ; vals:  0.010893 0.021351 0.967756 ; cond: -v7_0 +v34_2
+Splitting on var n1809 = v10_0
+Delta edges: 11 ; ll: 1.556022
+Total edges: 4711 ; Depth: 26
+Elapsed time: 4.809325 seconds
+Delta time: 0.056984 seconds
+Total number of potential splits: 6094
+Times: pick=0.0380 split=0.0129 update=0.0074
+
+SPLIT 170:
+z = 0.000000
+Splits recomputed: 384 ; worst-case edges: 332
+Splitting distribution:
+dvar: 14 ; vals:  0.929615 0.061089 0.009296 ; cond: -v33_0 -v35_0 +v36_0
+Splitting on var n1931 = v35_2
+Delta edges: 9 ; ll: 1.314770
+Total edges: 4720 ; Depth: 26
+Elapsed time: 4.897697 seconds
+Delta time: 0.088369 seconds
+Total number of potential splits: 6099
+Times: pick=0.0706 split=0.0090 update=0.0061
+
+SPLIT 171:
+z = 0.000000
+Splits recomputed: 268 ; worst-case edges: 131
+Splitting distribution:
+dvar: 33 ; vals:  0.535156 0.464844 ; cond: +v35_1 -v34_0 -v34_2
+Splitting on var n2640 = v31_3
+Delta edges: 131 ; ll: 13.494361
+Total edges: 4851 ; Depth: 26
+Elapsed time: 4.969102 seconds
+Delta time: 0.071404 seconds
+Total number of potential splits: 5983
+Times: pick=0.0433 split=0.0185 update=0.0099
+
+SPLIT 172:
+z = 0.000000
+Splits recomputed: 1981 ; worst-case edges: 332
+Splitting distribution:
+dvar: 7 ; vals:  0.078947 0.921053 ; cond: +v35_1
+Splitting on var n2642 = v31_3
+Delta edges: 0 ; ll: 0.646830
+Total edges: 4851 ; Depth: 26
+Elapsed time: 5.213254 seconds
+Delta time: 0.244150 seconds
+Total number of potential splits: 6001
+Times: pick=0.2304 split=0.0054 update=0.0054
+
+SPLIT 173:
+z = 0.000000
+Splits recomputed: 9 ; worst-case edges: 47
+Splitting distribution:
+dvar: 7 ; vals:  0.098131 0.901869 ; cond: -v31_3 +v35_1
+Splitting on var n1241 = v33_0
+Delta edges: 0 ; ll: 1.823374
+Total edges: 4851 ; Depth: 26
+Elapsed time: 5.225151 seconds
+Delta time: 0.011893 seconds
+Total number of potential splits: 6040
+Times: pick=0.0019 split=0.0046 update=0.0047
+
+SPLIT 174:
+z = 0.000000
+Splits recomputed: 24 ; worst-case edges: 34
+Splitting distribution:
+dvar: 7 ; vals:  0.053846 0.946154 ; cond: +v31_3 +v35_1
+Splitting on var n1243 = v33_0
+Delta edges: 0 ; ll: 0.664270
+Total edges: 4851 ; Depth: 26
+Elapsed time: 5.251499 seconds
+Delta time: 0.026344 seconds
+Total number of potential splits: 6042
+Times: pick=0.0156 split=0.0057 update=0.0042
+
+SPLIT 175:
+z = 0.000000
+Splits recomputed: 723 ; worst-case edges: 25
+Splitting distribution:
+dvar: 36 ; vals:  0.033816 0.512077 0.454106 ; cond: +v33_0 +v35_1 -v35_0
+Splitting on var n2652 = v31_3
+Delta edges: 6 ; ll: 1.001079
+Total edges: 4857 ; Depth: 26
+Elapsed time: 5.361127 seconds
+Delta time: 0.109624 seconds
+Total number of potential splits: 6071
+Times: pick=0.0942 split=0.0102 update=0.0049
+
+SPLIT 176:
+z = 0.000000
+Splits recomputed: 255 ; worst-case edges: 56
+Splitting distribution:
+dvar: 14 ; vals:  0.008772 0.035088 0.956140 ; cond: +v36_2 -v35_0 +v33_0 -v36_0
+Splitting on var n1539 = v35_1
+Delta edges: 9 ; ll: 1.293970
+Total edges: 4866 ; Depth: 26
+Elapsed time: 5.427625 seconds
+Delta time: 0.066496 seconds
+Total number of potential splits: 6076
+Times: pick=0.0310 split=0.0297 update=0.0053
+
+SPLIT 177:
+z = 0.000000
+Splits recomputed: 162 ; worst-case edges: 56
+Splitting distribution:
+dvar: 23 ; vals:  0.950161 0.049839 ; cond: -v22_0 -v24_2
+Splitting on var n250 = v31_0
+Delta edges: 6 ; ll: 0.991492
+Total edges: 4872 ; Depth: 26
+Elapsed time: 5.462302 seconds
+Delta time: 0.034674 seconds
+Total number of potential splits: 6122
+Times: pick=0.0176 split=0.0117 update=0.0143
+
+SPLIT 178:
+z = 0.000000
+Splits recomputed: 94 ; worst-case edges: 281
+Splitting distribution:
+dvar: 25 ; vals:  0.038360 0.011905 0.011905 0.937831 ; cond: +v24_0 +v29_0
+Splitting on var n259 = v31_0
+Delta edges: 12 ; ll: 1.585819
+Total edges: 4884 ; Depth: 26
+Elapsed time: 5.508158 seconds
+Delta time: 0.045854 seconds
+Total number of potential splits: 6136
+Times: pick=0.0165 split=0.0137 update=0.0057
+
+SPLIT 179:
+z = 0.000000
+Splits recomputed: 2 ; worst-case edges: 170
+Splitting distribution:
+dvar: 25 ; vals:  0.069672 0.004098 0.020492 0.905738 ; cond: +v31_0 +v24_0 +v29_0
+Splitting on var n2708 = v16_0
+Delta edges: 68 ; ll: 13.803807
+Total edges: 4952 ; Depth: 28
+Elapsed time: 5.548096 seconds
+Delta time: 0.039936 seconds
+Total number of potential splits: 6114
+Times: pick=0.0013 split=0.0302 update=0.0096
+
+SPLIT 180:
+z = 0.000000
+Splits recomputed: 2874 ; worst-case edges: 332
+Splitting distribution:
+dvar: 2 ; vals:  0.012216 0.038394 0.949389 ; cond: -v4_0 -v4_1
+Splitting on var n2026 = v1_0
+Delta edges: 9 ; ll: 1.282738
+Total edges: 4961 ; Depth: 28
+Elapsed time: 5.901161 seconds
+Delta time: 0.353063 seconds
+Total number of potential splits: 6140
+Times: pick=0.3366 split=0.0080 update=0.0055
+
+SPLIT 181:
+z = 0.000000
+Splits recomputed: 259 ; worst-case edges: 52
+Splitting distribution:
+dvar: 33 ; vals:  0.620370 0.379630 ; cond: -v35_1 -v34_0 -v34_2
+Splitting on var n1694 = v4_1
+Delta edges: 0 ; ll: 0.371483
+Total edges: 4961 ; Depth: 28
+Elapsed time: 5.960664 seconds
+Delta time: 0.059500 seconds
+Total number of potential splits: 6180
+Times: pick=0.0457 split=0.0071 update=0.0047
+
+SPLIT 182:
+z = 0.000000
+Splits recomputed: 67 ; worst-case edges: 76
+Splitting distribution:
+dvar: 11 ; vals:  0.333333 0.385965 0.280702 ; cond: +v34_0 -v34_2
+Splitting on var n1932 = v10_0
+Delta edges: 3 ; ll: 0.670036
+Total edges: 4964 ; Depth: 28
+Elapsed time: 6.005929 seconds
+Delta time: 0.045261 seconds
+Total number of potential splits: 6199
+Times: pick=0.0115 split=0.0283 update=0.0042
+
+SPLIT 183:
+z = 0.000000
+Splits recomputed: 379 ; worst-case edges: 50
+Splitting distribution:
+dvar: 25 ; vals:  0.005008 0.274653 0.319337 0.401002 ; cond: +v29_1 +v24_0 -v29_3 -v29_0
+Splitting on var n635 = v31_1
+Delta edges: 12 ; ll: 1.565649
+Total edges: 4976 ; Depth: 28
+Elapsed time: 6.100023 seconds
+Delta time: 0.094091 seconds
+Total number of potential splits: 6246
+Times: pick=0.0743 split=0.0150 update=0.0050
+
+SPLIT 184:
+z = 0.000000
+Splits recomputed: 466 ; worst-case edges: 52
+Splitting distribution:
+dvar: 10 ; vals:  0.105965 0.894035 ; cond: -v34_0 +v35_2
+Splitting on var n1774 = v7_0
+Delta edges: 0 ; ll: 0.333070
+Total edges: 4976 ; Depth: 28
+Elapsed time: 6.184287 seconds
+Delta time: 0.084262 seconds
+Total number of potential splits: 6233
+Times: pick=0.0730 split=0.0060 update=0.0072
+
+SPLIT 185:
+z = 0.000000
+Splits recomputed: 91 ; worst-case edges: 33
+Splitting distribution:
+dvar: 5 ; vals:  0.001661 0.998339 ; cond: -v4_0
+Splitting on var n2068 = v35_2
+Delta edges: 3 ; ll: 0.620248
+Total edges: 4979 ; Depth: 28
+Elapsed time: 6.235466 seconds
+Delta time: 0.051178 seconds
+Total number of potential splits: 6245
+Times: pick=0.0151 split=0.0273 update=0.0061
+
+SPLIT 186:
+z = 0.000000
+Splits recomputed: 63 ; worst-case edges: 42
+Splitting distribution:
+dvar: 5 ; vals:  0.005068 0.994932 ; cond: -v35_2 -v4_0
+Splitting on var n1708 = v4_1
+Delta edges: 0 ; ll: 0.579454
+Total edges: 4979 ; Depth: 28
+Elapsed time: 6.256771 seconds
+Delta time: 0.021301 seconds
+Total number of potential splits: 6230
+Times: pick=0.0086 split=0.0064 update=0.0044
+
+SPLIT 187:
+z = 0.000000
+Splits recomputed: 510 ; worst-case edges: 15
+Splitting distribution:
+dvar: 10 ; vals:  0.064286 0.935714 ; cond: +v34_2 +v4_1 -v35_2
+Splitting on var n1434 = v35_0
+Delta edges: 0 ; ll: 0.224994
+Total edges: 4979 ; Depth: 28
+Elapsed time: 6.340174 seconds
+Delta time: 0.083401 seconds
+Total number of potential splits: 6235
+Times: pick=0.0720 split=0.0064 update=0.0044
+
+SPLIT 188:
+z = 0.000000
+Splits recomputed: 76 ; worst-case edges: 38
+Splitting distribution:
+dvar: 16 ; vals:  0.043125 0.956875 ; cond: -v31_3
+Splitting on var n290 = v31_0
+Delta edges: 0 ; ll: 0.217858
+Total edges: 4979 ; Depth: 28
+Elapsed time: 6.364072 seconds
+Delta time: 0.023896 seconds
+Total number of potential splits: 6271
+Times: pick=0.0141 split=0.0046 update=0.0150
+
+SPLIT 189:
+z = 0.000000
+Splits recomputed: 190 ; worst-case edges: 61
+Splitting distribution:
+dvar: 25 ; vals:  0.013889 0.458333 0.180556 0.347222 ; cond: +v31_1 +v29_1 +v24_0 -v29_3 -v29_0
+Splitting on var n2662 = v15_3
+Delta edges: 20 ; ll: 2.194704
+Total edges: 4999 ; Depth: 28
+Elapsed time: 6.435970 seconds
+Delta time: 0.071992 seconds
+Total number of potential splits: 6261
+Times: pick=0.0327 split=0.0201 update=0.0110
+
+SPLIT 190:
+z = 0.000000
+Splits recomputed: 1959 ; worst-case edges: 332
+Splitting distribution:
+dvar: 7 ; vals:  0.049045 0.950955 ; cond: -v33_0 -v35_1
+Splitting on var n2087 = v35_2
+Delta edges: 0 ; ll: 0.192407
+Total edges: 4999 ; Depth: 28
+Elapsed time: 6.694581 seconds
+Delta time: 0.258511 seconds
+Total number of potential splits: 6311
+Times: pick=0.2424 split=0.0064 update=0.0071
+
+SPLIT 191:
+z = 0.000000
+Splits recomputed: 80 ; worst-case edges: 44
+Splitting distribution:
+dvar: 7 ; vals:  0.051587 0.948413 ; cond: +v35_2 -v33_0 -v35_1
+Splitting on var n1625 = v4_0
+Delta edges: 8 ; ll: 1.063834
+Total edges: 5007 ; Depth: 28
+Elapsed time: 6.743097 seconds
+Delta time: 0.048512 seconds
+Total number of potential splits: 6304
+Times: pick=0.0227 split=0.0175 update=0.0066
+
+SPLIT 192:
+z = 0.000000
+Splits recomputed: 1730 ; worst-case edges: 332
+Splitting distribution:
+dvar: 7 ; vals:  0.041667 0.958333 ; cond: -v35_2 -v33_0 -v35_1
+Splitting on var n1732 = v4_1
+Delta edges: 0 ; ll: 0.217573
+Total edges: 5007 ; Depth: 28
+Elapsed time: 7.002991 seconds
+Delta time: 0.259894 seconds
+Total number of potential splits: 6318
+Times: pick=0.2479 split=0.0057 update=0.0057
+
+SPLIT 193:
+z = 0.000000
+Splits recomputed: 51 ; worst-case edges: 34
+Splitting distribution:
+dvar: 7 ; vals:  0.031250 0.968750 ; cond: +v4_1 -v35_2 -v33_0 -v35_1
+Splitting on var n2762 = v31_3
+Delta edges: 14 ; ll: 1.688897
+Total edges: 5021 ; Depth: 28
+Elapsed time: 7.055314 seconds
+Delta time: 0.052322 seconds
+Total number of potential splits: 6307
+Times: pick=0.0091 split=0.0337 update=0.0089
+
+SPLIT 194:
+z = 0.000000
+Splits recomputed: 2612 ; worst-case edges: 332
+Splitting distribution:
+dvar: 3 ; vals:  0.141026 0.858974 ; cond: +v35_0 -v4_2
+Splitting on var n1337 = v33_0
+Delta edges: 12 ; ll: 1.390933
+Total edges: 5033 ; Depth: 28
+Elapsed time: 7.404789 seconds
+Delta time: 0.349471 seconds
+Total number of potential splits: 6348
+Times: pick=0.3291 split=0.0117 update=0.0073
+
+SPLIT 195:
+z = 0.000000
+Splits recomputed: 970 ; worst-case edges: 60
+Splitting distribution:
+dvar: 14 ; vals:  0.204762 0.604762 0.190476 ; cond: -v31_3 +v35_2 +v36_1 -v35_0 -v33_0 -v36_0
+Splitting on var n304 = v31_0
+Delta edges: 27 ; ll: 2.883702
+Total edges: 5060 ; Depth: 28
+Elapsed time: 7.534393 seconds
+Delta time: 0.129602 seconds
+Total number of potential splits: 6375
+Times: pick=0.1065 split=0.0123 update=0.0101
+
+SPLIT 196:
+z = 0.000000
+Splits recomputed: 3579 ; worst-case edges: 332
+Splitting distribution:
+dvar: 10 ; vals:  0.061765 0.938235 ; cond: -v4_1 -v35_2
+Splitting on var n2061 = v34_2
+Delta edges: 0 ; ll: 0.178001
+Total edges: 5060 ; Depth: 28
+Elapsed time: 7.946740 seconds
+Delta time: 0.412344 seconds
+Total number of potential splits: 6403
+Times: pick=0.3994 split=0.0073 update=0.0051
+
+SPLIT 197:
+z = 0.000000
+Splits recomputed: 14 ; worst-case edges: 39
+Splitting distribution:
+dvar: 10 ; vals:  0.051471 0.948529 ; cond: -v34_2 -v4_1 -v35_2
+Splitting on var n1482 = v35_0
+Delta edges: 0 ; ll: 1.111669
+Total edges: 5060 ; Depth: 28
+Elapsed time: 7.964852 seconds
+Delta time: 0.018108 seconds
+Total number of potential splits: 6403
+Times: pick=0.0047 split=0.0075 update=0.0051
+
+SPLIT 198:
+z = 0.000000
+Splits recomputed: 15 ; worst-case edges: 26
+Splitting distribution:
+dvar: 10 ; vals:  0.072816 0.927184 ; cond: +v34_2 -v4_1 -v35_2
+Splitting on var n1484 = v35_0
+Delta edges: 0 ; ll: 0.758257
+Total edges: 5060 ; Depth: 28
+Elapsed time: 7.983140 seconds
+Delta time: 0.018285 seconds
+Total number of potential splits: 6422
+Times: pick=0.0070 split=0.0058 update=0.0046
+
+SPLIT 199:
+z = 0.000000
+Splits recomputed: 6 ; worst-case edges: 34
+Splitting distribution:
+dvar: 10 ; vals:  0.192308 0.807692 ; cond: -v35_0 +v34_2 -v4_1 -v35_2
+Splitting on var n1840 = v7_0
+Delta edges: 0 ; ll: 0.734900
+Total edges: 5060 ; Depth: 28
+Elapsed time: 7.996191 seconds
+Delta time: 0.013050 seconds
+Total number of potential splits: 6423
+Times: pick=0.0020 split=0.0056 update=0.0187
+
+SPLIT 200:
+z = 0.000000
+Splits recomputed: 241 ; worst-case edges: 10
+Splitting distribution:
+dvar: 7 ; vals:  0.067073 0.932927 ; cond: -v33_0 -v31_3 +v35_1
+Splitting on var n1771 = v4_1
+Delta edges: 0 ; ll: 0.156062
+Total edges: 5060 ; Depth: 28
+Elapsed time: 8.055256 seconds
+Delta time: 0.059062 seconds
+Total number of potential splits: 6426
+Times: pick=0.0316 split=0.0078 update=0.0049
+
+SPLIT 201:
+z = 0.000000
+Splits recomputed: 11 ; worst-case edges: 30
+Splitting distribution:
+dvar: 7 ; vals:  0.058333 0.941667 ; cond: +v4_1 -v33_0 -v31_3 +v35_1
+Splitting on var n2154 = v36_2
+Delta edges: 14 ; ll: 2.366862
+Total edges: 5074 ; Depth: 28
+Elapsed time: 8.099830 seconds
+Delta time: 0.044571 seconds
+Total number of potential splits: 6371
+Times: pick=0.0020 split=0.0344 update=0.0102
+
+SPLIT 202:
+z = 0.000000
+Splits recomputed: 2783 ; worst-case edges: 332
+Splitting distribution:
+dvar: 22 ; vals:  0.366667 0.633333 ; cond: -v31_0 +v21_2
+Splitting on var n2803 = v31_3
+Delta edges: 0 ; ll: 0.146073
+Total edges: 5074 ; Depth: 28
+Elapsed time: 8.462523 seconds
+Delta time: 0.362691 seconds
+Total number of potential splits: 6411
+Times: pick=0.3489 split=0.0056 update=0.0050
+
+SPLIT 203:
+z = 0.000000
+Splits recomputed: 5 ; worst-case edges: 36
+Splitting distribution:
+dvar: 22 ; vals:  0.312500 0.687500 ; cond: +v31_3 -v31_0 +v21_2
+Splitting on var n1107 = v33_0
+Delta edges: 14 ; ll: 3.400063
+Total edges: 5088 ; Depth: 28
+Elapsed time: 8.509325 seconds
+Delta time: 0.046800 seconds
+Total number of potential splits: 6333
+Times: pick=0.0021 split=0.0328 update=0.0147
+
+SPLIT 204:
+z = 0.000000
+Splits recomputed: 4333 ; worst-case edges: 332
+Splitting distribution:
+dvar: 21 ; vals:  0.061667 0.885417 0.052917 ; cond: -v31_3
+Splitting on var n665 = v31_1
+Delta edges: 0 ; ll: 0.142795
+Total edges: 5088 ; Depth: 28
+Elapsed time: 9.010993 seconds
+Delta time: 0.501666 seconds
+Total number of potential splits: 6393
+Times: pick=0.4839 split=0.0081 update=0.0062
+
+SPLIT 205:
+z = 0.000000
+Splits recomputed: 253 ; worst-case edges: 76
+Splitting distribution:
+dvar: 23 ; vals:  0.076271 0.923729 ; cond: +v24_2
+Splitting on var n1106 = v31_2
+Delta edges: 6 ; ll: 0.722400
+Total edges: 5094 ; Depth: 28
+Elapsed time: 9.104771 seconds
+Delta time: 0.093775 seconds
+Total number of potential splits: 6393
+Times: pick=0.0462 split=0.0409 update=0.0052
+
+SPLIT 206:
+z = 0.000000
+Splits recomputed: 153 ; worst-case edges: 281
+Splitting distribution:
+dvar: 33 ; vals:  0.344595 0.655405 ; cond: -v31_3 +v35_1 -v34_0 -v34_2
+Splitting on var n2434 = v4_1
+Delta edges: 0 ; ll: 0.111108
+Total edges: 5094 ; Depth: 28
+Elapsed time: 9.139629 seconds
+Delta time: 0.034855 seconds
+Total number of potential splits: 6432
+Times: pick=0.0240 split=0.0054 update=0.0040
+
+SPLIT 207:
+z = 0.000000
+Splits recomputed: 114 ; worst-case edges: 45
+Splitting distribution:
+dvar: 36 ; vals:  0.367521 0.470085 0.162393 ; cond: +v33_0 +v35_0
+Splitting on var n2346 = v4_0
+Delta edges: 33 ; ll: 3.407711
+Total edges: 5127 ; Depth: 29
+Elapsed time: 9.196626 seconds
+Delta time: 0.056995 seconds
+Total number of potential splits: 6443
+Times: pick=0.0261 split=0.0218 update=0.0085
+
+SPLIT 208:
+z = 0.000000
+Splits recomputed: 2950 ; worst-case edges: 332
+Splitting distribution:
+dvar: 14 ; vals:  0.088889 0.155556 0.755556 ; cond: +v33_0 +v35_0 +v36_0
+Splitting on var n2459 = v4_1
+Delta edges: 11 ; ll: 1.337762
+Total edges: 5138 ; Depth: 29
+Elapsed time: 9.573882 seconds
+Delta time: 0.377254 seconds
+Total number of potential splits: 6433
+Times: pick=0.3612 split=0.0104 update=0.0050
+
+SPLIT 209:
+z = 0.000000
+Splits recomputed: 870 ; worst-case edges: 56
+Splitting distribution:
+dvar: 24 ; vals:  0.371795 0.006410 0.621795 ; cond: +v31_2 -v31_3 -v31_0
+Splitting on var n1352 = v22_0
+Delta edges: 5 ; ll: 0.598866
+Total edges: 5143 ; Depth: 29
+Elapsed time: 9.709758 seconds
+Delta time: 0.135876 seconds
+Total number of potential splits: 6090
+Times: pick=0.1149 split=0.0119 update=0.0121
+
+SPLIT 210:
+z = 0.000000
+Splits recomputed: 2465 ; worst-case edges: 332
+Splitting distribution:
+dvar: 26 ; vals:  0.054455 0.945545 ; cond: -v27_1
+Splitting on var n1964 = v27_2
+Delta edges: 0 ; ll: 0.095349
+Total edges: 5143 ; Depth: 29
+Elapsed time: 10.020519 seconds
+Delta time: 0.310754 seconds
+Total number of potential splits: 6104
+Times: pick=0.2949 split=0.0070 update=0.0042
+
+SPLIT 211:
+z = 0.000000
+Splits recomputed: 89 ; worst-case edges: 28
+Splitting distribution:
+dvar: 3 ; vals:  0.060000 0.940000 ; cond: +v33_0 +v35_0 -v4_2
+Splitting on var n2471 = v4_1
+Delta edges: 6 ; ll: 0.690886
+Total edges: 5149 ; Depth: 29
+Elapsed time: 10.080792 seconds
+Delta time: 0.060271 seconds
+Total number of potential splits: 6092
+Times: pick=0.0168 split=0.0380 update=0.0056
+
+SPLIT 212:
+z = 0.000000
+Splits recomputed: 94 ; worst-case edges: 36
+Splitting distribution:
+dvar: 33 ; vals:  0.008095 0.991905 ; cond: +v34_2
+Splitting on var n2473 = v4_1
+Delta edges: 0 ; ll: 0.090188
+Total edges: 5149 ; Depth: 29
+Elapsed time: 10.105489 seconds
+Delta time: 0.024695 seconds
+Total number of potential splits: 6103
+Times: pick=0.0134 split=0.0057 update=0.0043
+
+SPLIT 213:
+z = 0.000000
+Splits recomputed: 33 ; worst-case edges: 80
+Splitting distribution:
+dvar: 33 ; vals:  0.006849 0.993151 ; cond: -v4_1 +v34_2
+Splitting on var n2189 = v35_0
+Delta edges: 0 ; ll: 0.393275
+Total edges: 5149 ; Depth: 29
+Elapsed time: 10.133736 seconds
+Delta time: 0.028244 seconds
+Total number of potential splits: 6099
+Times: pick=0.0055 split=0.0178 update=0.0050
+
+SPLIT 214:
+z = 0.000000
+Splits recomputed: 15 ; worst-case edges: 15
+Splitting distribution:
+dvar: 33 ; vals:  0.009402 0.990598 ; cond: +v4_1 +v34_2
+Splitting on var n2839 = v35_2
+Delta edges: 0 ; ll: 0.137007
+Total edges: 5149 ; Depth: 29
+Elapsed time: 10.159082 seconds
+Delta time: 0.025344 seconds
+Total number of potential splits: 6097
+Times: pick=0.0041 split=0.0153 update=0.0041
+
+SPLIT 215:
+z = 0.000000
+Splits recomputed: 156 ; worst-case edges: 81
+Splitting distribution:
+dvar: 15 ; vals:  0.003906 0.941406 0.035156 0.019531 ; cond: -v29_1 +v31_0 -v24_1 -v31_1
+Splitting on var n1741 = v29_3
+Delta edges: 32 ; ll: 3.266551
+Total edges: 5181 ; Depth: 29
+Elapsed time: 10.216182 seconds
+Delta time: 0.057097 seconds
+Total number of potential splits: 6094
+Times: pick=0.0263 split=0.0242 update=0.0059
+
+SPLIT 216:
+z = 0.000000
+Splits recomputed: 1396 ; worst-case edges: 332
+Splitting distribution:
+dvar: 10 ; vals:  0.085366 0.914634 ; cond: +v35_0 -v34_2 -v4_1 -v35_2
+Splitting on var n2575 = v34_0
+Delta edges: 0 ; ll: 0.065397
+Total edges: 5181 ; Depth: 29
+Elapsed time: 10.402869 seconds
+Delta time: 0.186684 seconds
+Total number of potential splits: 6091
+Times: pick=0.1745 split=0.0064 update=0.0063
+
+SPLIT 217:
+z = 0.000000
+Splits recomputed: 64 ; worst-case edges: 34
+Splitting distribution:
+dvar: 19 ; vals:  0.955729 0.041667 0.002604 ; cond: -v31_0 -v31_3
+Splitting on var n686 = v31_1
+Delta edges: 0 ; ll: 0.061613
+Total edges: 5181 ; Depth: 29
+Elapsed time: 10.440191 seconds
+Delta time: 0.037319 seconds
+Total number of potential splits: 6113
+Times: pick=0.0256 split=0.0058 update=0.0048
+
+SPLIT 218:
+z = 0.000000
+Splits recomputed: 86 ; worst-case edges: 36
+Splitting distribution:
+dvar: 21 ; vals:  0.061234 0.887201 0.051565 ; cond: -v31_1 -v31_3
+Splitting on var n1137 = v31_2
+Delta edges: 0 ; ll: 0.056928
+Total edges: 5181 ; Depth: 29
+Elapsed time: 10.480794 seconds
+Delta time: 0.040601 seconds
+Total number of potential splits: 6147
+Times: pick=0.0273 split=0.0071 update=0.0051
+
+SPLIT 219:
+z = 0.000000
+Splits recomputed: 66 ; worst-case edges: 35
+Splitting distribution:
+dvar: 21 ; vals:  0.061417 0.886082 0.052501 ; cond: -v31_2 -v31_1 -v31_3
+Splitting on var n2895 = v16_0
+Delta edges: 0 ; ll: 0.316031
+Total edges: 5181 ; Depth: 29
+Elapsed time: 10.518157 seconds
+Delta time: 0.037360 seconds
+Total number of potential splits: 6144
+Times: pick=0.0140 split=0.0178 update=0.0077
+
+SPLIT 220:
+z = 0.000000
+Splits recomputed: 98 ; worst-case edges: 38
+Splitting distribution:
+dvar: 7 ; vals:  0.211538 0.788462 ; cond: +v33_0 -v31_3 +v35_1
+Splitting on var n2508 = v4_1
+Delta edges: 0 ; ll: 0.054846
+Total edges: 5181 ; Depth: 29
+Elapsed time: 10.560631 seconds
+Delta time: 0.042472 seconds
+Total number of potential splits: 6151
+Times: pick=0.0269 split=0.0071 update=0.0050
+
+SPLIT 221:
+z = 0.000000
+Splits recomputed: 113 ; worst-case edges: 33
+Splitting distribution:
+dvar: 36 ; vals:  0.411003 0.459547 0.129450 ; cond: -v33_0 +v35_1 -v35_0
+Splitting on var n2895 = v31_3
+Delta edges: 2 ; ll: 0.243103
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.614138 seconds
+Delta time: 0.053505 seconds
+Total number of potential splits: 6187
+Times: pick=0.0300 split=0.0170 update=0.0055
+
+SPLIT 222:
+z = 0.000000
+Splits recomputed: 416 ; worst-case edges: 56
+Splitting distribution:
+dvar: 10 ; vals:  0.108264 0.891736 ; cond: -v7_0 -v34_0 +v35_2
+Splitting on var n2812 = v34_2
+Delta edges: 0 ; ll: 0.035601
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.686925 seconds
+Delta time: 0.072784 seconds
+Total number of potential splits: 6185
+Times: pick=0.0626 split=0.0053 update=0.0057
+
+SPLIT 223:
+z = 0.000000
+Splits recomputed: 85 ; worst-case edges: 33
+Splitting distribution:
+dvar: 10 ; vals:  0.107143 0.892857 ; cond: -v34_2 +v4_1 -v35_2
+Splitting on var n2397 = v35_1
+Delta edges: 0 ; ll: 0.031455
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.725988 seconds
+Delta time: 0.039081 seconds
+Total number of potential splits: 6188
+Times: pick=0.0256 split=0.0062 update=0.0048
+
+SPLIT 224:
+z = 0.000000
+Splits recomputed: 68 ; worst-case edges: 29
+Splitting distribution:
+dvar: 33 ; vals:  0.581081 0.418919 ; cond: -v4_1 -v35_1 -v34_0 -v34_2
+Splitting on var n2880 = v35_2
+Delta edges: 0 ; ll: 0.029778
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.757590 seconds
+Delta time: 0.031579 seconds
+Total number of potential splits: 6198
+Times: pick=0.0196 split=0.0071 update=0.0041
+
+SPLIT 225:
+z = 0.000000
+Splits recomputed: 73 ; worst-case edges: 67
+Splitting distribution:
+dvar: 6 ; vals:  0.074801 0.872838 0.052361 ; cond: +v4_1
+Splitting on var n2725 = v34_1
+Delta edges: 0 ; ll: 0.027286
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.791536 seconds
+Delta time: 0.033943 seconds
+Total number of potential splits: 6228
+Times: pick=0.0222 split=0.0071 update=0.0044
+
+SPLIT 226:
+z = 0.000000
+Splits recomputed: 70 ; worst-case edges: 88
+Splitting distribution:
+dvar: 22 ; vals:  0.437500 0.562500 ; cond: -v31_3 -v31_0 +v21_2
+Splitting on var n694 = v31_1
+Delta edges: 0 ; ll: 0.027270
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.827364 seconds
+Delta time: 0.035827 seconds
+Total number of potential splits: 6233
+Times: pick=0.0131 split=0.0173 update=0.0045
+
+SPLIT 227:
+z = 0.000000
+Splits recomputed: 163 ; worst-case edges: 28
+Splitting distribution:
+dvar: 8 ; vals:  0.280702 0.701754 0.017544 ; cond: +v34_0 -v34_2
+Splitting on var n2766 = v10_0
+Delta edges: 0 ; ll: 0.016286
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.874568 seconds
+Delta time: 0.047200 seconds
+Total number of potential splits: 6260
+Times: pick=0.0351 split=0.0066 update=0.0046
+
+SPLIT 228:
+z = 0.000000
+Splits recomputed: 201 ; worst-case edges: 14
+Splitting distribution:
+dvar: 33 ; vals:  0.694444 0.305556 ; cond: +v4_1 -v35_1 -v34_0 -v34_2
+Splitting on var n2890 = v35_2
+Delta edges: 0 ; ll: 0.000356
+Total edges: 5183 ; Depth: 29
+Elapsed time: 10.926888 seconds
+Delta time: 0.052317 seconds
+Total number of potential splits: 6275
+Times: pick=0.0403 split=0.0069 update=0.0045
+
+SPLIT 229:
+z = 0.000000
+Splits recomputed: 47 ; worst-case edges: 33
+
+Learning converged.
+Final log likelihood: -10574.096505
+Total time: 11.126145 seconds

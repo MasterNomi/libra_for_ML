@@ -1,0 +1,405 @@
+# OASIS_START
+# DO NOT EDIT (digest: 1dbb644a16b2d9297817b1b2c60a9342)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
+# useless stuff for the build process
+true: annot, bin_annot
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library ext
+"src/ext/ext.cmxs": use_ext
+# Library data
+"src/data/data.cmxs": use_data
+# Library mn
+"src/mn/mn.cmxs": use_mn
+<src/mn/*.ml{,i,y}>: use_data
+<src/mn/*.ml{,i,y}>: use_ext
+# Library circuit
+"src/circuit/circuit.cmxs": use_circuit
+<src/circuit/*.ml{,i,y}>: pkg_str
+<src/circuit/*.ml{,i,y}>: use_data
+<src/circuit/*.ml{,i,y}>: use_ext
+<src/circuit/*.ml{,i,y}>: use_mn
+# Library bn
+"src/bn/bn.cmxs": use_bn
+<src/bn/*.ml{,i,y}>: pkg_expat
+<src/bn/*.ml{,i,y}>: use_data
+<src/bn/*.ml{,i,y}>: use_ext
+<src/bn/*.ml{,i,y}>: use_mn
+# Library lbfgs
+"src/lbfgs/lbfgs.cmxs": use_lbfgs
+"src/lbfgs/lbfgs.cmxa": use_liblbfgs_stubs
+# Library spn
+"src/spn/spn.cmxs": use_spn
+<src/spn/*.ml{,i,y}>: pkg_str
+<src/spn/*.ml{,i,y}>: pkg_unix
+<src/spn/*.ml{,i,y}>: use_circuit
+<src/spn/*.ml{,i,y}>: use_data
+<src/spn/*.ml{,i,y}>: use_ext
+<src/spn/*.ml{,i,y}>: use_lbfgs
+<src/spn/*.ml{,i,y}>: use_mn
+# Library fminbr
+"src/fminbr/fminbr.cmxs": use_fminbr
+"src/fminbr/fminbr.cmxa": use_libfminbr_stubs
+# Library pll
+"src/pll/pll.cmxs": use_pll
+"src/pll/pll.cmxa": use_libpll_stubs
+<src/pll/*.ml{,i,y}>: pkg_str
+<src/pll/*.ml{,i,y}>: use_data
+<src/pll/*.ml{,i,y}>: use_ext
+<src/pll/*.ml{,i,y}>: use_mn
+"src/pll/pll_impl.c": pkg_str
+"src/pll/pll_impl.c": use_data
+"src/pll/pll_impl.c": use_ext
+"src/pll/pll_impl.c": use_mn
+"src/pll/pll_stubs.c": pkg_str
+"src/pll/pll_stubs.c": use_data
+"src/pll/pll_stubs.c": use_ext
+"src/pll/pll_stubs.c": use_mn
+# Library gibbsImpl
+"src/inference/gibbsImpl.cmxs": use_gibbsImpl
+# Executable bp
+"src/inference/bp.native": pkg_expat
+"src/inference/bp.native": pkg_str
+"src/inference/bp.native": use_bn
+"src/inference/bp.native": use_data
+"src/inference/bp.native": use_ext
+"src/inference/bp.native": use_mn
+# Executable mf
+"src/inference/mf.native": pkg_expat
+"src/inference/mf.native": pkg_str
+"src/inference/mf.native": use_bn
+"src/inference/mf.native": use_data
+"src/inference/mf.native": use_ext
+"src/inference/mf.native": use_mn
+# Executable icm
+"src/inference/icm.native": pkg_expat
+"src/inference/icm.native": pkg_str
+"src/inference/icm.native": use_bn
+"src/inference/icm.native": use_data
+"src/inference/icm.native": use_ext
+"src/inference/icm.native": use_mn
+# Executable maxprod
+"src/inference/maxprod.native": pkg_expat
+"src/inference/maxprod.native": pkg_str
+"src/inference/maxprod.native": use_bn
+"src/inference/maxprod.native": use_data
+"src/inference/maxprod.native": use_ext
+"src/inference/maxprod.native": use_mn
+# Executable gibbs
+"src/inference/gibbs.native": pkg_expat
+"src/inference/gibbs.native": pkg_str
+"src/inference/gibbs.native": use_bn
+"src/inference/gibbs.native": use_data
+"src/inference/gibbs.native": use_ext
+"src/inference/gibbs.native": use_gibbsImpl
+"src/inference/gibbs.native": use_mn
+<src/inference/*.ml{,i,y}>: pkg_expat
+<src/inference/*.ml{,i,y}>: use_bn
+<src/inference/*.ml{,i,y}>: use_gibbsImpl
+# Executable acquery
+"src/inference/acquery.native": pkg_str
+"src/inference/acquery.native": use_circuit
+"src/inference/acquery.native": use_data
+"src/inference/acquery.native": use_ext
+"src/inference/acquery.native": use_mn
+# Executable spquery
+"src/inference/spquery.native": pkg_str
+"src/inference/spquery.native": pkg_unix
+"src/inference/spquery.native": use_circuit
+"src/inference/spquery.native": use_data
+"src/inference/spquery.native": use_ext
+"src/inference/spquery.native": use_lbfgs
+"src/inference/spquery.native": use_mn
+"src/inference/spquery.native": use_spn
+<src/inference/*.ml{,i,y}>: pkg_str
+<src/inference/*.ml{,i,y}>: pkg_unix
+<src/inference/*.ml{,i,y}>: use_circuit
+<src/inference/*.ml{,i,y}>: use_data
+<src/inference/*.ml{,i,y}>: use_ext
+<src/inference/*.ml{,i,y}>: use_lbfgs
+<src/inference/*.ml{,i,y}>: use_mn
+<src/inference/*.ml{,i,y}>: use_spn
+# Executable acbn
+"src/acbn/acbn.native": pkg_expat
+"src/acbn/acbn.native": pkg_str
+"src/acbn/acbn.native": pkg_unix
+"src/acbn/acbn.native": use_bn
+"src/acbn/acbn.native": use_circuit
+"src/acbn/acbn.native": use_data
+"src/acbn/acbn.native": use_ext
+"src/acbn/acbn.native": use_mn
+# Executable bnlearn
+"src/acbn/bnlearn.native": pkg_expat
+"src/acbn/bnlearn.native": pkg_str
+"src/acbn/bnlearn.native": pkg_unix
+"src/acbn/bnlearn.native": use_bn
+"src/acbn/bnlearn.native": use_circuit
+"src/acbn/bnlearn.native": use_data
+"src/acbn/bnlearn.native": use_ext
+"src/acbn/bnlearn.native": use_mn
+<src/acbn/*.ml{,i,y}>: pkg_expat
+<src/acbn/*.ml{,i,y}>: pkg_str
+<src/acbn/*.ml{,i,y}>: pkg_unix
+<src/acbn/*.ml{,i,y}>: use_bn
+<src/acbn/*.ml{,i,y}>: use_circuit
+<src/acbn/*.ml{,i,y}>: use_data
+<src/acbn/*.ml{,i,y}>: use_ext
+<src/acbn/*.ml{,i,y}>: use_mn
+# Executable dn2mn
+"src/dn2mn/dn2mn.native": pkg_expat
+"src/dn2mn/dn2mn.native": pkg_str
+"src/dn2mn/dn2mn.native": pkg_unix
+"src/dn2mn/dn2mn.native": use_bn
+"src/dn2mn/dn2mn.native": use_data
+"src/dn2mn/dn2mn.native": use_ext
+"src/dn2mn/dn2mn.native": use_mn
+<src/dn2mn/*.ml{,i,y}>: pkg_expat
+<src/dn2mn/*.ml{,i,y}>: pkg_str
+<src/dn2mn/*.ml{,i,y}>: pkg_unix
+<src/dn2mn/*.ml{,i,y}>: use_bn
+<src/dn2mn/*.ml{,i,y}>: use_data
+<src/dn2mn/*.ml{,i,y}>: use_ext
+<src/dn2mn/*.ml{,i,y}>: use_mn
+# Executable acmn
+"src/acmn/acmn.native": pkg_str
+"src/acmn/acmn.native": pkg_unix
+"src/acmn/acmn.native": use_circuit
+"src/acmn/acmn.native": use_data
+"src/acmn/acmn.native": use_ext
+"src/acmn/acmn.native": use_lbfgs
+"src/acmn/acmn.native": use_mn
+<src/acmn/*.ml{,i,y}>: pkg_str
+<src/acmn/*.ml{,i,y}>: pkg_unix
+<src/acmn/*.ml{,i,y}>: use_circuit
+<src/acmn/*.ml{,i,y}>: use_data
+<src/acmn/*.ml{,i,y}>: use_ext
+<src/acmn/*.ml{,i,y}>: use_lbfgs
+<src/acmn/*.ml{,i,y}>: use_mn
+# Executable acopt
+"src/acopt/acopt.native": pkg_expat
+"src/acopt/acopt.native": pkg_str
+"src/acopt/acopt.native": pkg_unix
+"src/acopt/acopt.native": use_bn
+"src/acopt/acopt.native": use_circuit
+"src/acopt/acopt.native": use_data
+"src/acopt/acopt.native": use_ext
+"src/acopt/acopt.native": use_gibbsImpl
+"src/acopt/acopt.native": use_lbfgs
+"src/acopt/acopt.native": use_mn
+<src/acopt/*.ml{,i,y}>: pkg_expat
+<src/acopt/*.ml{,i,y}>: pkg_str
+<src/acopt/*.ml{,i,y}>: pkg_unix
+<src/acopt/*.ml{,i,y}>: use_bn
+<src/acopt/*.ml{,i,y}>: use_circuit
+<src/acopt/*.ml{,i,y}>: use_data
+<src/acopt/*.ml{,i,y}>: use_ext
+<src/acopt/*.ml{,i,y}>: use_gibbsImpl
+<src/acopt/*.ml{,i,y}>: use_lbfgs
+<src/acopt/*.ml{,i,y}>: use_mn
+# Executable acve
+"src/acve/acve.native": pkg_expat
+"src/acve/acve.native": pkg_str
+"src/acve/acve.native": pkg_unix
+"src/acve/acve.native": use_bn
+"src/acve/acve.native": use_circuit
+"src/acve/acve.native": use_data
+"src/acve/acve.native": use_ext
+"src/acve/acve.native": use_mn
+<src/acve/*.ml{,i,y}>: pkg_expat
+<src/acve/*.ml{,i,y}>: pkg_str
+<src/acve/*.ml{,i,y}>: pkg_unix
+<src/acve/*.ml{,i,y}>: use_bn
+<src/acve/*.ml{,i,y}>: use_circuit
+<src/acve/*.ml{,i,y}>: use_data
+<src/acve/*.ml{,i,y}>: use_ext
+<src/acve/*.ml{,i,y}>: use_mn
+# Executable cl
+"src/cl/cl.native": pkg_expat
+"src/cl/cl.native": pkg_str
+"src/cl/cl.native": use_bn
+"src/cl/cl.native": use_circuit
+"src/cl/cl.native": use_data
+"src/cl/cl.native": use_ext
+"src/cl/cl.native": use_mn
+<src/cl/*.ml{,i,y}>: pkg_expat
+<src/cl/*.ml{,i,y}>: pkg_str
+<src/cl/*.ml{,i,y}>: use_bn
+<src/cl/*.ml{,i,y}>: use_circuit
+<src/cl/*.ml{,i,y}>: use_data
+<src/cl/*.ml{,i,y}>: use_ext
+<src/cl/*.ml{,i,y}>: use_mn
+# Executable idspn
+"src/idspn/idspn.native": pkg_expat
+"src/idspn/idspn.native": pkg_str
+"src/idspn/idspn.native": pkg_unix
+"src/idspn/idspn.native": use_bn
+"src/idspn/idspn.native": use_circuit
+"src/idspn/idspn.native": use_data
+"src/idspn/idspn.native": use_ext
+"src/idspn/idspn.native": use_lbfgs
+"src/idspn/idspn.native": use_mn
+"src/idspn/idspn.native": use_spn
+<src/idspn/*.ml{,i,y}>: pkg_expat
+<src/idspn/*.ml{,i,y}>: pkg_str
+<src/idspn/*.ml{,i,y}>: pkg_unix
+<src/idspn/*.ml{,i,y}>: use_bn
+<src/idspn/*.ml{,i,y}>: use_circuit
+<src/idspn/*.ml{,i,y}>: use_data
+<src/idspn/*.ml{,i,y}>: use_ext
+<src/idspn/*.ml{,i,y}>: use_lbfgs
+<src/idspn/*.ml{,i,y}>: use_mn
+<src/idspn/*.ml{,i,y}>: use_spn
+# Executable mnlearnw
+"src/mnlearnw/mnlearnw.native": pkg_expat
+"src/mnlearnw/mnlearnw.native": pkg_str
+"src/mnlearnw/mnlearnw.native": use_bn
+"src/mnlearnw/mnlearnw.native": use_data
+"src/mnlearnw/mnlearnw.native": use_ext
+"src/mnlearnw/mnlearnw.native": use_lbfgs
+"src/mnlearnw/mnlearnw.native": use_mn
+"src/mnlearnw/mnlearnw.native": use_pll
+<src/mnlearnw/*.ml{,i,y}>: use_lbfgs
+<src/mnlearnw/*.ml{,i,y}>: use_pll
+# Executable mtlearn
+"src/mtlearn/mtlearn.native": pkg_expat
+"src/mtlearn/mtlearn.native": pkg_str
+"src/mtlearn/mtlearn.native": pkg_unix
+"src/mtlearn/mtlearn.native": use_bn
+"src/mtlearn/mtlearn.native": use_circuit
+"src/mtlearn/mtlearn.native": use_data
+"src/mtlearn/mtlearn.native": use_ext
+"src/mtlearn/mtlearn.native": use_lbfgs
+"src/mtlearn/mtlearn.native": use_mn
+<src/mtlearn/*.ml{,i,y}>: pkg_expat
+<src/mtlearn/*.ml{,i,y}>: pkg_str
+<src/mtlearn/*.ml{,i,y}>: pkg_unix
+<src/mtlearn/*.ml{,i,y}>: use_bn
+<src/mtlearn/*.ml{,i,y}>: use_circuit
+<src/mtlearn/*.ml{,i,y}>: use_data
+<src/mtlearn/*.ml{,i,y}>: use_ext
+<src/mtlearn/*.ml{,i,y}>: use_lbfgs
+<src/mtlearn/*.ml{,i,y}>: use_mn
+# Executable spnlearn
+"src/spnlearn/spnlearn.native": pkg_expat
+"src/spnlearn/spnlearn.native": pkg_str
+"src/spnlearn/spnlearn.native": pkg_unix
+"src/spnlearn/spnlearn.native": use_bn
+"src/spnlearn/spnlearn.native": use_circuit
+"src/spnlearn/spnlearn.native": use_data
+"src/spnlearn/spnlearn.native": use_ext
+"src/spnlearn/spnlearn.native": use_lbfgs
+"src/spnlearn/spnlearn.native": use_mn
+"src/spnlearn/spnlearn.native": use_spn
+<src/spnlearn/*.ml{,i,y}>: pkg_expat
+<src/spnlearn/*.ml{,i,y}>: pkg_str
+<src/spnlearn/*.ml{,i,y}>: pkg_unix
+<src/spnlearn/*.ml{,i,y}>: use_bn
+<src/spnlearn/*.ml{,i,y}>: use_circuit
+<src/spnlearn/*.ml{,i,y}>: use_data
+<src/spnlearn/*.ml{,i,y}>: use_ext
+<src/spnlearn/*.ml{,i,y}>: use_lbfgs
+<src/spnlearn/*.ml{,i,y}>: use_mn
+<src/spnlearn/*.ml{,i,y}>: use_spn
+# Executable dnboost
+"src/dnlearn/dnboost.native": pkg_expat
+"src/dnlearn/dnboost.native": pkg_str
+"src/dnlearn/dnboost.native": use_bn
+"src/dnlearn/dnboost.native": use_data
+"src/dnlearn/dnboost.native": use_ext
+"src/dnlearn/dnboost.native": use_fminbr
+"src/dnlearn/dnboost.native": use_lbfgs
+"src/dnlearn/dnboost.native": use_mn
+<src/dnlearn/*.ml{,i,y}>: use_fminbr
+# Executable dnlearn
+"src/dnlearn/dnlearn.native": pkg_expat
+"src/dnlearn/dnlearn.native": pkg_str
+"src/dnlearn/dnlearn.native": use_bn
+"src/dnlearn/dnlearn.native": use_data
+"src/dnlearn/dnlearn.native": use_ext
+"src/dnlearn/dnlearn.native": use_lbfgs
+"src/dnlearn/dnlearn.native": use_mn
+<src/dnlearn/*.ml{,i,y}>: pkg_expat
+<src/dnlearn/*.ml{,i,y}>: pkg_str
+<src/dnlearn/*.ml{,i,y}>: use_bn
+<src/dnlearn/*.ml{,i,y}>: use_data
+<src/dnlearn/*.ml{,i,y}>: use_ext
+<src/dnlearn/*.ml{,i,y}>: use_lbfgs
+<src/dnlearn/*.ml{,i,y}>: use_mn
+# Executable mnsetw
+"src/mnlearnw/mnsetw.native": pkg_expat
+"src/mnlearnw/mnsetw.native": pkg_str
+"src/mnlearnw/mnsetw.native": use_bn
+"src/mnlearnw/mnsetw.native": use_data
+"src/mnlearnw/mnsetw.native": use_ext
+"src/mnlearnw/mnsetw.native": use_mn
+<src/mnlearnw/*.ml{,i,y}>: pkg_expat
+<src/mnlearnw/*.ml{,i,y}>: pkg_str
+<src/mnlearnw/*.ml{,i,y}>: use_bn
+<src/mnlearnw/*.ml{,i,y}>: use_data
+<src/mnlearnw/*.ml{,i,y}>: use_ext
+<src/mnlearnw/*.ml{,i,y}>: use_mn
+# Executable spn2ac
+"src/util/spn2ac.native": pkg_expat
+"src/util/spn2ac.native": pkg_str
+"src/util/spn2ac.native": pkg_unix
+"src/util/spn2ac.native": use_bn
+"src/util/spn2ac.native": use_circuit
+"src/util/spn2ac.native": use_data
+"src/util/spn2ac.native": use_ext
+"src/util/spn2ac.native": use_lbfgs
+"src/util/spn2ac.native": use_mn
+"src/util/spn2ac.native": use_spn
+<src/util/*.ml{,i,y}>: pkg_unix
+<src/util/*.ml{,i,y}>: use_lbfgs
+<src/util/*.ml{,i,y}>: use_spn
+# Executable bnsample
+"src/util/bnsample.native": pkg_expat
+"src/util/bnsample.native": pkg_str
+"src/util/bnsample.native": use_bn
+"src/util/bnsample.native": use_data
+"src/util/bnsample.native": use_ext
+"src/util/bnsample.native": use_mn
+# Executable mconvert
+"src/util/mconvert.native": pkg_expat
+"src/util/mconvert.native": pkg_str
+"src/util/mconvert.native": use_bn
+"src/util/mconvert.native": use_circuit
+"src/util/mconvert.native": use_data
+"src/util/mconvert.native": use_ext
+"src/util/mconvert.native": use_mn
+# Executable fstats
+"src/util/fstats.native": pkg_expat
+"src/util/fstats.native": pkg_str
+"src/util/fstats.native": use_bn
+"src/util/fstats.native": use_circuit
+"src/util/fstats.native": use_data
+"src/util/fstats.native": use_ext
+"src/util/fstats.native": use_mn
+# Executable mscore
+"src/util/mscore.native": pkg_expat
+"src/util/mscore.native": pkg_str
+"src/util/mscore.native": use_bn
+"src/util/mscore.native": use_circuit
+"src/util/mscore.native": use_data
+"src/util/mscore.native": use_ext
+"src/util/mscore.native": use_mn
+"src/util/mscore.native": use_pll
+<src/util/*.ml{,i,y}>: pkg_expat
+<src/util/*.ml{,i,y}>: pkg_str
+<src/util/*.ml{,i,y}>: use_bn
+<src/util/*.ml{,i,y}>: use_circuit
+<src/util/*.ml{,i,y}>: use_data
+<src/util/*.ml{,i,y}>: use_ext
+<src/util/*.ml{,i,y}>: use_mn
+<src/util/*.ml{,i,y}>: use_pll
+# Executable rand
+# OASIS_STOP

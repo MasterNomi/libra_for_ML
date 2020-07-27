@@ -1,0 +1,84 @@
+Loading data....
+Learning params....
+Intial CL trees
+round 1, error = 0.177218
+round 2, error = 0.356541
+round 3, error = 0.381793
+round 4, error = 0.462529
+round 5, error = 0.472970
+round 6, error = 0.341383
+round 7, error = 0.204304
+round 8, error = 0.117070
+round 9, error = 0.072157
+round 10, error = 0.071744
+round 11, error = 0.067027
+round 12, error = 0.060997
+round 13, error = 0.062293
+round 14, error = 0.071381
+round 15, error = 0.076924
+round 16, error = 0.079904
+round 17, error = 0.082255
+round 18, error = 0.084266
+round 19, error = 0.084881
+round 20, error = 0.079441
+round 21, error = 0.079037
+round 22, error = 0.085542
+round 23, error = 0.092462
+round 24, error = 0.092928
+round 25, error = 0.082715
+round 26, error = 0.069267
+round 27, error = 0.058388
+round 28, error = 0.049275
+round 29, error = 0.042031
+round 30, error = 0.036385
+round 31, error = 0.032027
+round 32, error = 0.028622
+round 33, error = 0.026060
+round 34, error = 0.024440
+round 35, error = 0.033131
+round 36, error = 0.032588
+round 37, error = 0.027847
+round 38, error = 0.022469
+round 39, error = 0.017896
+round 40, error = 0.014605
+round 41, error = 0.017257
+round 42, error = 0.010608
+round 43, error = 0.012205
+round 44, error = 0.012803
+round 45, error = 0.019226
+round 46, error = 0.024471
+round 47, error = 0.021076
+round 48, error = 0.018352
+round 49, error = 0.016241
+round 50, error = 0.015442
+round 51, error = 0.014699
+round 52, error = 0.014009
+round 53, error = 0.013362
+round 54, error = 0.012746
+round 55, error = 0.012156
+round 56, error = 0.011590
+round 57, error = 0.011048
+round 58, error = 0.010532
+round 59, error = 0.010164
+round 60, error = 0.009891
+Minfill ordering: 0.000034s
+ADD creation: 0.000102s
+Variable elimination: 0.000858s
+Creating circuit: 0.001094s
+Minfill ordering: 0.000033s
+ADD creation: 0.000071s
+Variable elimination: 0.000772s
+Creating circuit: 0.000991s
+Minfill ordering: 0.000033s
+ADD creation: 0.000069s
+Variable elimination: 0.000799s
+Creating circuit: 0.001070s
+Minfill ordering: 0.000033s
+ADD creation: 0.000065s
+Variable elimination: 0.000715s
+Creating circuit: 0.000992s
+Minfill ordering: 0.000032s
+ADD creation: 0.000072s
+Variable elimination: 0.000820s
+Creating circuit: 0.001177s
+Average data likelihood: -6.04074

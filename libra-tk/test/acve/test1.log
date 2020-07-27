@@ -1,0 +1,5 @@
+Arguments: ../../bin/acve -b test1.bif -o out1.ac -log out1.log
+Minfill ordering: 0.000022s
+ADD creation: 0.000049s
+Variable elimination: 0.000335s
+Creating circuit: 0.000585s

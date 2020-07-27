@@ -1,0 +1,136 @@
+<?xml version="1.0" standalone="yes"?>
+<AnalysisNotebook>
+	<Variables>
+		<Variable name="Cold" type="categorical">
+			<State index="0" name="TRUE"/>
+			<State index="1" name="FALSE"/>
+		</Variable>
+		<Variable name="Light" type="categorical">
+			<State index="0" name="TRUE"/>
+			<State index="1" name="FALSE"/>
+		</Variable>
+		<Variable name="RunnyNose" type="categorical">
+			<State index="0" name="TRUE"/>
+			<State index="1" name="FALSE"/>
+		</Variable>
+		<Variable name="Sneeze" type="categorical">
+			<State index="0" name="TRUE"/>
+			<State index="1" name="FALSE"/>
+		</Variable>
+		<Variable name="TakeMedicine" type="categorical">
+			<State index="0" name="TRUE"/>
+			<State index="1" name="FALSE"/>
+		</Variable>
+	</Variables>
+	<Model name="">
+		<LocalModels>
+			<LocalModel variable="Cold">
+				<Inputs>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates></InputStates>
+						<Multinomial>
+							<Probs>0.1 0.9</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Light">
+				<Inputs>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates></InputStates>
+						<Multinomial>
+							<Probs>0.7 0.3</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="RunnyNose">
+				<Inputs>
+					<Input variable="Cold"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.5 0.5</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.05 0.95</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Sneeze">
+				<Inputs>
+					<Input variable="Cold"/>
+					<Input variable="Light"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0 0</InputStates>
+						<Multinomial>
+							<Probs>0.6 0.4</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>0 1</InputStates>
+						<Multinomial>
+							<Probs>0.5 0.5</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1 0</InputStates>
+						<Multinomial>
+							<Probs>0.25 0.75</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1 1</InputStates>
+						<Multinomial>
+							<Probs>0.01 0.99</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="TakeMedicine">
+				<Inputs>
+					<Input variable="RunnyNose"/>
+					<Input variable="Sneeze"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0 0</InputStates>
+						<Multinomial>
+							<Probs>0.5 0.5</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>0 1</InputStates>
+						<Multinomial>
+							<Probs>0.2 0.8</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1 0</InputStates>
+						<Multinomial>
+							<Probs>0.1 0.9</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1 1</InputStates>
+						<Multinomial>
+							<Probs>0.01 0.99</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+		</LocalModels>
+	</Model>
+</AnalysisNotebook>

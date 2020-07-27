@@ -1,0 +1,107 @@
+Arguments: ../../bin/aclearnstruct -i cold.pdata -o cold-out1.ac -ob cold-out1.xmod 
+Initializing...
+Loaded data.
+Initializing took 0.007097 seconds.
+Initial log likelihood: -1974.092608
+
+SPLIT 1:
+Splits recomputed: 2 ; worst-case edges: 7
+Delta edges: 7 ; ll: 51.730623
+Total edges: 42 ; Depth: 6
+Elapsed time: 0.007335 seconds
+Delta time: 0.000224 seconds
+Times: pick=0.0000 split=0.0001 update=0.0002
+
+SPLIT 2:
+Splits recomputed: 2 ; worst-case edges: 7
+Delta edges: 7 ; ll: 39.385590
+Total edges: 49 ; Depth: 6
+Elapsed time: 0.007758 seconds
+Delta time: 0.000421 seconds
+Times: pick=0.0000 split=0.0002 update=0.0002
+
+SPLIT 3:
+Splits recomputed: 1 ; worst-case edges: 9
+Delta edges: 9 ; ll: 34.388255
+Total edges: 58 ; Depth: 6
+Elapsed time: 0.008148 seconds
+Delta time: 0.000386 seconds
+Times: pick=0.0000 split=0.0002 update=0.0002
+
+SPLIT 4:
+Splits recomputed: 1 ; worst-case edges: 10
+Delta edges: 10 ; ll: 32.711741
+Total edges: 68 ; Depth: 7
+Elapsed time: 0.008617 seconds
+Delta time: 0.000467 seconds
+Times: pick=0.0000 split=0.0002 update=0.0002
+
+SPLIT 5:
+Splits recomputed: 1 ; worst-case edges: 38
+Delta edges: 38 ; ll: 18.565415
+Total edges: 106 ; Depth: 9
+Elapsed time: 0.009135 seconds
+Delta time: 0.000517 seconds
+Times: pick=0.0001 split=0.0003 update=0.0002
+
+SPLIT 6:
+Splits recomputed: 1 ; worst-case edges: 3
+Delta edges: 3 ; ll: 9.806185
+Total edges: 109 ; Depth: 9
+Elapsed time: 0.009571 seconds
+Delta time: 0.000433 seconds
+Times: pick=0.0000 split=0.0002 update=0.0002
+
+SPLIT 7:
+Splits recomputed: 1 ; worst-case edges: 6
+Delta edges: 6 ; ll: 6.623059
+Total edges: 115 ; Depth: 9
+Elapsed time: 0.010057 seconds
+Delta time: 0.000482 seconds
+Times: pick=0.0000 split=0.0002 update=0.0002
+
+SPLIT 8:
+Splits recomputed: 1 ; worst-case edges: 3
+Delta edges: 3 ; ll: 2.190093
+Total edges: 118 ; Depth: 9
+Elapsed time: 0.010531 seconds
+Delta time: 0.000472 seconds
+Times: pick=0.0000 split=0.0002 update=0.0002
+
+SPLIT 9:
+Splits recomputed: 1 ; worst-case edges: 11
+Delta edges: 11 ; ll: 3.489151
+Total edges: 129 ; Depth: 11
+Elapsed time: 0.011009 seconds
+Delta time: 0.000475 seconds
+Times: pick=0.0000 split=0.0003 update=0.0002
+
+SPLIT 10:
+Splits recomputed: 2 ; worst-case edges: 8
+Delta edges: 6 ; ll: 1.096562
+Total edges: 135 ; Depth: 11
+Elapsed time: 0.011587 seconds
+Delta time: 0.000575 seconds
+Times: pick=0.0002 split=0.0002 update=0.0002
+
+SPLIT 11:
+Splits recomputed: 3 ; worst-case edges: 11
+Delta edges: 0 ; ll: 0.491160
+Total edges: 135 ; Depth: 11
+Elapsed time: 0.012144 seconds
+Delta time: 0.000555 seconds
+Times: pick=0.0001 split=0.0002 update=0.0002
+
+SPLIT 12:
+Splits recomputed: 1 ; worst-case edges: 0
+Delta edges: 0 ; ll: 0.298877
+Total edges: 135 ; Depth: 11
+Elapsed time: 0.012597 seconds
+Delta time: 0.000450 seconds
+Times: pick=0.0000 split=0.0002 update=0.0001
+
+SPLIT 13:
+Splits recomputed: 4 ; worst-case edges: 10
+
+Learning converged.
+Total time: 0.013786 seconds

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo $1 $2
+./round.pl 12 $1 > "$1-r"
+./round.pl 12 $2 > "$2-r"
+diff -b -q "$1-r" "$2-r"

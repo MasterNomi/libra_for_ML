@@ -1,0 +1,306 @@
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: DevFiles (0.4)
+Name: libra-tk
+Version: 1.1.2
+Authors: "Daniel Lowd <lowd@cs.uoregon.edu> and Amirmohammad (Pedram) Rooshenas <pedram@cs.uoregon.edu>"
+Synopsis: "Learning and inference with discrete probabilistic models"
+Description: "The Libra Toolkit is a collection of algorithms for learning and inference with discrete probabilistic models, including Bayesian networks (BNs), Markov networks (MNs), dependency networks (DNs), sum-product networks (SPNs), and arithmetic circuits (ACs).  Compared to other toolkits, Libra focuses more on structure learning, especially for tractable models in which exact inference is efficient.  Each algorithm in Libra is implemented as a command-line program suitable for interactive use or scripting, with consistent options and file formats throughout the toolkit."
+License: BSD-2-clause
+Homepage: http://libra.cs.uoregon.edu
+PostBuildCommand: sh scripts/_move_binaries.sh
+InstallType: custom (0.4)
+
+XCustomInstall: sh scripts/_install.sh $bindir $docdir
+XCustomUninstall: sh scripts/_uninstall.sh $bindir $docdir
+XDevFilesMakefileNoTargets: test
+
+############################
+# Shared libraries
+############################
+Library ext
+    Modules: Ext
+    FindlibName: ext
+    Path: src/ext
+    Install: false
+    CompiledObject: native
+
+Library data
+    Modules: Data
+    FindlibName: data
+    Path: src/data
+    BuildDepends: ext, str
+    Install: false
+    CompiledObject: native
+
+Library circuit
+    Modules: Circuit
+    FindlibName: circuit
+    Path: src/circuit
+    BuildDepends: ext, str, mn
+    Install: false
+    CompiledObject: native
+
+Library mn
+    Modules: Mn
+    FindlibName: mn
+    Path: src/mn
+    BuildDepends: ext, data
+    Install: false
+    CompiledObject: native
+
+Library bn
+    Modules: Bn
+    FindlibName: bn
+    Path: src/bn
+    BuildDepends: ext, mn, expat, data
+    Install: false
+    CompiledObject: native
+
+Library spn
+    Modules: Spn
+    FindlibName: spn
+    Path: src/spn
+    BuildDepends: ext, str, data, unix, mn, circuit, lbfgs
+    Install: false
+    CompiledObject: native
+
+Library lbfgs
+    Modules: Lbfgs
+    FindlibName: lbfgs
+    CSources: arithmetic_ansi.h, arithmetic_sse_double.h, arithmetic_sse_float.h, lbfgs.h, lbfgs_stubs.c, lbfgs_impl.c
+    Path: src/lbfgs
+    Install: false
+    CompiledObject: native
+
+Library fminbr
+    Modules: Fminbr
+    FindlibName: fminbr
+    CSources: fminbr_stubs.c, fminbr_impl.c
+    Path: src/fminbr
+    Install: false
+    CompiledObject: native
+
+Library pll
+    Modules: Pll
+    FindlibName: pll
+    CSources: pll.h, pll_impl.c, pll_stubs.c
+    Path: src/pll
+    BuildDepends: ext, str, mn 
+    Install: false
+    CompiledObject: native
+
+Library gibbsImpl
+    Modules: GibbsImpl
+    FindlibName: gibbsImpl
+    Path: src/inference
+    BuildDepends: ext, str, mn, bn
+    Install: false
+    CompiledObject: native
+
+
+############################
+# Inference programs
+############################
+
+Executable bp
+    Path: src/inference
+    MainIs: bp.ml
+    BuildDepends: ext, str, data, mn, bn
+    CompiledObject: native
+
+Executable mf
+    Path: src/inference
+    MainIs: mf.ml
+    BuildDepends: ext, str, data, mn, bn
+    CompiledObject: native
+
+Executable icm
+    Path: src/inference
+    MainIs: icm.ml
+    BuildDepends: ext, str, data, mn, bn
+    CompiledObject: native
+
+Executable maxprod
+    Path: src/inference
+    MainIs: maxprod.ml
+    BuildDepends: ext, str, data, mn, bn
+    CompiledObject: native
+
+Executable gibbs
+    Path: src/inference
+    MainIs: gibbs.ml
+    BuildDepends: ext, str, data, mn, bn, gibbsImpl
+    CompiledObject: native
+
+Executable acquery
+    Path: src/inference
+    MainIs: acquery.ml
+    BuildDepends: ext, data, circuit
+    CompiledObject: native
+
+Executable spquery
+    Path: src/inference
+    MainIs: spquery.ml
+    BuildDepends: ext, unix, lbfgs, str, data, mn, circuit, spn
+    CompiledObject: native
+
+Executable cluster
+    Path: src/clustering
+    MainIs: cluster.ml
+    BuildDepends: ext, unix, lbfgs, str, data, mn, circuit, spn
+    CompiledObject: native
+
+
+############################
+# Other programs
+############################
+
+Executable acbn
+    Path: src/acbn
+    MainIs: acbn.ml
+    BuildDepends: ext, unix, str, data, bn, circuit
+    CompiledObject: native
+
+Executable bnlearn
+    Path: src/acbn
+    MainIs: bnlearn.ml
+    BuildDepends: ext, unix, str, data, bn, circuit
+    CompiledObject: native
+
+Executable dn2mn
+    Path: src/dn2mn
+    MainIs: dn2mn.ml
+    BuildDepends: ext, unix, str, data, mn, bn
+    CompiledObject: native
+
+Executable acmn
+    Path: src/acmn
+    MainIs: acmn.ml
+    BuildDepends: ext, unix, str, data, mn, circuit, lbfgs
+    CompiledObject: native
+
+Executable acopt
+    Path: src/acopt
+    MainIs: acopt.ml
+    BuildDepends: ext, unix, str, data, mn, circuit, lbfgs, gibbsImpl
+    CompiledObject: native
+
+Executable acve
+    Path: src/acve
+    MainIs: acve.ml
+    BuildDepends: ext, unix, str, data, mn, bn, circuit
+    CompiledObject: native
+
+Executable cl
+    Path: src/cl
+    MainIs: cl.ml
+    BuildDepends: ext, str, data, mn, bn, circuit
+    CompiledObject: native
+
+Executable idspn
+    Path: src/idspn
+    MainIs: idspn.ml
+    BuildDepends: ext, str, data, mn, bn, circuit, spn
+    CompiledObject: native
+
+Executable mnlearnw
+    Path: src/mnlearnw
+    MainIs: mnlearnw.ml
+    BuildDepends: ext, str, data, mn, bn, pll, lbfgs
+    CompiledObject: native
+
+Executable mtlearn
+    Path: src/mtlearn
+    MainIs: mtlearn.ml
+    BuildDepends: ext, unix, str, data, mn, bn, circuit, lbfgs
+    CompiledObject: native
+
+Executable spnlearn
+    Path: src/spnlearn
+    MainIs: spnlearn.ml
+    BuildDepends: ext, unix, str, data, mn, bn, circuit, lbfgs, spn
+    CompiledObject: native
+
+Executable dnboost
+    Path: src/dnlearn
+    MainIs: dnboost.ml
+    BuildDepends: ext, str, data, mn, bn, lbfgs, fminbr
+    CompiledObject: native
+
+Executable dnlearn
+    Path: src/dnlearn
+    MainIs: dnlearn.ml
+    BuildDepends: ext, str, data, mn, bn, lbfgs
+    CompiledObject: native
+
+Executable mnsetw
+    Path: src/mnlearnw
+    MainIs: mnsetw.ml
+    BuildDepends: ext, str, bn
+    CompiledObject: native
+
+Executable daclearn
+    Path: src/daclearn
+    MainIs: daclearn.ml
+    BuildDepends: unix, ext, str, data, mn, circuit, lbfgs
+    CompiledObject: native
+
+Executable dacmap
+    Path: src/dacmap
+    MainIs: dacmap.ml
+    BuildDepends: unix, ext, str, data, mn, circuit, lbfgs
+    CompiledObject: native
+
+############################
+# Utilities
+############################
+
+Executable spn2ac
+    Path: src/util
+    MainIs: spn2ac.ml
+    BuildDepends: ext, str, mn, bn, circuit, spn
+    CompiledObject: native
+
+Executable bnsample
+    Path: src/util
+    MainIs: bnsample.ml
+    BuildDepends: ext, str, data, bn
+    CompiledObject: native
+
+Executable mconvert
+    Path: src/util
+    MainIs: mconvert.ml
+    BuildDepends: ext, str, data, mn, bn, circuit
+    CompiledObject: native
+
+Executable fstats
+    Path: src/util
+    MainIs: fstats.ml
+    BuildDepends: ext, str, data, mn, bn, circuit
+    CompiledObject: native
+
+Executable mscore
+    Path: src/util
+    MainIs: mscore.ml
+    BuildDepends: ext, str, mn, bn, circuit, pll
+    CompiledObject: native
+
+# Helper program used for testing
+Executable rand
+    Path: src/util
+    MainIs: rand.ml
+    CompiledObject: native
+
+# Build API Documentation
+AlphaFeatures: ocamlbuild_more_args
+Document "api"
+    Type: ocamlbuild (0.4)
+    #InstallDir: $htmldir/libra-tk
+    Install: false
+    PostCommand: sh scripts/_move_docs.sh
+    Title: API reference for the Libra Toolkit
+    XOCamlbuildPath: src
+    XOCamlbuildLibraries: ext, data, circuit, mn, bn, spn, lbfgs, pll
+    BuildTools: ocamldoc
+    #XOCamlbuildExtraArgs: "-docflags '-colorize-code -short-functors -charset utf-8'"

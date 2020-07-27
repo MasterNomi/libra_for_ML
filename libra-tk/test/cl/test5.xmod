@@ -1,0 +1,114 @@
+<?xml version="1.0" standalone="yes"?>
+<AnalysisNotebook>
+	<Variables>
+		<Variable name="Variable_0" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+			<State index="2" name="2"/>
+		</Variable>
+		<Variable name="Variable_1" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+			<State index="2" name="2"/>
+		</Variable>
+		<Variable name="Variable_2" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+			<State index="2" name="2"/>
+		</Variable>
+		<Variable name="Variable_3" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+			<State index="2" name="2"/>
+		</Variable>
+	</Variables>
+	<Model name="">
+		<LocalModels>
+			<LocalModel variable="Variable_0">
+				<Table>
+					<TableEntry>
+						<InputStates></InputStates>
+						<Multinomial>
+							<Probs>0.494949494949 0.252525252525 0.252525252525</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_1">
+				<Inputs>
+					<Input variable="Variable_3"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.769696969697 0.115151515152 0.115151515152</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.151515151515 0.833333333333 0.0151515151515</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>2</InputStates>
+						<Multinomial>
+							<Probs>0.151515151515 0.0151515151515 0.833333333333</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_2">
+				<Inputs>
+					<Input variable="Variable_0"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.863945578231 0.0680272108844 0.0680272108844</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.133333333333 0.853333333333 0.0133333333333</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>2</InputStates>
+						<Multinomial>
+							<Probs>0.133333333333 0.0133333333333 0.853333333333</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+			<LocalModel variable="Variable_3">
+				<Inputs>
+					<Input variable="Variable_2"/>
+				</Inputs>
+				<Table>
+					<TableEntry>
+						<InputStates>0</InputStates>
+						<Multinomial>
+							<Probs>0.741496598639 0.12925170068 0.12925170068</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>1</InputStates>
+						<Multinomial>
+							<Probs>0.373333333333 0.613333333333 0.0133333333333</Probs>
+						</Multinomial>
+					</TableEntry>
+					<TableEntry>
+						<InputStates>2</InputStates>
+						<Multinomial>
+							<Probs>0.373333333333 0.0133333333333 0.613333333333</Probs>
+						</Multinomial>
+					</TableEntry>
+				</Table>
+			</LocalModel>
+		</LocalModels>
+	</Model>
+</AnalysisNotebook>

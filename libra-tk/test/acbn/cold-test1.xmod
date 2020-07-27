@@ -1,0 +1,264 @@
+<?xml version="1.0" standalone="yes"?>
+<AnalysisNotebook>
+	<Variables>
+		<Variable name="Variable_0" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_1" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_2" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_3" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+		<Variable name="Variable_4" type="categorical">
+			<State index="0" name="0"/>
+			<State index="1" name="1"/>
+		</Variable>
+	</Variables>
+	<Model name="">
+		<LocalModels>
+			<LocalModel variable="Variable_0">
+				<DecisionTree>
+					<Leaf>
+						<Multinomial>
+							<Probs>0.0924075924076 0.907592407592</Probs>
+							<Counts>0 0</Counts>
+						</Multinomial>
+					</Leaf>
+				</DecisionTree>
+			</LocalModel>
+			<LocalModel variable="Variable_1">
+				<Inputs>
+					<Input variable="Variable_0"/>
+					<Input variable="Variable_3"/>
+					<Input variable="Variable_4"/>
+				</Inputs>
+				<DecisionTree>
+					<Vertex split="Variable_3">
+						<Branch>
+							<Values>0</Values>
+							<Vertex split="Variable_0">
+								<Branch>
+									<Values>0</Values>
+									<Vertex split="Variable_4">
+										<Branch>
+											<Values>0</Values>
+											<Leaf>
+												<Multinomial>
+													<Probs>0.558823529412 0.441176470588</Probs>
+													<Counts>0 0</Counts>
+												</Multinomial>
+											</Leaf>
+										</Branch>
+										<Branch>
+											<Values>1</Values>
+											<Leaf>
+												<Multinomial>
+													<Probs>0.765625 0.234375</Probs>
+													<Counts>0 0</Counts>
+												</Multinomial>
+											</Leaf>
+										</Branch>
+									</Vertex>
+								</Branch>
+								<Branch>
+									<Values>1</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.986631016043 0.0133689839572</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+							</Vertex>
+						</Branch>
+						<Branch>
+							<Values>1</Values>
+							<Vertex split="Variable_4">
+								<Branch>
+									<Values>0</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.972222222222 0.0277777777778</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+								<Branch>
+									<Values>1</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.654460719041 0.345539280959</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+							</Vertex>
+						</Branch>
+					</Vertex>
+				</DecisionTree>
+			</LocalModel>
+			<LocalModel variable="Variable_2">
+				<Inputs>
+					<Input variable="Variable_0"/>
+				</Inputs>
+				<DecisionTree>
+					<Vertex split="Variable_0">
+						<Branch>
+							<Values>0</Values>
+							<Leaf>
+								<Multinomial>
+									<Probs>0.467741935484 0.532258064516</Probs>
+									<Counts>0 0</Counts>
+								</Multinomial>
+							</Leaf>
+						</Branch>
+						<Branch>
+							<Values>1</Values>
+							<Leaf>
+								<Multinomial>
+									<Probs>0.0566556655666 0.943344334433</Probs>
+									<Counts>0 0</Counts>
+								</Multinomial>
+							</Leaf>
+						</Branch>
+					</Vertex>
+				</DecisionTree>
+			</LocalModel>
+			<LocalModel variable="Variable_3">
+				<Inputs>
+					<Input variable="Variable_0"/>
+					<Input variable="Variable_2"/>
+					<Input variable="Variable_4"/>
+				</Inputs>
+				<DecisionTree>
+					<Vertex split="Variable_4">
+						<Branch>
+							<Values>0</Values>
+							<Vertex split="Variable_0">
+								<Branch>
+									<Values>0</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.868421052632 0.131578947368</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+								<Branch>
+									<Values>1</Values>
+									<Vertex split="Variable_2">
+										<Branch>
+											<Values>0</Values>
+											<Leaf>
+												<Multinomial>
+													<Probs>0.366666666667 0.633333333333</Probs>
+													<Counts>0 0</Counts>
+												</Multinomial>
+											</Leaf>
+										</Branch>
+										<Branch>
+											<Values>1</Values>
+											<Leaf>
+												<Multinomial>
+													<Probs>0.767857142857 0.232142857143</Probs>
+													<Counts>0 0</Counts>
+												</Multinomial>
+											</Leaf>
+										</Branch>
+									</Vertex>
+								</Branch>
+							</Vertex>
+						</Branch>
+						<Branch>
+							<Values>1</Values>
+							<Vertex split="Variable_0">
+								<Branch>
+									<Values>0</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.42 0.58</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+								<Branch>
+									<Values>1</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.184907834101 0.815092165899</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+							</Vertex>
+						</Branch>
+					</Vertex>
+				</DecisionTree>
+			</LocalModel>
+			<LocalModel variable="Variable_4">
+				<Inputs>
+					<Input variable="Variable_0"/>
+					<Input variable="Variable_2"/>
+				</Inputs>
+				<DecisionTree>
+					<Vertex split="Variable_2">
+						<Branch>
+							<Values>0</Values>
+							<Vertex split="Variable_0">
+								<Branch>
+									<Values>0</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.352272727273 0.647727272727</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+								<Branch>
+									<Values>1</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.278846153846 0.721153846154</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+							</Vertex>
+						</Branch>
+						<Branch>
+							<Values>1</Values>
+							<Vertex split="Variable_0">
+								<Branch>
+									<Values>0</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.07 0.93</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+								<Branch>
+									<Values>1</Values>
+									<Leaf>
+										<Multinomial>
+											<Probs>0.0320512820513 0.967948717949</Probs>
+											<Counts>0 0</Counts>
+										</Multinomial>
+									</Leaf>
+								</Branch>
+							</Vertex>
+						</Branch>
+					</Vertex>
+				</DecisionTree>
+			</LocalModel>
+		</LocalModels>
+	</Model>
+</AnalysisNotebook>

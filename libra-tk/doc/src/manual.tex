@@ -1,0 +1,1739 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+%\setlength{\parindent}{0cm}
+\newcommand{\eat}[1]{}
+\newcommand{\pedram}[1]{\textcolor{blue}{\emph{[Pedram: #1]}}}
+\newcommand{\compactlist}{
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\title{User Manual for Libra 1.1.2c}
+\author{Daniel Lowd $<$lowd@cs.uoregon.edu$>$ \\
+Amirmohammad Rooshenas $<$pedram@cs.uoregon.edu$>$}
+\begin{document}
+\maketitle
+
+\section{Overview}
+
+The Libra Toolkit provides a collections of algorithms for learning
+and inference with probabilistic models in discrete domains.  Each
+algorithm can be run from the command-line with a variety of options
+using the {\tt libra} script:
+\begin{verbatim}
+  libra <command> [options]
+\end{verbatim}
+Different algorithms share many common options and file formats, so they
+can be used together for experimental or application-driven workflows.
+This user manual gives a brief overview of Libra's functionality,
+describes the file formats used, and explains the operation of each
+command in the toolkit.  See the developer's guide for information on
+modifying and extending Libra.
+
+\subsection{Representations}
+
+In Libra, each probabilistic model represents a probability
+distribution, $P(\mathcal{X})$, over set of discrete random variables,
+$\mathcal{X} = \{X_1, X_2, \ldots, X_n\}$.  Libra supports Bayesian
+networks (BNs), Markov networks (MNs), dependency networks
+(DNs)~\cite{heckerman&al00}, sum-product networks
+(SPNs)~\cite{poon&domingos11}, arithmetic circuits
+(ACs)~\cite{darwiche03}, and mixtures of trees
+(MT)~\cite{meila&jordan00}.
+
+%Libra does not currently support template-based models, such as
+%hidden Markov models, dynamic Bayesian networks, and relational
+%models are not currently supported.
+
+BNs and DNs represent a probability distribution as a collection of
+conditional probability distributions (CPDs), each denoting the
+conditional probability of one random variable given its parents.  The
+most common CPD representation is a table with one entry for each
+joint configuration of the variable and its parents.  In addition to
+tables, Libra also supports tree CPDs and more complex feature-based
+CPDs.  In a tree CPD, nodes and branches specify conditions on the
+parent variables, and each leaf contains the probability of the target
+variable given the conditions on the path to that leaf.  When many
+configurations have identical probabilities, trees can be
+exponentially more compact than table CPDs.  Feature-based CPDs use a
+weighted set of conjunctive features.  Each conjunctive feature
+represents a set of conditions on the parent variables and target
+variables, similar to the paths in the decision tree, except that they
+need not be mutually exclusive or exhaustive.  Feature-based CPDs can
+easily represent logistic regression CPDs, boosted trees, and other
+complex CPDs.  Libra represents MNs as collections of factors or
+potential functions, each of which can be represented as a table,
+tree, or set of conjunctive features.  For general background BNs and
+MNs, see Koller and Friedman~\cite{koller&friedman09}.  For an
+introduction to DNs, see Heckerman et al.~\cite{heckerman&al00}.
+
+SPNs and ACs represent a probability distribution as a directed
+acyclic graph of sum and product nodes, with parameters or indicator
+variables at the leaves.  When the indicator variables are set to
+encode a particular configuration of the random variables, the root of
+the circuit evaluates to that configuration's probability.  The
+indicator variables can also be set so that one or more variables are
+marginalized, which permits efficient computation of marginal and
+conditional probabilities.  The ability to perform efficient, exact
+inference is a key strength of SPNs and ACs.  SPNs and ACs are also
+very flexible, since they can encode complex structures that do not
+correspond to any compact BN or MN.  Libra has separate SPN and AC
+representations.  The SPN representation shows high-level structure
+more clearly, but the AC representation is better supported for
+inference.  The SPN representation can be converted to the AC
+representation.
+
+The mixture of trees (MT) representation represents a probability
+distribution as a weighted sum of tree-structured BNs.  Since SPNs are
+good at modeling mixtures, Libra represents mixtures of trees as SPNs.
+
+For more detail about the model file formats, see
+Section~\ref{sec:fileformats}.
+
+\subsection{Algorithms}
+
+The learning algorithms in Libra fit a probabilistic model to the
+empirical distribution represented by the training data.  The learning
+methods currently available in Libra require that the data be
+fully-observed so that no variable values are missing.  Most methods
+learn the model structure as well as its parameters.
+
+Libra includes the following commands for learning
+probabilistic models:
+\begin{itemize}
+\compactlist
+\item \hyperref[sec:cl]{{\tt cl}}: The Chow-Liu algorithm for tree-structured BNs~\cite{chow&liu68}
+\item \hyperref[sec:bnlearn]{{\tt bnlearn}}: Learning BNs with tree CPDs~\cite{chickering&al97}
+\item \hyperref[sec:dnlearn]{{\tt dnlearn}}: Learning DNs with tree or logistic regression CPDs~\cite{heckerman&al00}
+\item \hyperref[sec:dnboost]{{\tt dnboost}}: Learning DNs with boosted tree CPDs
+\item \hyperref[sec:acbn]{{\tt acbn}}: Using ACs to learn tractable BNs with tree CPDs~\cite{lowd&domingos08}
+\item \hyperref[sec:acmn]{{\tt acmn}}: Using ACs to learn tractable MNs with conjunctive features~\cite{lowd&rooshenas13}
+\item \hyperref[sec:idspn]{{\tt idspn}}: The ID-SPN algorithm for learning SPN structure~\cite{rooshenas&lowd14}
+\item \hyperref[sec:mtlearn]{{\tt mtlearn}}: Learning mixtures of trees~\cite{meila&jordan00}
+\item \hyperref[sec:dn2mn]{{\tt dn2mn}}: Learning MNs from DNs~\cite{lowd12}
+\item \hyperref[sec:mnlearnw]{{\tt mnlearnw}}: MN weight learning, to maximize L1/L2 penalized pseudo-likelihood
+\item \hyperref[sec:acopt]{{\tt acopt}}: Parameter learning for ACs, to match an empirical
+  distribution or another BN or MN~\cite{lowd&domingos10}
+\end{itemize}
+Inference algorithms compute marginal and joint probabilities, given
+evidence.
+For models that are represented as ACs or SPNs, Libra supports:
+\begin{itemize}
+\compactlist
+\item \hyperref[sec:acquery]{{\tt acquery}}: Exact inference in ACs
+\item \hyperref[sec:spquery]{{\tt spquery}}: Exact inference in SPNs
+\end{itemize}
+The following inference algorithms are supported for BNs, MNs,
+and DNs:
+\begin{itemize}
+\compactlist
+\item \hyperref[sec:mf]{{\tt mf}}: Mean field inference~\cite{lowd&shamaei11}
+\item \hyperref[sec:gibbs]{{\tt gibbs}}: Gibbs sampling
+\item \hyperref[sec:icm]{{\tt icm:}} Iterated conditional modes~\cite{besag86}
+\end{itemize}
+For BNs and MNs, three more inference algorithms are supported:
+\begin{itemize}
+\compactlist
+\item \hyperref[sec:bp]{{\tt bp}}: Loopy belief propagation~\cite{murphy&al99}
+\item \hyperref[sec:maxprod]{{\tt maxprod}}: Max-product
+\item \hyperref[sec:acve]{{\tt acve}}: AC variable elimination~\cite{chavira&darwiche07}
+\end{itemize}
+The last method compiles a BN or MN into an AC.  Thus, {\tt acve} and
+{\tt acquery} can be used together to perform exact inference in a BN
+or MN.
+
+A few utility commands round out the toolkit:
+\begin{itemize}
+\compactlist
+\item \hyperref[sec:bnsample]{{\tt bnsample}}: BN forward sampling
+\item \hyperref[sec:mscore]{{\tt mscore}}: Likelihood and pseudo-likelihood model scoring
+\item \hyperref[sec:mconvert]{{\tt mconvert}}: Model conversion and conditioning on evidence
+\item \hyperref[sec:spn2ac]{{\tt spn2ac}}: Convert SPNs to ACs
+\item \hyperref[sec:fstats]{{\tt fstats}}: File information for any supported file type
+\end{itemize}
+
+\section{Installation}
+
+Libra was designed to run from the command line under Linux and Mac OS
+X. It also may work with Windows (Cygwin environment), but it is not
+completely supported in the current version.  Libra can be installed
+using OPAM or manually.
+
+\subsection{Installation Using OPAM}
+
+The recommended way to install Libra is through the OPAM package
+manager.  Detailed instructions for installing OPAM on various
+platforms can be found at \url{http://opam.ocaml.org/doc/Install.html}.
+
+On macOS this might be done using homebrew (\url{https://brew.sh/}):
+\begin{verbatim}
+  brew install opam
+\end{verbatim}
+
+Or with the built-in package manager for your Linux distribution ({\tt apt}, {\tt dnf}):
+\begin{verbatim}
+  dnf install opam
+\end{verbatim}
+
+Once installed, opam will likely have installed the latest version of OCaml
+by default.  We will need to use 4.02 for Libra:
+\begin{verbatim}
+  opam switch create 4.02.1
+  opam init
+\end{verbatim}
+
+Finally, to install libra-tk, run:
+\begin{verbatim}
+  opam install libra-tk
+\end{verbatim}
+
+Binaries will be installed in the {\tt {\em $<$version$>$}/bin/}
+subdirectory of your OPAM installation, where {\em $<$version$>$} is
+the OCaml version being used (e.g., {\tt system}, {\tt 4.02.1}, {\tt
+4.01.0}).  Documentation and example files will be installed in the OPAM subdirectory
+{\tt {\em $<$version$>$}/share/doc/libra-tk}.
+
+On OS X, the default Clang compiler may fail to build
+{\tt ocaml-expat} with the following error:
+\begin{verbatim}
+  expat_stubs.c:23:10: fatal error: 'caml/mlvalues.h' file not found
+\end{verbatim}
+To fix this, run the following command before installing:
+\begin{verbatim}
+  export C_INCLUDE_PATH=`ocamlc -where`:$C_INCLUDE_PATH
+\end{verbatim}
+Note that this command uses backtics (\verb|`|), not
+single quote (\verb|'|).
+
+\subsection{Manual Installation}
+
+If you prefer, you can build and install Libra manually.  Libra
+depends on OCaml (version 4.00.0 or later), the {\tt ocamlfind} build
+tool, the {\tt ocaml-expat} library, and {\tt oasis}  To install these using
+OPAM, first install OPAM (see above) and then run:
+\begin{verbatim}
+  opam install ocamlfind ocaml-expat oasis
+\end{verbatim}
+
+Libra also depends on GNU Make and the Expat XML parsing library.  The
+automated tests depend on Perl, awk, and the diff utility.  In some OS
+environments, these are already installed by default.
+
+After installing the dependencies, download the Libra source code and
+unpack the source distribution:
+\begin{verbatim}
+  tar -xzvf libra-tk-1.1.2c.tar.gz
+  cd libra-tk-1.1.2c
+\end{verbatim}
+This creates the {\tt libra-tk-1.1.2c/} directory and makes it your
+working directory.  For the remainder of this document, all paths will
+be relative to this directory.
+
+Before building, you can optionally use the {\tt configure} script to
+change installation directories and other settings.  Run {\tt
+./configure --help} to see a list of configuration options.  For
+example, {\tt ./configure --prefix \textasciitilde{}} changes the installation
+directory from {\tt /usr/local} to your home directory.
+
+Next, build the executables:
+\begin{verbatim}
+  make
+\end{verbatim}
+All programs should now be present in the directory {\tt bin/}, with
+one executable file for each command in Libra.  For convenience, you
+may use the {\tt libra} script, which acts as an interface to all of
+the commands in the toolkit.
+
+To install the executables and PDF documentation, run:
+\begin{verbatim}
+  make install
+\end{verbatim}
+Depending on your system and the installation path, this command may
+require super\-user permissions.  To run the installation step as a
+super\-user, use the command {\tt sudo make install}.  Alternately,
+you can change the installation directories using {\tt configure}.
+
+To create HTML documentation for the libraries, run:
+\begin{verbatim}
+  make doc
+\end{verbatim}
+This generates ocamldoc-based HTML files for the libraries and puts them in {\tt doc/html}.  Open {\tt doc/html/index.html} in a web browser to view the documentation.
+
+\section{Quick Start}
+
+This section will demonstrate basic usage of the Libra toolkit through
+a short tutorial.  In this tutorial, we will train several models from
+data, evaluate model accuracy on held-out data, and answer queries
+exactly and approximately.  All necessary files are included in the
+{\tt doc/examples/} directory of the standard distribution.  These
+files are also copied during installation.  If you installed Libra
+using OPAM, they can be found in the {\tt {\em
+$<$version$>$}/share/doc/libra-tk/examples/} subdirectory of your OPAM
+installation, where {\em $<$version$>$} is the OCaml version being
+used (e.g., {\tt system}, {\tt 4.02.1}, {\tt 4.01.0}).  If you
+installed Libra manually, the default installation directory is {\tt
+/usr/local/share/doc/libra-tk/examples/}.
+
+As our dataset, we will use the Microsoft Anonymous Web
+Data\footnote{Available from the UCI repository at:
+\url{http://kdd.ics.uci.edu/databases/msweb/msweb.html}}, which records the
+areas (Vroots) of microsoft.com that each user visited during one week
+in February 1998.  A small subset of this data is present in the
+examples directory, already converted into Libra's data format: each
+line is one sample, represented as a list of comma-separated values
+(one discrete value per variable).
+
+To continue with the quick start, change to the examples directory:
+\begin{verbatim}
+  cd doc/examples
+\end{verbatim}
+
+\subsection{Training Models}
+
+To train a tree-structured BN with the Chow-Liu algorithm, use the
+{\tt cl} command:
+\begin{verbatim}
+  libra cl -i msweb.data -s msweb.schema -o msweb-cl.bn -prior 1
+\end{verbatim}
+The most important options are {\tt -i}, for indicating the training
+data, and {\tt -o}, for indicating the output file.  Libra has a
+custom format for Bayesian networks ({\tt .bn}) and also supports two
+external formats, BIF ({\tt .bif}) and XMOD ({\tt .xmod}). (See
+Section~\ref{sec:fileformats} for more information about file formats.)
+Libra will automatically guess the model type from the
+filename suffix.
+
+The {\tt -s} option allows you to specify a variable schema, which
+defines the number of values for each variable.  If unspecified, Libra
+will guess from the training data.  {\tt -prior} specifies the prior
+counts to use when estimating the parameters of the network, for
+smoothing\footnote{Specifically, the option {\tt -prior} $\alpha$
+specifies a symmetric Dirichlet prior with parameter $\alpha/d$,
+where $d$ is the number of possible values for the variable.}.
+
+The {\tt -log} flag redirects log output to another file
+instead of standard output.  You can use the flag {\tt -v} to
+enable more verbose output, or {\tt -debug} to turn on detailed
+debugging output.  These three flags are valid with any command,
+although for some commands they have minimal effect.  Try them with
+{\tt cl} to see what happens.
+
+To see a list of all options, run {\tt libra cl} without any other
+arguments.  This trick works for every command in Libra.  You can run
+{\tt libra} with no arguments to see a list of all commands.
+
+Other learning algorithms offer similar options.  For example, to learn
+a Bayesian network with tree CPDs, use {\tt bnlearn}:
+\begin{verbatim}
+  libra bnlearn -i msweb.data -s msweb.schema
+                -o msweb-bn.bn -prior 1 -ps 10
+\end{verbatim}
+The option {\tt -ps 10} specifies a ``per-split'' penalty, so that a
+tree CPD is only extended when the new split increases the log-likelihood
+by more than 10.  This acts as a structure prior, to control
+overfitting.
+
+The other programs for learning models from data are: {\tt dnlearn}
+and {\tt dnboost}, for learning DNs, and {\tt acbn}, {\tt acmn}, {\tt
+idspn}, and {\tt mtlearn}, for learning various kinds of tractable
+models in which exact inference is efficient.
+
+\subsection{Model Scoring}
+
+We can compute the average log-likelihood per example using the {\tt
+mscore} program:
+\begin{verbatim}
+  libra mscore -m msweb-cl.bn -i msweb.test
+  libra mscore -m msweb-bn.bn -i msweb.test
+\end{verbatim}
+{\tt -m} specifies the MN, BN, DN, or AC to score, and {\tt -i}
+specifies the test data.  The filetype is inferred from the extension.
+To see the likelihood of every test case individually, enable verbose
+output with {\tt -v}.  For DNs and MNs, {\tt mscore} reports
+pseudo-log-likelihood instead of log-likelihood.
+
+You can obtain additional information about models or data files using
+{\tt fstats}:
+\begin{verbatim}
+  libra fstats -i msweb-cl.bn
+  libra fstats -i msweb.test
+\end{verbatim}
+
+\subsection{Inference}
+
+We can either use exact inference or approximate inference. To do
+exact inference, we must first compile the learned model into an AC:
+\begin{verbatim}
+  libra acve -m msweb-cl.bn -o msweb-cl.ac
+\end{verbatim}
+The AC is an inference representation in which many queries can be
+answered efficiently.  However, depending on the structure of the BN,
+the resulting AC could be very large.  Section \ref{sec:acve} gives
+more information about {\tt acve}.  Now that we have an AC, we can use
+it to answer queries using {\tt acquery}.  The simplest query is
+computing all single-variable marginals:
+\begin{verbatim}
+  libra acquery -m msweb-cl.ac -marg
+\end{verbatim}
+
+{\tt -marg} specifies that we want to compute the marginals.
+The output is a list of 294 marginal distributions, which is a
+bit overwhelming.   We can also use {\tt acquery} to compute
+conditional log probabilities $\log P(q | e)$, where $q$ is a query
+and $e$ is evidence:
+\begin{verbatim}
+  libra acquery -m msweb-cl.ac -q msweb.q -ev msweb.ev
+\end{verbatim}
+{\tt acquery} also supports MPE (most probable explanation) queries
+and a number of other options; see Section \ref{sec:acquery} for more
+information.
+
+For approximate inference, we can use mean field ({\tt mf}),
+loopy belief propagation ({\tt bp}), or Gibbs sampling ({\tt gibbs}).
+Their basic options are the same as the tools for exact inference,
+but each algorithm has some specific options:
+\begin{verbatim}
+  libra mf -m msweb-bn.bn -q msweb.q -ev msweb.ev -v
+  libra bp -m msweb-bn.bn -q msweb.q -ev msweb.ev -v
+  libra gibbs -m msweb-bn.bn -q msweb.q -ev msweb.ev -v
+\end{verbatim}
+
+See Section~\ref{sec:inference} for detailed descriptions of the
+inference algorithms.
+
+\section{File Formats}
+\label{sec:fileformats}
+
+This section describes the file formats supported by Libra.
+
+\subsection{Data and Evidence}
+
+For data points, Libra uses comma-separated lists of variable values,
+with asterisks representing values that are unknown.  This allows the
+same format to be used for training examples and evidence
+configurations.  Each data point is terminated by a newline.  In some
+programs ({\tt mscore}, {\tt acbn}, and most inference
+methods), each data point may be preceded by an optional weight, in
+order to learn or score a weighted set of examples.  The default
+weight is 1.0.  The following are all valid data points:
+\begin{verbatim}
+0,0,1,0,4,3,0
+0.2|0,0,1,1,2,0,1
+1000|0,0,0,0,0,0,0
+\end{verbatim}
+Evidence files have the same comma separated format, except when the
+value of a variable has not been observed as evidence, we put a `*'
+in the related column:
+\begin{verbatim}
+0,0,1,*,4,3,*
+\end{verbatim}
+The corresponding query data point should be consistent with the evidence.
+For example:
+\begin{verbatim}
+0,0,1,1,4,3,0
+\end{verbatim}
+The above query and evidence can be used to find the conditional probability of
+$P(X_4, X_7 | X_1 = 0, X_2=0, X_3 = 1, X_5 = 4, X_6 = 3)$.
+
+
+\subsection{Graphical Models}
+
+Libra has custom file formats for BNs ({\tt .bn}), DNs ({\tt .dn}),
+and MNs ({\tt .mn}) which allows for very flexible factors, including
+trees, tables, and conjunctive features.  Model parameters are
+represented as log probabilities or unnormalized log potential
+functions.  See Figure~\ref{fig:bn} for an example of a complete {\tt
+.bn} file.
+
+\begin{figure}[tb]
+{\tt example.bn}:
+\hrule
+\begin{small}
+\begin{verbatim}
+
+2,2,2
+BN {
+
+v0 {
+  table {
+  -7.60e+00 +v0_1
+  -5.00e-04 +v0_0
+  }
+}
+
+v1 {
+  tree {
+   (v0_0
+        (v1_0 -1.91e-02 -3.97e+00)
+        (v1_0 -5.32e-02 -2.96e+00))
+  }
+}
+
+v2 {
+  features {
+  1.5 +v0_0 +v1_0 +v2_0
+  2.5 +v0_1 +v1_1 +v2_1
+  }
+}
+
+}
+\end{verbatim}
+\end{small}
+\hrule
+\caption{Example .bn file showing three types of CPDs.}
+\label{fig:bn}
+\end{figure}
+
+The first line in the file is a comma-separated variable schema
+listing the range of each variable.  The next line specifies
+the model type (BN, DN, or MN).  The rest of the file defines the
+conditional probability distributions (CPDs) (for BNs and DNs) or
+factors (for MNs), enclosed within braces ({\tt \{\}}).  Each CPD
+definition begins with the name of the child variable ({\tt v1}, {\tt
+v2}, {\tt v3}, etc.) followed by a set of factor definitions enclosed
+in braces.  MNs do not contain CPDs, and simply use the raw factors.
+
+Different factor types (table, tree, feature set) have
+different formats.  The simplest is a factor for a single feature,
+which is written out as a real-valued weight and a list of variable
+conditions.  For example the following line defines a feature with a
+weight of 1.2 for the conjunction $(X_0 = 1) \wedge (X_3 = 0) \wedge
+(X_4 \neq 2)$:
+\begin{verbatim}
+1.2 +v0_1 +v3_0 -v4_2
+\end{verbatim}
+
+%\begin{align*}
+%{\em t} &:= {\tt (v}{\em var}{\tt \_}{\em value} {\em t} {\em t}{\tt )} \\
+%        &:= <float>
+%\end{align*}
+
+A feature set factor consists of a list of mutually exclusive features, each in
+the format described above.  The list is surrounded is preceded by the word
+``{\tt features}'' and an opening brace (`{\tt \{}'), and followed by a closing
+brace (`{\tt \}}').  For example:
+\begin{verbatim}
+features {
+-1.005034e-02 +v5_1 +v0_1
+-2.302585e+00 +v5_0 +v0_1
+-4.605170e+00 +v5_1 +v0_0
+-1.053605e-01 +v5_0 +v0_0
+}
+\end{verbatim}
+
+A table factor has the same format as a feature set, except with the word
+``{\tt table}'' in place of the word ``{\tt features}'', and the features in
+the list need not be mutually exclusive.  After reading a table factor, Libra
+creates an internal tabular representation.  The size of this table is
+exponential in the number of variables referenced by the listed features.
+
+The format of a tree factor is similar to a LISP s-expression, as illustrated
+in the following example:
+\begin{verbatim}
+tree {
+(v1_0
+    (v3_0
+        (v0_0
+            (v2_0 -1.905948e-02 -3.969694e+00)
+            (v2_0 -5.320354e-02 -2.960105e+00))
+        (v2_0 -2.341261e-01 -1.566675e+00))
+    (v2_0 -2.121121e-01 -1.654822e+00))
+}
+\end{verbatim}
+When $x_1 = 0$, $x_3 = 1$, and $x_2 = 1$, then the log value of this factor
+is {\tt -1.566675}.
+
+To indicate an infinite weight, write ``{\tt inf}'' or {\tt -inf}''.
+
+\subsection{Arithmetic Circuits}
+
+For arithmetic circuits, Libra uses a custom file format ({\tt .ac}).
+The first line of a {\tt .ac} file specifies the range of each
+variable. For example, {\tt (2 2 2)} indicates a domain with three
+binary-valued variables.  The following lines list the nodes in the
+network, one per line.  Each line specifies the node type and any of
+its parameters, such as the value of a constant node, the variable and
+value index for an indicator variable node, and the indices of child
+nodes for sum and product nodes.  For example, {\tt n 0.9995}
+represents the constant value 0.9995, {\tt v 2 0} represents the
+indicator variable for the first value of the third variable, and {\tt
+* 0 13} represents the product of the first and fourteenth nodes.
+Each node must appear after all of its children. The root of the
+circuit is therefore the last node, followed by the string {\tt EOF}.
+
+After defining all nodes, an arithmetic circuit file optionally
+describes how its parameters relate to conjunctive features.  For
+example, \verb|1 0.981081 +v0_0 +v1_0| indicates that the second node
+in the circuit contains the parameter associated with the conjunctive
+feature $(X_0 = 0) \wedge (X_1 = 0)$.  Libra uses this supplementary
+information when converting circuits into Markov networks, optimizing
+their parameters, or computing pseudo-likelihood.
+
+See Figure~\ref{fig:ac-txt} for a complete example.  This circuit was
+generated from the BN in Figure~\ref{fig:bn}, using the command: {\tt
+libra acve -m example.bn -o example.ac}.  Note that, unlike {\tt .bn}
+and {\tt .mn} files, all parameters in the circuit files are stored as
+raw values, not log values.
+
+\begin{figure}[tb]
+{\tt example.ac}:
+\hrule
+\begin{small}
+\begin{tabular}{ll}
+\begin{minipage}[t]{2.75in}
+\begin{verbatim}
+
+(2 2 2)
+v 1 0
+n 0.981081
+n 0.999500
+v 0 0
+* 2 3
+n 4.481689
+* 4 5
+* 1 6
+n 0.948190
+n 0.000500
+v 0 1
+* 9 10
+* 8 11
++ 7 12
+* 0 13
+v 1 1
+n 0.018873
+* 16 4
+n 0.051819
+* 18 11
++ 17 19
+* 15 20
++ 14 21
+v 2 0
+
+\end{verbatim}
+\end{minipage}
+&
+\begin{minipage}[t]{2.75in}
+\begin{verbatim}
+
+* 22 23
+* 1 4
++ 25 12
+* 0 26
+n 12.182494
+* 11 28
+* 18 29
++ 17 30
+* 15 31
++ 27 32
+v 2 1
+* 33 34
++ 24 35
+EOF
+
+2 0.999500 +v0_0
+9 0.000500 +v0_1
+1 0.981081 +v0_0 +v1_0
+8 0.948190 +v0_1 +v1_0
+16 0.018873 +v0_0 +v1_1
+18 0.051819 +v0_1 +v1_1
+5 4.481689 +v0_0 +v1_0 +v2_0
+28 12.182494 +v0_1 +v1_1 +v2_1
+EOF
+\end{verbatim}
+\end{minipage}
+\end{tabular}
+\end{small}
+\hrule
+\caption{Example .ac file based on the BN from Figure~\ref{fig:bn}.
+For compactness and readability, the file listing has been split
+into two columns.}
+\label{fig:ac-txt}
+\end{figure}
+
+\subsection{Sum-Product Networks and Mixtures of Trees}
+
+Libra represents sum-product networks with a custom file format ({\tt
+.spn}).  Each {\tt .spn} file is a directory containing a model file
+{\tt spac.m} and many {\tt .ac} files. In the model file, a node is
+represented as: {\tt n} {\em $<$nid$>$ $<$type$>$ $<$pid$>$} where
+{\em nid} and {\em pid} are the id of the node and its parent,
+respectively, and {\em type} can be {\tt +}, {\tt *}, or {\tt ac}.
+For each node with type {\tt ac}, there is a corresponding file {\tt
+spac-nid.ac} in the {\tt .spn} directory. Libra uses the same file
+format for mixtures of trees.
+
+See Figure~\ref{fig:m} for an example model file.  This model contains
+seven nodes, representing a mixture of products of arithmetic
+circuits.  The first two lines specify the network name ({\tt spac})
+and the number of nodes (7).  The first node ({\tt n 0 + -1}) is a sum
+node with no parent.  The next line specifies its children, nodes 1
+and 2.  For sum nodes, an additional line specifies the log mixture
+weight of each child.  The following line specifies that this first
+node is a probability distribution over all three variables (0 1 2).
+The next two nodes are product nodes, each with two children, and each
+representing a distribution over all three variables.  Last are the
+{\tt ac} nodes, referencing the external files {\tt spac-1.ac} through
+{\tt spac-4.ac}.  However, each of these circuits is a probability
+distribution over a different subset of the domain variables: the
+first is a distribution over variables 0 and 1, the second is over
+variable 2, the third is over variables 1 and 2, and the last is over
+variable 0.
+
+\begin{figure}[tb]
+{\tt spac.m}:
+\hrule
+\begin{small}
+\begin{verbatim}
+spac
+7
+n 0 + -1
+1 2
+-1.204 -0.357
+0 1 2
+n 1 * 0
+3 4
+0 1 2
+n 2 * 0
+5 6
+0 1 2
+n 3 ac 1
+0 1
+n 4 ac 1
+2
+n 5 ac 2
+1 2
+n 6 ac 2
+0
+\end{verbatim}
+\end{small}
+\hrule
+\caption{Example model file from a {\tt .spn} directory.
+This represents a mixture of products of arithmetic circuits.}
+\label{fig:m}
+\end{figure}
+
+\subsection{External File Formats}
+
+For interoperability with other toolkits, Libra supports several other
+file formats as well. For Bayesian networks and dependency networks,
+Libra (mostly) supports two previously defined file formats.  The
+first is the Bayesian interchange format (BIF) for BNs and DNs with
+table CPDs.\footnote{BIF is described here:
+\url{http://www.cs.cmu.edu/~fgcozman/Research/InterchangeFormat/Old/xmlbif02.html}.}
+Note that this is different from the newer XML-based XBIF format,
+which may be supported in the future.\footnote{Scripts to translate between
+BIF and XBIF are available here:
+\url{http://ssli.ee.washington.edu/~bilmes/uai06InferenceEvaluation/uai06-repository/scripts/}.}
+The second is the WinMine Toolkit XMOD format, which supports both
+table and tree CPDs.\footnote{The WinMine Toolkit also provides a
+visualization tool for XMOD files, {\tt DNetBrowser.exe}.}
+
+Libra also supports the Markov network model file format used the by
+the UAI inference competition\footnote{The UAI inference file format
+is described here:
+\url{http://www.cs.huji.ac.il/project/UAI10/fileFormat.php}.}.
+However, Libra does not currently support the UAI evidence or result
+file formats.
+
+\section{Common Options}
+
+Libra is designed to be run on the command line in a
+UNIX-like environment or called by scripts in research or application
+workflows.  No GUI environment is provided.  A list of options for any
+command can be produced by running it with no arguments, or by
+running it with a {\tt -help} or {\tt --help} argument.
+
+The following output options are valid with every command:
+\begin{itemize}
+\item[] {\tt -log} {\em $<$file$>$}: Output logging information to the specified file
+\item[] {\tt -v}: Enable verbose logging output.  Verbose output always
+lists the full command line arguments, and often includes additional
+timing information.
+\item[] {\tt -debug}: Enable both verbose and debugging logging output.
+Debugging output varies from program to program and is subject to
+change.
+\end{itemize}
+
+Option names for the following common options are mostly standardized among
+the Libra commands that use them:
+\begin{itemize}
+%\item[] {\tt -c} {\em $<$file$>$}: Arithmetic circuit
+\item[] {\tt -i} {\em $<$file$>$}: Train or test data
+\item[] {\tt -m} {\em $<$file$>$}: Model file
+\item[] {\tt -o} {\em $<$file$>$}: Output model or data
+%\item[] {\tt -depnet}: Treat model as a dependency network, not a BN
+\item[] {\tt -seed} {\em $<$int$>$}: Seed for the random number generator
+\item[] {\tt -q} {\em $<$file$>$}: Query file
+\item[] {\tt -ev} {\em $<$file$>$}: Query evidence file
+\item[] {\tt -mo} {\em $<$file$>$}: File for writing marginals or MPE states
+\item[] {\tt -sameev}: If specified, use the first line in the evidence
+file as the evidence for all queries.
+\end{itemize}
+
+The last four options are exclusive to inference algorithms.
+Inference methods that compute probabilities print out the
+conditional log probability of each query given the evidence
+(optional).  If no query is specified, the marginal distribution of
+each non-evidence variable is printed out instead.  Methods that
+compute the most probable explanation (MPE) state print out the
+Hamming loss between the true and inferred states divided by the
+number of non-evidence variables.  If no query file is specified, then
+MPE methods print out the MPE state for each evidence.
+
+
+\section{Learning Methods}
+
+\subsection{{\tt cl}: Chow-Liu Algorithm} \label{sec:cl}
+
+\noindent {\underbar{Options:}} \\
+\begin{tabular}{ll}
+  {\tt -i}    &  Training data file \\
+  {\tt -s}    & Data schema (optional) \\
+  {\tt -o}    & Output Bayesian network \\
+  {\tt -prior}& Prior counts of uniform distribution
+\end{tabular} \\
+
+The Chow-Liu algorithm ({\bf cl})~\cite{chow&liu68} learns the maximum
+likelihood tree-structured BN from data.  The algorithm works by first
+computing the mutual information between each pair of variables and
+then greedily adding the edge with highest mutual information
+(excluding edges that would form cycles) until a spanning tree is
+formed.  (For sparse data, faster implementations are
+possible~\cite{meila99}.) The option {\tt -prior} determines the prior
+counts used for smoothing.
+\begin{verbatim}
+  libra cl -i msweb.data -s msweb.schema -o msweb-cl.bn -prior 1.0
+\end{verbatim}
+
+\subsection{{\tt bnlearn}: Learning Bayesian Networks} \label{sec:bnlearn}
+
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+  {\tt -i        } &  Training data file \\
+  {\tt -s        } &  Data schema (optional) \\
+  {\tt -o        } &  Output Bayesian network (XMOD or BN format) \\
+  {\tt -prior    } &  Prior counts of uniform distribution \\
+  {\tt -parents  } &  Restrictions on variable parents \\
+  {\tt -ps       } &  Per-split penalty [-1.0] \\
+  {\tt -kappa    } &  Alternate per-split penalty specification [0.0] \\
+  {\tt -psthresh } &  Output models for various per-split penalty thresholds [false] \\
+  {\tt -maxs     } &  Maximum number of splits [1000000000] \\
+\end{tabular} \\
+
+The {\tt bnlearn} command learns a BN with decision-tree CPDs
+(see~\cite{chickering&al97}).  In order to avoid overfitting, {\tt
+bnlearn} uses a per-split penalty for early stopping ({\tt -ps}),
+similar to the penalty on the number of parameters used by Chickering
+et al.~\cite{chickering&al97}.  The {\tt -kappa} option is equivalent
+to a setting a per-split penalty of log kappa.  With the {\tt
+-psthresh} option, {\tt bnlearn} will output models for different
+values of {\tt -ps} as learning progresses, without needing to rerun
+training.
+\begin{verbatim}
+  libra bnlearn -i msweb.data -o msweb.xmod -prior 1.0 -psthresh
+\end{verbatim}
+
+An allowed parents file may be specified ({\tt -parents} {\em $<$file$>$}),
+which restricts the sets of parents structure learning is allowed to choose for
+each variable.  Restrictions can limit the parents to a specific set of parents
+(``{\tt none except 1 2 8 10}'') or to any parent not in a list (``{\tt all
+except 3 5}'').  An example parent file is below:
+\begin{verbatim}
+# This is a comment
+0: all except 1 3   # var 0 may not have var 1 or 3 as a parent
+1: none except 5 2  # only vars 5 and 2 may be parents of var 1
+2: none             # var 2 may have no parents
+5: all              # var 5 may have any parents
+\end{verbatim}
+
+%\pedram{depnet, parent, maxs, and psthresh}
+
+\subsection{{\tt acbn}: Learning Tractable BNs with ACs} \label{sec:acbn}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -i} &         Training data file \\
+{\tt -s} &         Data schema (optional) \\
+{\tt -o} &         Output circuit \\
+{\tt -mo} &        Output Bayesian network (XMOD or BN format) \\
+{\tt -prior} &     Prior counts of uniform distribution [1] \\
+{\tt -parents} &   Restrictions on variable parents \\
+{\tt -pe} &        Per-edge penalty [0.1] \\
+{\tt -shrink} &    Shrink edge cost before halting [false] \\
+{\tt -ps} &        Per-split penalty [-1.0] \\
+{\tt -kappa} &     Alternate per-split penalty specification [0.0] \\
+{\tt -psthresh} &  Output models for various per-split penalty thresholds [false] \\
+{\tt -maxe} &      Maximum number of edges [1000000000] \\
+{\tt -maxs} &      Maximum number of splits [1000000000] \\
+{\tt -quick} &     `Quick and dirty' heuristic [false] \\
+{\tt -qgreedy} &   Find greedy local optimum after quick heuristic [false] \\
+{\tt -freq} &      Number of iterations between saving current circuit [-1] \\
+\end{tabular} \\
+
+
+LearnAC ({\tt acbn})~\cite{lowd&domingos08} learns a BN with
+decision-tree CPDs using the size of the corresponding AC as a
+learning bias.  This effectively trades off accuracy and inference
+complexity, guaranteeing that the final model will support efficient,
+exact inference.  {\tt acbn} outputs both an AC (specified with {\tt
+-o}) and a BN (specified with {\tt -mo}). It uses the same BN learning
+as {\tt bnlearn} as well as some additional options that are specific
+to learning an AC.
+
+The LearnAC algorithm penalizes the log-likelihood with the number of
+edges in AC, which relates to the complexity of inference. The option
+{\tt -pe} specifies the per-edge penalty for {\tt acbn}. When the
+per-edge penalty is higher, {\tt acbn} will more strongly prefer
+structures with few edges.  The per-split penalty is for early
+stopping, in order to avoid overfitting.
+\begin{verbatim}
+  libra acbn -i msweb.data -o msweb.ac -mo msweb-bn.xmod -ps 1 -pe 0.1
+\end{verbatim}
+
+We can also bound the size of the AC to a certain number of edges
+using the {\tt -maxe} option. The combination of {\tt -maxe 100000
+-shrink} specifies the maximum number of edges (100,000, in this case)
+and tells {\tt acbn} to keep running until this edge limit is met,
+reducing the per-edge cost as necessary.  This way, we can start with
+a conservative edge cost (such as 100), select only the most promising
+simple structures, and make compromises later as our edge budget
+allows.  A final option is {\tt -quick}, which relaxes the default, greedy
+heuristic to be only approximately greedy.  In practice, it is often
+an order of magnitude faster with only slightly worse accuracy.
+
+Algorithms that learn ACs, such as {\tt acbn}, can be much slower than
+those that only learn graphical models, such as {\tt bnlearn}.  The
+reason is that {\tt acbn} is also learning a complex inference
+representation, and manipulating that representation can be relatively
+expensive.
+
+For good results in a reasonable amount of time, we recommend using
+{\tt -quick}, {\tt -maxe}, and {\tt -shrink}:
+\begin{verbatim}
+  libra acbn -i msweb.data -o msweb.ac -mo msweb-bn2.bn -quick
+                                       -maxe 100000 -shrink
+\end{verbatim}
+
+
+\subsection{{\tt acmn}: Learning Tractable MNs with ACs} \label{sec:acmn}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -i} &          Training data file \\
+{\tt -s} &          Data schema (optional) \\
+{\tt -o} &          Output circuit \\
+{\tt -mo} &         Output Markov network \\
+{\tt -sd} &         Standard deviation of Gaussian weight prior [1.0] \\
+{\tt -l1} &         Weight of L1 norm [0.0] \\
+{\tt -pe} &         Per-edge penalty [0.1] \\
+{\tt -sloppy} &     Score tolerance heuristic [0.01] \\
+{\tt -shrink} &     Shrink edge cost before halting [false] \\
+{\tt -ps} &         Per-split penalty [-1.0] \\
+{\tt -psthresh} &   Output models for various per-split penalty thresholds [false] \\
+{\tt -maxe} &       Maximum number of edges [1000000000] \\
+{\tt -maxs} &       Maximum number of splits [1000000000] \\
+{\tt -quick} &      `Quick and dirty' heuristic [false] \\
+{\tt -halfsplit} &  Produce only one child feature in each split [false] \\
+{\tt -freq} &       Number of iterations between saving current circuit [-1] \\
+\end{tabular} \\
+
+
+The ACMN algorithm~\cite{lowd&rooshenas13}, {\tt acmn},
+learns a tractable Markov network. ACMN outputs an AC augmented with
+Markov network features and weights.  The {\tt -mo} option specifies a
+second output file for the learned MN structure.  ACMN
+supports both L1 ({\tt -l1}) and L2 ({\tt -sd}) regularization
+to avoid overfitting parameters. Like {\tt acbn}, ACMN uses per-split
+and per-edge penalties. See Section~\ref{sec:acbn} and
+Section~\ref{sec:bnlearn} for common options: {\tt -ps, -pe,
+-psthresh, -maxe, -maxs, -shrink, -quick}.
+\begin{verbatim}
+  libra acmn -i msweb.data -s msweb.schema -o msweb-mn.ac -l1 5
+       -sd 0.1 -maxe 100000 -shrink -ps 5 -mo msweb.mn
+\end{verbatim}
+Currently, Libra's implementation of {\tt acmn} only supports
+binary-valued variables.
+
+\subsection{{\tt idspn}: Learning Sum-Product Networks} \label{sec:idspn}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -i} &        Training data file \\
+{\tt -s} &        Data schema (optional) \\
+{\tt -o} &        Output SPN directory \\
+{\tt -l1} &       Weight of L1 norm [5.0] \\
+{\tt -l} &        EM clustering penalty [0.2] \\
+{\tt -ps} &       Per-split penalty [10.0] \\
+{\tt -k} &        Max sum nodes' cardinalities [5] \\
+{\tt -sd} &       Standard deviation of Gaussian weight prior [1.0] \\
+{\tt -cp} &       Number of concurrent processes [4] \\
+{\tt -vth} &      Vertical cut thresh [0.001] \\
+{\tt -ext} &      Maximum number of node extensions [5] \\
+{\tt -minl1} &    Minimum value for components' L1 priors [1.0] \\
+{\tt -minedge} &  Minimum edge budget for components [200000] \\
+{\tt -minps} &    Minimum split penalty for components [2.0] \\
+{\tt -seed} &     Random seed \\
+{\tt -f} &        Force to override output SPN directory \\
+\end{tabular} \\
+
+ID-SPN ({\tt idspn})~\cite{rooshenas&lowd14} learns sum-product
+networks (SPNs) using direct and indirect variable interactions. The
+ouput is in the {\tt .spn} format, which is a directory containing
+{\tt .ac} files for AC nodes and a model file {\tt spac.m} that holds
+the structure of the SPN. We can convert the {\tt .spn} directory to
+an {\tt .ac} file using {\tt spn2ac}.
+
+ID-SPN calls {\tt acmn} to learn the AC nodes, so {\tt acmn} must be
+in the path.  The behavior of {\tt acmn} can be adjusted using the
+{\tt -l1}, {\tt -ps}, and {\tt -sd} options.  We can control the
+number of times that ID-SPN tries to expand an AC node by using the
+{\tt -ext} option. Setting this parameter to a large number will lead
+to longer learning times and possibly overfitting.  ID-SPN adjusts the
+parameters of {\tt acmn} based on the number of variables and samples
+it uses for learning an AC node.  We can set a minimum for these
+options using {\tt -minl1}, {\tt -minedge}, and {\tt -minps}, which
+helps control overfitting.  ID-SPN uses clustering for learning sum
+nodes.  We can control the number of clusters by adjusting the prior
+over the number of clusters ({\tt -l}) or by setting the maximum
+number of clusters ({\tt -k}).  To learn product nodes, ID-SPN uses a
+cut threshold ({\tt -vth}), and it supposes that two variables are
+independent if their mutual information value is less than that
+threshold. When running ID-SPN on a multicore machine, we can increase
+the number of concurrent processes using the {\tt -cp} option to
+reduce the learning time.
+\begin{verbatim}
+  libra idspn -i msweb.data -o msweb.spn -k 10 -ext 5 -l 0.2
+        		  -vth 0.001 -ps 20 -l1 20
+\end{verbatim}
+(This example will take a long time to run.)
+
+Libra's current implementation of {\tt idspn} only supports binary-valued variables.
+
+\subsection{{\tt mtlearn}: Learning Mixtures of Trees} \label{sec:mtlearn}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -i} &      Training data file \\
+{\tt -s} &      Data schema (optional) \\
+{\tt -o} &      Output SPN directory \\
+{\tt -k} &      Number of component [4] \\
+{\tt -seed} &   Random seed \\
+{\tt -f} &      Force to override output SPN directory \\
+\end{tabular} \\
+
+Libra supports learning mixtures of trees
+({\tt mtlearn})~\cite{meila&jordan00}. A mixture of trees can be viewed as a
+sum node and many AC nodes, in which every AC represents a Chow-Liu
+tree~\cite{chow&liu68}. Therefore, {\tt mtlearn}'s output has the same
+format as {\tt idspn}, {\tt .spn}. We can convert the {\tt .spn}
+directory to an {\tt .ac} file using the {\tt spn2ac} command.
+
+For {\tt mtlearn}, the option {\tt -k} determines the number of trees.
+The performance of {\tt mtlearn} can be sensitive to the
+random initialization, so it may take several runs to get good
+results.  The seed for the random generator can be specified using
+{\tt -seed} in order to enable repeatable experiments.
+\begin{verbatim}
+  libra mtlearn -i msweb.data -s msweb.schema -o msweb-mt.spn -k 10 -v
+\end{verbatim}
+(This example will take several minutes to run.)
+
+\subsection{{\tt dnlearn}: DN Structure Learning} \label{sec:dnlearn}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -i} &         Training data file \\
+{\tt -s} &         Data schema (optional) \\
+{\tt -o} &         Output dependency network \\
+{\tt -ps} &        Per-split penalty [0.0] \\
+{\tt -kappa} &     Alternate per-split penalty specification [0.0] \\
+{\tt -prior} &     Prior counts of uniform distribution [1.0] \\
+{\tt -tree} &      Use decision tree CPDs [default] \\
+{\tt -mincount} &  Minimum number of examples at each decision tree leaf [10] \\
+{\tt -logistic} &  Use logistic regression CPDs [false] \\
+{\tt -l1} &        Weight of L1 norm for logistic regression [0.1] \\
+\end{tabular} \\
+
+A dependency network (DN) specifies a conditional probability
+distribution for each variable given its parents.  However, unlike a
+BN, the graph of parent-child relationships may contain cycles.  With
+Libra, we can learn a dependency network with tree-structured
+conditional probability distributions using {\tt dnlearn}:
+\begin{verbatim}
+  libra dnlearn -i msweb.data -s msweb.schema -o msweb-dn.dn -prior 1
+\end{verbatim}
+
+The algorithm is similar to that of Heckerman et
+al.~\cite{heckerman&al00}.  As with {\tt bnlearn}, the user can set
+the prior counts on the multinomial leaf distributions ({\tt -prior})
+as well as a per-split penalty ({\tt -ps}) to prevent overfitting.
+
+If all variables are binary-valued, logistic regression CPDs can be
+used instead ({\tt -logistic}).  To obtain sparsity, tune the L1
+regularization parameter with the {\tt -l1} option.
+\begin{verbatim}
+  libra dnlearn -i msweb.data -s msweb.schema -o msweb-dn-l1.dn
+        			  -logistic -l1 2
+\end{verbatim}
+
+\subsection{{\tt dnboost}: DN Structure Learning with Logitboost} \label{sec:dnboost}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -i} &          Training data file \\
+{\tt -valid} &      Validation data \\
+{\tt -s} &          Data schema (optional) \\
+{\tt -o} &          Output dependency network \\
+{\tt -numtrees} &   Number of trees per CPD \\
+{\tt -numleaves} &  Number of leaves per tree \\
+{\tt -nu} &         Shrinkage [0-1] (0 =$>$ line search) \\
+{\tt -mincount} &   Minimum number of examples at each decision tree leaf [10] \\
+\end{tabular} \\
+
+Dependency networks with boosted decision trees as the conditional
+model can be learned with {\tt dnboost}.  The boosting method is based
+on the logitboost algorithm~\cite{friedman&al98}.  Important
+parameters include the number of trees to learn for each conditional
+distribution ({\tt -numtrees}), the number of leaves for each tree
+({\tt -numleaves}), and shrinkage ({\tt -shrinkage}).  To use
+validation data for early stopping, specify the file with {\tt
+-valid}.
+
+In our limited experience, boosted decision trees usually work worse
+than single decision trees or logistic regression CPDs.
+
+\subsection{{\tt dn2mn}: Learning MNs from DNs} \label{sec:dn2mn}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &        Model file (DN) \\
+{\tt -o} &        Output Markov network \\
+{\tt -i} &        Input data \\
+{\tt -base} &     Average over base instances from data \\
+{\tt -bcounts} &  Average over base instances from data, using cached counts \\
+{\tt -marg} &     Average over all instances, weighted by data marginals [default] \\
+{\tt -order} &    Variable order file \\
+{\tt -rev} &      Add reverse orders, for symmetry [default] \\
+{\tt -norev} &    Do not add reverse orders \\
+{\tt -single} &   Average over given orders \\
+{\tt -linear} &   Average over all rotations of all orders [default] \\
+{\tt -all} &      Average over all possible orderings \\
+{\tt -maxlen} &   Max feature length for -linear or -all [default: unlimited] \\
+{\tt -uniq} &     Combine weights for duplicate features (may be slower) \\
+\end{tabular} \\
+
+The DN2MN algorithm ({\tt dn2mn})~\cite{lowd12} converts a DN into an
+MN representing a similar distribution.  The advantage of DNs is that
+they are easier to learn; the advantage of MNs is clearer semantics
+and more inference algorithms.  DN2MN allows a learned DN to be
+converted to an MN for inference, giving the best of both worlds.  For
+consistent DNs, this conversion is exact.  If the CPDs are
+inconsistent with each other, as is typical for learned DNs, then the
+resulting MN will not represent the exact same distribution.  The
+approximation is often improved by averaging over multiple orderings
+or base instances (see~\cite{lowd12} for more details).
+
+For averaging over multiple base instances, use {\tt -i} to specify a
+set of input examples, which are either used to learn the marginal
+distribution over the base instances ({\tt -marg}) or used as the base
+instances directly ({\tt -base} or {\tt -bcounts}).  The default
+variable order is $(1, 2, \ldots, n)$.  To specify a different order
+or set of orders from a file, use {\tt -order}.  To add in reverse
+orders, use {\tt -rev}.  To add in rotations over all orderings (e.g.,
+$(2, 3, \ldots, n, 1)$), use {\tt -linear}.  To sum over all possible
+orderings, use {\tt -all}.  To obtain faster performance and smaller
+models, use {\tt -maxlen} to restrict the use of {\tt -all} or
+{\tt -linear} to short features.  Longer features are then handled
+with more efficient methods ({\tt -linear} instead of {\tt -all} or
+{\tt -single} instead of {\tt -linear}).
+
+Default options are {\tt -marg}, {\tt -rev}, and {\tt -linear}, which
+typically provides a compact and robust approximation, especially when
+given representative data with {\tt -i}:
+\begin{verbatim}
+  libra dn2mn -m msweb-dn.dn -o msweb-dn.mn -i msweb.data
+\end{verbatim}
+
+To sum over a single order instead, use {\tt -base}, {\tt -norev}, and
+{\tt -single}.  The conversion process often leads to many duplicate
+features.  To merge these automatically, use {\tt -uniq}.  This may
+lead to slower performance.
+
+Another method for learning an MN from a DN is to run {\tt mnlearnw},
+which, when given a DN model with {\tt -m}, uses the DN features but
+relearns the parameters from data.
+
+\subsection{{\tt mnlearnw}: MN Weight Learning} \label{sec:mnlearnw}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &        Input Markov network structure \\
+{\tt -i} &        Training data \\
+{\tt -o} &        Output model \\
+{\tt -maxiter} &  Maximum number of optimization iterations [100] \\
+{\tt -sd} &       Standard deviation of Gaussian weight prior [1.0] (< 0 = inf) \\
+{\tt -l1} &       Weight of L1 norm [0.0] \\
+{\tt -clib} &     Use C implementation for speed [true]  \\
+{\tt -noclib} &   Use OCaml implementation \\
+{\tt -cache} &    Enable feature cache (much faster, but more memory) [true] \\
+{\tt -nocache} &  Disable feature cache \\
+\end{tabular} \\
+
+MN weight learning ({\tt mnlearnw}) selects weights to
+minimize the penalized pseudo-likelihood of the training data.  Both
+L1 and L2 penalties are supported.  The weight of the L1 norm can be
+set using {\tt -l1} and the standard deviation of the L2 prior can be
+set using {\tt -sd}.  Optimization is performed using the
+L-BFGS~\cite{liu&nocedal89} or OWL-QN~\cite{andrew&gao07} algorithm.
+To achieve the best performance for most applications, the internal
+optimization is implemented in C and caches all features relevant to
+each example.  These optimizations can be disabled with {\tt -noclib}
+and {\tt -nocache}, respectively.  Learning terminates when the
+optimization converges or when the maximum iteration number is reached
+({\tt -maxiter}).
+
+\subsection{{\tt acopt}: AC Parameter Learning} \label{sec:acopt}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &        Arithmetic circuit to optimize \\
+{\tt -o} &        Output circuit \\
+{\tt -ma} &       Model to approximate (BN or MN) \\
+{\tt -i} &        Empirical distribution to approximate \\
+{\tt -gibbs} &    Approximate sampled empirical distribution [false] \\
+{\tt -gspeed} &   Number of samples (fast/medium/slow/slower/slowest) \\
+{\tt -gc} &       Number of MCMC chains  \\
+{\tt -gb} &       Number of burn iterations \\
+{\tt -gs} &       Number sampling iterations \\
+{\tt -gdn} &      Sample from CPD instead of Markov blanket \\
+{\tt -norb} &     Disable Rao-Blackwellization \\
+{\tt -seed} &     Random seed \\
+{\tt -ev} &       Evidence file \\
+{\tt -init} &     Initial variable marginals \\
+{\tt -maxiter} &  Maximum number of optimization iterations [100] \\
+\end{tabular} \\
+
+AC parameters can be learned or otherwise optimized using {\tt acopt}.
+Given training data ({\tt -i} {\em $<$file$>$}), {\tt acopt} finds
+parameters that maximize the log-likelihood of the training data.
+This works for any AC that represents a log linear model, including
+BNs and MNs.  Our implementation uses L-BFGS~\cite{liu&nocedal89}, a
+standard convex optimization method.  The gradient of the
+log-likelihood is computed in each iteration by differentiating the
+circuit, which is linear in circuit size.  Since this is a convex
+problem, the parameters will eventually converge to their optimal
+values.  The maximum number of iterations can be specified using
+{\tt -maxiter}.
+
+Given a BN or MN to approximate ({\tt -ma}) and, optionally, evidence
+({\tt -ev}), {\tt acopt} supports two other kinds of parameter
+optimization.
+
+The first is to minimize the KL divergence between the given BN or MN
+(optionally conditioned on evidence) and the AC ({\em i.e.},
+$D_{\text{KL}}(\text{AC}||\text{BN})$).  This is similar to mean field
+inference, except that an AC is used in place of a fully factored
+distribution, and the optimization is performed using L-BFGS instead
+of message passing.
+
+The second type of optimization ({\tt -gibbs}) approximately minimizes
+the KL divergence in the other direction,
+$D_{\text{KL}}(\text{BN}||\text{AC})$ or
+$D_{\text{KL}}(\text{MN}||\text{AC})$, by generating samples from the
+BN or MN (optionally conditioned on evidence) and selecting AC
+parameters to maximize their likelihood.  Samples are generated using
+Gibbs sampling, with parameters analogous to those for the {\tt gibbs}
+command (Section~\ref{sec:gibbs}).  The most important options are
+{\tt -gspeed} or {\tt -gc}/{\tt -gb}/{\tt -gs} to set the number of
+samples.  Increasing the number of samples yields a better
+approximation but takes longer to run.  This is similar to running
+{\tt gibbs}, saving the samples using {\tt -so}, and then running {\tt
+acopt} with {\tt -i}, as described above.  However, {\tt acopt -gibbs}
+is faster since it only needs to compute the sufficient statistics
+instead of storing and reloading the entire set of samples.
+
+The main application of {\tt acopt} is for for performing approximate
+inference using ACs, as described by~\cite{lowd&domingos10}.  This can
+be done by generating samples from a BN ({\tt bnsample}), learning an
+AC from the samples ({\tt acbn}), and then optimizing the AC's
+parameters for specific evidence ({\tt acopt}) (see
+\cite{lowd&domingos10}).
+
+
+\section{Inference Methods}
+\label{sec:inference}
+
+\subsection{{\tt acve}: AC Variable Elimination} \label{sec:acve}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &      Model file (BN or MN) \\
+{\tt -o} &      Output circuit \\
+\end{tabular} \\
+
+AC variable elimination ({\tt acve})~\cite{chavira&darwiche07}
+compiles a BN or MN by simulating variable elimination and encoding
+the addition and multiplication operations into an AC:
+\begin{verbatim}
+  libra acve -m msweb-cl.xmod -o msweb-cl.ac
+\end{verbatim}
+ACVE represents the original and intermediate factors as algebraic
+decision diagrams (ADDs) with AC nodes at the leaves.  As each
+variable is summed out, the leaves of the ADDs are replaced with new
+sum and product nodes.  By producing an AC, ACVE builds a
+representation that can answer many different queries.  By using ADDs,
+ACVE can exploit context-specific independence much better than
+previous methods based on variable elimination.  See Chavira and
+Darwiche~\cite{chavira&darwiche07} for details.
+
+The one difference between Libra's implementation and the standard
+algorithm is that its ADDs allow $k$-way splits for variables with $k$
+values.  In the standard algorithm, $k$-valued variables are converted
+into $k$ Boolean variables, along with constraints to ensure that
+exactly one of these variables is true at a time.  We also omit the
+circuit node cache, which we find has little effect on circuit size at
+the cost of significantly slowing compilation.
+
+If no output file is specified, then {\tt acve} does not create a
+circuit but simply sums out all variables and prints out the value of
+the log partition function ($\log Z$).  To compute conditional
+probabilities without creating an AC, use {\tt mconvert -ev} to
+condition the model on different evidence and {\tt acve} to compute
+the log partition functions of the conditioned models.  The log
+probability of a query ($\log P(q|e)$) is the difference between the
+log partition function of the model conditioned on query and evidence
+($\log Z_{q,e}$) and the model conditioned only on evidence ($\log
+Z_{e}$).
+
+\subsection{{\tt acquery}: Exact AC Inference} \label{sec:acquery}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &         Input arithmetic circuit \\
+{\tt -ev} &        Evidence file \\
+{\tt -q} &         Query file \\
+{\tt -sameev} &    Use the same evidence for all queries \\
+{\tt -preprune} &  Prune circuit for the evidence \\
+{\tt -marg} &      Use conditional marginals instead of joint distribution \\
+{\tt -mpe} &       Compute most probable explanation (MPE) state \\
+{\tt -mo} &        Output file for marginals or MPE \\
+\end{tabular} \\
+
+Exact inference in ACs is done through {\tt acquery}, which accepts
+similar arguments to the approximate inference algorithms. See
+Darwiche~\cite{darwiche03} for a thorough description of ACs and how
+to use them for inference.  We provide a brief description of the
+methods below.
+
+To compute the probability of a conjunctive query, we set all
+indicator variables in the AC to zero if they are inconsistent with
+the query and to one if they are consistent.  For instance, to compute
+$P(X_1 = \text{true} \wedge X_3 = \text{false})$, we would set the
+indicator variables for $X_1=\text{false}$ and $X_3=\text{true}$ to
+zero and all others to one.  Evaluating the root of the circuit gives
+the probability of the input query.  Conditional probabilities are
+answered by taking the ratio of two unconditioned probabilities:
+\[
+P(Q|E) = \frac{P(Q \wedge E)}{P(E)}
+\]
+where $Q$ and $E$ are conjunctions of query and evidence variables,
+respectively.  Both $P(Q \wedge E)$ and $P(E)$ can be computed using
+previously discussed methods.  Evaluating the circuit is linear in the
+size of the circuit.
+
+We can also differentiate the circuit to compute all marginals in
+parallel ({\tt -marg}), optionally conditioned on evidence.
+Differentiating the circuit consists of an upward pass and a downward
+pass, each of which is linear in the size of the circuit.  See
+Darwiche~\cite{darwiche03} for more details.
+
+In addition, we can compute the most probable explanation (MPE) state
+({\tt -mpe}), which is the most likely configuration of the
+non-evidence variables given the evidence.  When the MPE state is not
+unique, {\tt acquery} selects one of the MPE states arbitrarily.
+
+We can also use {\tt acquery} to compute the probabilities of
+configurations of multiple variables, such as the probability that
+variables two through five all equal 0.  To do this, we need to create
+a query file that defines every configuration we're interested in.
+The format is identical to Libra data files, except that we use ``*''
+in place of an actual value for variables whose values are
+unspecified.  {\tt msweb.q} contains three example queries.
+\begin{verbatim}
+  libra acquery -m msweb-cl.ac -q msweb.q
+\end{verbatim}
+{\tt acquery} outputs the log probability of each query as
+well as the average over all queries and its standard deviation.
+With the {\tt -v} flag, {\tt acquery} will print out query times in
+a second column.
+
+An evidence file can be specified as well using {\tt -ev}, using the
+same format as the query file:
+\begin{verbatim}
+  libra acquery -m msweb-cl.ac -q msweb.q -ev msweb.ev -v
+\end{verbatim}
+
+Evidence can also be used when computing marginals.  If you specify
+both {\tt -q} and {\tt -marg}, then the probability of each query will be
+computed as the product of the marginals computed.  This is typically
+less accurate, since it ignores correlations among the query variables.
+
+To obtain the most likely variable state (possibly conditioned on
+evidence), use the {\tt -mpe} flag:
+\begin{verbatim}
+  libra acquery -m msweb-cl.ac -ev msweb.ev -mpe
+\end{verbatim}
+This computes the most probable explanation (MPE) state for each
+evidence configuration.  If the MPE state is not unique, {\tt acquery}
+will select one arbitrarily.  If you specify a query with {\tt -q},
+then {\tt acquery} will print out the fraction of query variables that
+differ from the predicted MPE state:
+\begin{verbatim}
+  libra acquery -m msweb-cl.ac -q msweb.q -ev msweb.ev -mpe
+\end{verbatim}
+
+\subsection{{\tt spquery}: Exact Inference in Sum-Product Networks} \label{sec:spquery}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &      Input SPN (SPAC) model directory \\
+{\tt -ev} &     Evidence file \\
+{\tt -q} &      Query file \\
+\end{tabular} \\
+
+For models represented in the {\tt .spn} format, we can use {\tt
+spquery} to find the log probability of queries or the conditional log
+probability of queries given evidence:
+\begin{verbatim}
+  libra spquery -m msweb-mt.spn -q msqweb.q -ev msweb.ev
+\end{verbatim}
+
+For more complex queries, such as computing the most probable
+explanation (MPE) state or marginals, you must first use {\tt spn2ac}
+to convert the {\tt .spn} file to the {\tt .ac} format and then use
+{\tt acquery}, Section~\ref{sec:acquery}.
+
+
+\subsection{{\tt mf}: Mean Field} \label{sec:mf}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &           Model file (BN, MN, or DN) \\
+{\tt -mo} &          Output file for marginals \\
+{\tt -ev} &          Evidence file \\
+{\tt -sameev} &      Use the same evidence for all queries \\
+{\tt -q} &           Query file \\
+{\tt -maxiter} &     Maximum number of iterations [50] \\
+{\tt -thresh} &      Convergence threshold [0.0001] \\
+{\tt -depnet} &      Interpret factors as CPDs in a cyclical dependency network \\
+{\tt -roundrobin} &  Update marginals in order instead of skipping unchanged vars \\
+\end{tabular} \\
+
+Mean field ({\tt mf}) is an approximate inference algorithm that
+attempts to minimize the KL divergence between the specified
+MN or BN (possibly conditioned on evidence) and a fully factored
+distribution ({\em i.e.}, a product of single-variable marginals):
+\begin{verbatim}
+  libra mf -m msweb-cl.bn
+  libra mf -m msweb-cl.bn -q msweb.q
+  libra mf -m msweb-cl.bn -q msweb.q -ev msweb.ev -v
+\end{verbatim}
+Note that there is no {\tt -marg} option, since mean field always
+approximates the distribution as a product of marginals.
+
+Libra's implementation updates one marginal at a time until all
+marginals have converged, using a queue to keep track of which
+marginals may need to be updated (see Algorithm 11.7
+from~\cite{koller&friedman09}).  With the {\tt -roundrobin} flag,
+Libra will instead update all marginals in order.  The stopping
+criteria can be adjusted using the parameters {\tt -thresh}
+(convergence threshold) or {\tt -maxiter} (maximum number of
+iterations).  Rather than working directly with table or tree CPDs,
+{\tt mf} converts both to a set of features and works directly with
+the log-linear representation, ensuring that the compactness of tree
+CPDs is fully exploited.
+
+Libra's implementation is the first to support mean field inference in
+DNs, using the {\tt -depnet} option.  Since a DN may not represent a
+consistent probability distribution, the mean field objective is
+undefined.  However, the message-passing updates can still be applied
+to DNs and they tend to converge in practice~\cite{lowd&shamaei11}.
+
+\subsection{{\tt bp}: Loopy Belief Propagation} \label{sec:bp}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &        Model file (BN or MN) \\
+{\tt -mo} &       Output file for marginals \\
+{\tt -ev} &       Evidence file \\
+{\tt -sameev} &   Use the same evidence for all queries \\
+{\tt -q} &        Query file \\
+{\tt -maxiter} &  Maximum number of iterations [50] \\
+{\tt -thresh} &   Convergence threshold [0.0001] \\
+\end{tabular} \\
+
+Loopy belief propagation ({\tt bp}) is the application of an exact
+inference algorithm for trees to general graphs that may have loops:
+\begin{verbatim}
+  libra bp -m msweb-cl.bn -q msweb.q -ev msweb.ev -v
+  libra bp -m msweb-cl.bn -q msweb.q -ev msweb.ev -sameev -v
+\end{verbatim}
+The {\tt -sameev} option in the second command runs BP only once with
+the first evidence configuration in {\tt msweb.ev}, and then reuses the
+marginals for answering all queries in {\tt msweb.q}.
+
+{\tt bp} is implemented on a factor graph, in which variables pass
+messages to factors and factors pass messages back to variables in
+each iteration.  All factor-to-variable or variable-to-factor messages
+are passed in parallel, a message passing schedule known as
+``flooding.''  For BNs, each factor is a CPD for one of the variables.
+For factors represented as trees or sets of features, the running time
+of a single message update is linear in the number of leaves or
+features, respectively.  This allows {\tt bp} to run on networks with
+factors that involve 100 or more variables, as long as the
+representation is compact.
+
+\subsection{{\tt maxprod}: Max-Product} \label{sec:maxprod}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &        Model file (BN or MN) \\
+{\tt -mo} &       Output file for MPE states \\
+{\tt -ev} &       Evidence file \\
+{\tt -sameev} &   Use the same evidence for all queries \\
+{\tt -q} &        Query file \\
+{\tt -maxiter} &  Maximum number of iterations [50] \\
+{\tt -thresh} &   Convergence threshold [0.0001] \\
+\end{tabular} \\
+
+The max-product algorithm ({\tt maxprod}) is an approximate inference
+algorithm to find the most probable explanation (MPE) state, the most
+likely configuration of the non-evidence variables given the evidence.
+Like {\tt bp}, max-product is an exact inference algorithm in
+tree-structured networks, but may be incorrect in graphs with loops.
+Max-product is implemented identically to {\tt bp}, but replacing sum
+operations with max.
+
+Examples:
+\begin{verbatim}
+  libra maxprod -m msweb-cl.bn -ev msweb.ev -mo msweb-cl.mpe
+  libra maxprod -m msweb-bn.bn -q msweb.q -ev msweb.ev -v
+\end{verbatim}
+
+
+\subsection{{\tt gibbs}: Gibbs Sampling} \label{sec:gibbs}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &         Model file (BN, MN, or DN) \\
+{\tt -depnet} &    Sample from CPD only, not Markov blanket \\
+{\tt -mo} &        Output file for marginals \\
+{\tt -so} &        Output file for samples \\
+{\tt -marg} &      Compute marginals \\
+{\tt -ev} &        Evidence file \\
+{\tt -sameev} &    Use the same evidence for all queries \\
+{\tt -q} &         Query file \\
+{\tt -speed} &     Number of samples (fast/medium/slow/slower/slowest) \\
+{\tt -chains} &    Number of MCMC chains \\
+{\tt -burnin} &    Number of burn-in iterations \\
+{\tt -sampling} &  Number sampling iterations \\
+{\tt -norb} &      Disable Rao-Blackwellization \\
+{\tt -prior} &     Total prior counts \\
+{\tt -seed} &      Random seed \\
+\end{tabular} \\
+
+Gibbs sampling ({\tt gibbs}) is an instance of Markov-chain Monte
+Carlo (MCMC) that generates samples by resampling a single variable at
+a time conditioned on its Markov blanket.  The probability of any
+query can be computed by counting the fraction of samples that satisfy
+the query.  When evidence is specified, the values of the evidence
+variables are fixed and never resampled.  By default, Libra's
+implementation computes the probabilities of conjunctive queries ({\em
+e.g.}, $P(X_1 \wedge X_2 \wedge \neg X_4)$) or marginal queries ({\em
+e.g.}, $P(X_1)$), optionally conditioned on evidence.  This is
+potentially more powerful than MF and BP, which only compute marginal
+probabilities.  To compute only marginal probabilities with Gibbs
+sampling, use the {\tt -marg} option.  This is helpful when the specific
+queries are very rare (such as long conjunctions) but can be
+approximated well as the product of the individual marginal
+probabilities.
+
+The running time of Gibbs sampling depends on the number of samples
+taken.  Use {\tt -burnin} to set the number of burn-in iterations
+(sampling steps thrown away before counting the samples); use {\tt
+-sampling} to set the number of sampling iterations; and use {\tt
+-chains} to set the number of repeated sampling runs.  For
+convenience, these parameters can also be set using the {\tt -speed}
+option which allows arguments of {\tt fast}, {\tt medium}, {\tt slow},
+{\tt slower}, and {\tt slowest}, which range from 1000 to 10 million
+total sampling iterations.  All speeds except for {\tt fast} use 10
+chains and a number of burn-in iterations equal to 10\% of the
+sampling iterations. Samples can be output to a file using the {\tt
+-so} option.
+
+By default, Libra uses Rao-Blackwellization to make the probabilities
+slightly more accurate.  This adds {\em fractional} counts to multiple
+states by examining the distribution of the variable to be resampled.
+For instance, suppose the sampler is computing the marginal
+distribution $P(X_3)$, and that the probability of $X_3 = \text{true}$
+is 0.001, given the current state of its Markov blanket.  A standard
+Gibbs sampler adds 1 to the count of the next sampled state and 0 to
+the other.  In contrast, Libra's Rao-Blackwellized sampler adds 0.001
+to the counts for $X_3$ being true and 0.999 to the counts for $X_3$
+being false.  This applies both to computing conjunctive queries and
+marginals.  It can be disabled with the flag {\tt -norb}.
+
+{\tt gibbs} can answer queries using either the full joint
+distribution (the default) or just the marginals (with {\tt -marg}).
+The latter option is helpful for estimating the probabilities of rare
+events that may never show up in the samples.
+
+To print the raw samples to a file, use {\tt -so}.  To obtain
+repeatable experiments, use {\tt -seed} to specify a random seed.
+
+Examples:
+\begin{verbatim}
+  libra gibbs -m msweb-bn.bn -mo msweb-gibbs.marg
+  libra gibbs -m msweb-bn.bn -q msweb.q -ev msweb.ev -v
+  libra gibbs -m msweb-bn.bn -q msweb.q -ev msweb.ev -speed medium -v
+  libra gibbs -m msweb-bn.bn -q msweb.q -ev msweb.ev -marg -sameev
+\end{verbatim}
+
+Gibbs sampling can be run on a BN, MN, or DN.  To force a {\tt .xmod}
+or {\tt .bif} file to be treated as a DN when sampling, use the {\tt
+-depnet} flag.
+
+\subsection{{\tt icm}: Iterated Conditional Modes} \label{sec:icm}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &         Model file (BN, MN, or DN) \\
+{\tt -mo} &        Output file for MPE states \\
+{\tt -depnet} &    Treat BN as a DN when computing conditional probabilities \\
+{\tt -ev} &        Evidence file \\
+{\tt -sameev} &    Use the same evidence for all queries \\
+{\tt -q} &         Query file \\
+{\tt -restarts} &  Number of random restarts [1] \\
+{\tt -maxiter} &   Maximum number of iterations [-1] \\
+{\tt -seed} &      Random seed \\
+\end{tabular} \\
+
+Iterated conditional modes ({\tt icm})~\cite{besag86} is a simple
+hill-climbing algorithm for MPE inference.  Starting from a random
+initial state, it sets each variable in turn to its most likely state
+given its Markov blanket, until it reaches a local optimum.  Multiple
+random restarts can lead to better optima.  In an inconsistent DN, the
+algorithm is not guaranteed to terminate.
+\begin{verbatim}
+  libra icm -m msweb-bn.bn -ev msweb.ev
+\end{verbatim}
+
+
+\section{Utilities}
+
+\subsection{{\tt mscore}: Model Scoring} \label{sec:mscore}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &       Input model (BN, MN, DN, or AC) \\
+{\tt -depnet} &  Score model as a DN, using pseudo-log-likelihood \\
+{\tt -i} &       Test data file \\
+{\tt -pll} &     Compute pseudo-log-likelihood \\
+{\tt -pervar} &  Give MN PLL or BN LL for each variable separately. \\
+{\tt -clib} &    Use C library for computing PLL \\
+{\tt -noclib} &  Use only OCaml code for computing PLL \\
+\end{tabular} \\
+
+The command {\tt mscore} computes the log-likelihood of a set of
+examples for BNs or ACs.  For MNs, {\tt mscore} can be used to compute
+the unnormalized log-likelihood, which will differ from the true
+log-likelihood by {\tt log Z}, the log partition function of the MN.
+Using the {\tt -pll} flag, {\tt mscore} will compute the
+pseudo-log-likelihood (PLL) of a set of examples instead.  For DNs,
+{\tt mscore} always computes the PLL.  With {\tt -pervar}, {\tt
+mscore} provides the log-likelihood or PLL for each variable
+separately.
+
+\subsection{{\tt bnsample}: BN Forward Sampling} \label{sec:bnsample}
+
+%\vspace{0.1in}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &      Model file (BN) \\
+{\tt -o} &      Output file \\
+{\tt -n} &      Number of samples to generate [1000] \\
+{\tt -seed} &   Random seed \\
+\end{tabular} \\
+
+The command {\tt bnsample} can be used to generate a set of
+independent samples from a BN using forward sampling.  Each variable
+is sampled given its parents, in topological order.  Use {\tt -n} to
+indicate the number of samples and {\tt -seed} to choose a random
+seed.
+
+\subsection{{\tt mconvert}: Model Format Conversion} \label{sec:mconvert}
+
+%\vspace{0.1in}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &      Input model file (BN, MN, or AC) \\
+{\tt -o} &      Output model file \\
+{\tt -ev} &     Evidence file \\
+{\tt -feat} &   Convert MN factors to features \\
+{\tt -dn} &     Convert factors to conditional distributions, producing a DN \\
+\end{tabular} \\
+
+The command {\tt mconvert} performs conversions among the AC, BN, DN,
+and MN file formats, and conditions models on evidence ({\tt -ev}).
+ACs can be converted to ACs or MNs; BNs can be converted to BNs, MNs,
+or DNs; MNs can be converted to MNs or DNs; and DNs can be converted
+to DNs or MNs.  Converting from a DN to an MN will keep the same set
+of features but not the same distribution; to maintain (approximately)
+the same distribution, use the {\tt dn2mn} algorithm instead.  If an
+evidence file is specified (using {\tt -ev}), then the output model
+must be an AC or MN.  Conditioning on evidence ``reduces'' the model
+by removing portions of the model that are inconsistent with the
+evidence.  If the {\tt -feat} option is specified, then each factor
+will be a set of features.  The {\tt -dn} option converts the factors
+of a BN or MN to a set of conditional probability distributions, one
+for each variable given its Markov blanket.
+
+\subsection{{\tt spn2ac}: SPN to AC Conversion} \label{sec:spn2ac}
+
+%\vspace{0.1in}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -m} &      Input SPN (SPAC) model directory \\
+{\tt -o} &      Output arithmetic circuit
+\end{tabular} \\
+
+The command {\tt spn2ac} takes a sum-product network {\tt .spn} and
+converts it to an equivalent arithmetic file.
+
+\subsection{{\tt fstats}: File Information} \label{sec:fstats}
+
+%\vspace{0.1in}
+
+\noindent \underbar{Options:} \\
+\begin{tabular}{ll}
+{\tt -i} &      Input file (BN, MN, DN, AC, or data) \\
+\end{tabular} \\
+
+{\tt fstats} gives basic information for files of most types supported
+by Libra.
+
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{libra}
+
+\end{document}

@@ -1,0 +1,154 @@
+Arguments: ../../bin/acve -b alarm.bif -o out2.ac -log out2.log -v
+Minfill ordering: 0.000546s
+ADD creation: 0.000765s
+cus maxsize = 0.000000
+Eliminating var 0: 0.000011s
+Summing out: 0.000010s
+Final size: 3
+73 factors remaining.
+Eliminating var 1: 0.000011s
+Summing out: 0.000006s
+Final size: 4
+72 factors remaining.
+Eliminating var 2: 0.000010s
+Summing out: 0.000005s
+Final size: 4
+71 factors remaining.
+Eliminating var 4: 0.000021s
+Summing out: 0.000006s
+Final size: 7
+68 factors remaining.
+Eliminating var 3: 0.000024s
+Summing out: 0.000007s
+Final size: 10
+65 factors remaining.
+Eliminating var 5: 0.000018s
+Summing out: 0.000005s
+Final size: 4
+62 factors remaining.
+Eliminating var 6: 0.000023s
+Summing out: 0.000009s
+Final size: 13
+60 factors remaining.
+Eliminating var 7: 0.000019s
+Summing out: 0.000008s
+Final size: 12
+58 factors remaining.
+Eliminating var 8: 0.000009s
+Summing out: 0.000006s
+Final size: 4
+57 factors remaining.
+Eliminating var 9: 0.000012s
+Summing out: 0.000007s
+Final size: 7
+56 factors remaining.
+Eliminating var 10: 0.000024s
+Summing out: 0.000007s
+Final size: 9
+53 factors remaining.
+Eliminating var 11: 0.000009s
+Summing out: 0.000006s
+Final size: 4
+52 factors remaining.
+Eliminating var 12: 0.000051s
+Summing out: 0.000018s
+Final size: 44
+50 factors remaining.
+Eliminating var 13: 0.000085s
+Summing out: 0.000008s
+Final size: 4
+48 factors remaining.
+Eliminating var 15: 0.000016s
+Summing out: 0.000008s
+Final size: 8
+47 factors remaining.
+Eliminating var 17: 0.000017s
+Summing out: 0.000008s
+Final size: 10
+46 factors remaining.
+Eliminating var 18: 0.000022s
+Summing out: 0.000009s
+Final size: 15
+44 factors remaining.
+Eliminating var 21: 0.000008s
+Summing out: 0.000006s
+Final size: 3
+43 factors remaining.
+Eliminating var 22: 0.000017s
+Summing out: 0.000007s
+Final size: 7
+40 factors remaining.
+Eliminating var 25: 0.000037s
+Summing out: 0.000013s
+Final size: 28
+39 factors remaining.
+Eliminating var 16: 0.000133s
+Summing out: 0.000018s
+Final size: 45
+36 factors remaining.
+Eliminating var 26: 0.000021s
+Summing out: 0.000009s
+Final size: 9
+34 factors remaining.
+Eliminating var 27: 0.000016s
+Summing out: 0.000007s
+Final size: 5
+32 factors remaining.
+Eliminating var 28: 0.000015s
+Summing out: 0.000007s
+Final size: 5
+30 factors remaining.
+Eliminating var 29: 0.000026s
+Summing out: 0.000010s
+Final size: 16
+28 factors remaining.
+Eliminating var 36: 0.000018s
+Summing out: 0.000008s
+Final size: 11
+27 factors remaining.
+Eliminating var 30: 0.000208s
+Summing out: 0.000019s
+Final size: 52
+23 factors remaining.
+Eliminating var 34: 0.000028s
+Summing out: 0.000008s
+Final size: 9
+19 factors remaining.
+Eliminating var 35: 0.000017s
+Summing out: 0.000008s
+Final size: 9
+17 factors remaining.
+Eliminating var 14: 0.000043s
+Summing out: 0.000011s
+Final size: 28
+14 factors remaining.
+Eliminating var 33: 0.000131s
+Summing out: 0.000009s
+Final size: 12
+13 factors remaining.
+Eliminating var 19: 0.000047s
+Summing out: 0.000014s
+Final size: 37
+11 factors remaining.
+Eliminating var 20: 0.000044s
+Summing out: 0.000013s
+Final size: 40
+9 factors remaining.
+Eliminating var 23: 0.000036s
+Summing out: 0.000015s
+Final size: 40
+7 factors remaining.
+Eliminating var 24: 0.000131s
+Summing out: 0.000010s
+Final size: 16
+4 factors remaining.
+Eliminating var 31: 0.000018s
+Summing out: 0.000007s
+Final size: 4
+2 factors remaining.
+Eliminating var 32: 0.000006s
+Summing out: 0.000006s
+Final size: 1
+1 factors remaining.
+Variable elimination: 0.006277s
+Creating circuit: 0.008308s

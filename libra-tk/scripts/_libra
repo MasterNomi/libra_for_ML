@@ -1,0 +1,79 @@
+#!/bin/sh
+
+LIBRA_PATH=`dirname $0`
+
+if [ "$1" = "acmn" ] || 
+		[ "$1" = "bp" ]  || 
+		[ "$1" = "idspn" ]				|| 	 
+		[ "$1" = "gibbs" ]        || 
+		[ "$1" = "acbn" ]         || 
+		[ "$1" = "daclearn" ]         || 
+		[ "$1" = "condacbn" ]         || 
+		[ "$1" = "acopt" ]        || 
+		[ "$1" = "acquery" ]      || 
+		[ "$1" = "condAcquery" ]      || 
+		[ "$1" = "bnlearn" ]      || 
+		[ "$1" = "acve" ]         || 
+		[ "$1" = "bnsample" ]     || 
+		[ "$1" = "cl" ]           || 
+		[ "$1" = "dn2mn" ]        || 
+		[ "$1" = "dnboost" ]      || 
+		[ "$1" = "dnlearn" ]      || 
+		[ "$1" = "fstats" ]       || 
+		[ "$1" = "icm" ]          || 
+		[ "$1" = "maxprod" ]      || 
+		[ "$1" = "mconvert" ]     || 
+		[ "$1" = "mf" ]           || 
+		[ "$1" = "mnlearnw" ]     || 
+		[ "$1" = "mnsetw" ]       || 
+		[ "$1" = "mscore" ]       || 
+		[ "$1" = "spn2ac" ]       || 
+		[ "$1" = "mtlearn" ]      || 
+		[ "$1" = "spnlearn" ]     || 
+		[ "$1" = "crflearn" ]     || 
+		[ "$1" = "cluster" ]     || 
+		[ "$1" = "spquery" ] ; then 
+if [[ -e $LIBRA_PATH/_libra_$1 ]]; then
+    $LIBRA_PATH/_libra_$@
+else
+    echo "Error: Could not find executable for command '$1' in directory $LIBRA_PATH."
+fi
+else
+echo "Usage: libra Command Options"
+echo " Commands:"
+
+echo "  Learning algorithms:"
+
+echo "    cl        The Chow-Liu algorithm for tree-structured BNs"
+echo "    bnlearn   Learning BNs with tree CPDs"
+echo "    dnlearn   Learning DNs with tree or logistic regression CPDs"
+echo "    dnboost   Learning DNs with boosted tree CPDs"
+echo "    acbn      Using ACs to learn tractable BNs with tree CPDs"
+echo "    acmn      Using ACs to learn tractable MNs with conjunctive features"
+echo "    idspn     The ID-SPN algorithm for learning SPN structure"
+echo "    mtlearn   Learning mixtures of trees"
+echo "    dn2mn     Learning MNs from DNs"
+echo "    mnlearnw  MN weight learning, to maximize L1/L2 penalized pseudo-likelihood"
+echo "    acopt     Parameter learning for ACs, to match an empirical distribution or another BN or MN"
+echo " "
+echo "  Inference algorithms:"
+echo "    acquery   Exact inference in ACs"
+echo "    spquery   Exact inference in SPNs"
+echo "    mf        Mean field inference"
+echo "    gibbs     Gibbs sampling"
+echo "    icm       Iterated conditional modes"
+echo "    bp        Loopy belief propagation"
+echo "    maxprod   Max-product"
+echo "    acve      AC variable elimination"
+echo "  "
+echo "  Utilities:"
+echo "    bnsample  BN forward sampling"
+echo "    mscore    Likelihood and pseudo-likelihood model scoring"
+echo "    mconvert  Model conversion and conditioning on evidence"
+echo "    spn2ac    Convert SPNs to ACs"
+echo "    fstats    File information for any supported file type"
+echo "  "
+echo " For the options of each command, try:"
+echo "   libra command"
+echo "  "
+fi

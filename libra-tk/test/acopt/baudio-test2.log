@@ -1,0 +1,21 @@
+Initializing...
+Num variables = 100
+Number of circuit features = 10666
+Number of pruned circuit features = 1473
+BNF feature time: 0.015718
+Num BN features = 866
+1473 features, 866 BN features after.
+fx = 5.031693 (24.009576 sec)
+fx = 4.902907 (23.893632 sec)
+fx = 4.841176 (23.974652 sec)
+fx = 8.461541 (23.860574 sec)
+fx = 4.820400 (23.826041 sec)
+fx = 4.795046 (23.761321 sec)
+fx = 4.788739 (23.793224 sec)
+fx = 5.287603 (23.894984 sec)
+fx = 4.773924 (23.811039 sec)
+fx = 4.750848 (23.726171 sec)
+Errcode = -1005; KLD = 4.750848
+Final K-L divergence is: 4.750848
+Optimization took 239.587466 seconds.
+Total time: 239.668338 seconds
